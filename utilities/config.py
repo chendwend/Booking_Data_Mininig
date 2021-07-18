@@ -1,0 +1,3 @@
+PARSER = "html.parser"
+PAGE_URL = "https://www.airbnb.com/s/Germany/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&flexible_trip_dates%5B%5D=august&flexible_trip_dates%5B%5D=july&flexible_trip_lengths%5B%5D=weekend_trip&date_picker_type=calendar&query=Germany&place_id=ChIJa76xwh5ymkcRW-WRjmtd6HU&source=structured_search_input_header&search_type=autocomplete_click"
+LOCATIONS_CLASS_ID = "_8s3ctt"
