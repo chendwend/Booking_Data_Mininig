@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import time
 
+
 PATH = "C:\Program Files (x86)\chromedriver.exe"  # location of chromedriver
 WEBSITE = "https://www.airbnb.com/"
 HTML_ELEMENT_RESULT_PAGE = ''
