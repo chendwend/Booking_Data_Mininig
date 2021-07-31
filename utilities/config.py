@@ -9,7 +9,7 @@
 # WEB_SOURCE = "https://www.airbnb.com"
 
 CHROME_DRIVER_PATH = "C:/Program Files (x86)/chromedriver.exe"
-SEC_TO_WAIT = 20
+SEC_TO_WAIT = 10
 # IDENTIFIER_SEARCH_LOCATION = "query"
 "c-autocomplete__input sb-searchbox__input sb-destination__input"
 # IDENTIFIER_SEARCH_BUTTON = "_m9v25n"
@@ -45,20 +45,19 @@ REVIEWERS_REGEX = "[0-9]+"
 
 # -------------- booking -----------------
 WEB_SOURCE = "https://www.booking.com"
-IDENTIFIER_SEARCH_LOCATION = "c-autocomplete__input sb-searchbox__input sb-destination__input"
-IDENTIFIER_SEARCH_BUTTON = "sb-searchbox__button "
-IDENTIFIER_PAGE_BUTTONS = "bui-pagination__item sr_pagination_item"
+SEARCH_LOCATION_STRING = "ss"
+SEARCH_BUTTON_STRING = "sb-searchbox__button "
+PAGES_LINKS_STRING = ".bui-pagination__pages .bui-pagination__list li a"
 MAX_STAYS_IN_PAGE = 25
+OFFSET_REGEX = "[0-9]+$"
 
-OFFSET_REGEX = "=[0-9]+$"
-
-IDENTIFIER_LOCATIONS = ("div", "class", "sr_item  sr_item_new sr_item_default sr_property_block sr_flex_layout         ")
+STAYS_STRING = ".sr_property_block_main_row"
 FEATURES_DICT = {
-    "name": ("div", "class", "sr-hotel__name"),
-    "sub_location": ("a", "class", "bui-link"),
+    "name": ".sr-hotel__name",
+    "sub_location": ".bui-link",
     "price": ("div", "class", "bui-price-display__value prco-inline-block-maker-helper "),
-    "rating": ("div", "class", "bui-review-score__badge"),
-    "reviewers_amount": ("div", "class", "bui-review-score__text"),
+    "rating": ".bui-review-score__badge",
+    "reviewers_amount": ".bui-review-score__text",
     "guests_amount": ("span", "class", "_3hmsj"),
     "wifi": ("span", "class", "_3hmsj")
 }

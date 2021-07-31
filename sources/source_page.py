@@ -12,16 +12,17 @@ import re
 
 
 class Website:
-    SEARCH_BUTTON_LOCATOR = (By.CLASS_NAME, IDENTIFIER_SEARCH_BUTTON)
-    # SEARCH_LOCATION_LOCATOR = (By.NAME, IDENTIFIER_SEARCH_LOCATION)
-    SEARCH_LOCATION_LOCATOR = (By.CLASS_NAME, IDENTIFIER_SEARCH_LOCATION)
-    PAGE_BUTTONS_LOCATOR = (By.CLASS_NAME, IDENTIFIER_PAGE_BUTTONS)
-    SEC_TO_WAIT = 20
+    SEARCH_BUTTON_SELECTOR = (By.CLASS_NAME, SEARCH_BUTTON_STRING)
+    SEARCH_LOCATION_SELECTOR = (By.NAME, SEARCH_LOCATION_STRING)
+    PAGE_BUTTONS_SELECTOR = (By.CSS_SELECTOR, PAGES_LINKS_STRING)
+    SEC_TO_WAIT = 10
+    page_offset = 25
 
     def __init__(self, main_url):
         options = Options()
         options.add_argument("--headless")
         options.add_argument("--blink-settings=imagesEnabled=false")
+        options.add_argument(f'user-agent={USER_AGENT}')
         self._driver = webdriver.Chrome(CHROME_DRIVER_PATH, options=options)
         self._driver.get(main_url)
         self._pages = []
@@ -29,7 +30,7 @@ class Website:
     def enter_location(self, location):
         try:
             search_location = WebDriverWait(self._driver, Website.SEC_TO_WAIT).until(
-                EC.presence_of_element_located(Website.SEARCH_LOCATION_LOCATOR)
+                EC.presence_of_element_located(Website.SEARCH_LOCATION_SELECTOR)
             )
             search_location.send_keys(location)
         except TimeoutException:
@@ -39,7 +40,7 @@ class Website:
     def click_search_button(self):
         try:
             search_button = WebDriverWait(self._driver, Website.SEC_TO_WAIT).until(
-                EC.presence_of_element_located(Website.SEARCH_BUTTON_LOCATOR)
+                EC.presence_of_element_located(Website.SEARCH_BUTTON_SELECTOR)
             )
             search_button.click()
         except TimeoutException:
@@ -53,38 +54,27 @@ class Website:
         list_urls.append(first_page_url)
         try:
             page_buttons = WebDriverWait(self._driver, Website.SEC_TO_WAIT).until(
-                EC.presence_of_all_elements_located(Website.PAGE_BUTTONS_LOCATOR)
+                EC.presence_of_all_elements_located(Website.PAGE_BUTTONS_SELECTOR)
             )
-            last_url = page_buttons[-1]
-            last_offset_number = int(re.search(OFFSET_REGEX, last_url).group())
-            last_equal_sign_index = last_url.rfind('=')
-            base_url = last_url[:last_equal_sign_index]
-            number_of_pages = last_offset_number/25 + 1
-            for i in range(2, number_of_pages):
-                list_urls.append(base_url + '=' + str(i*25))
-            # number_of_pages_minus_one = len(page_buttons)  # pages 2..<last_page>
-            # if number_of_pages_minus_one >= 1:
-            #     page_buttons[number_of_pages_minus_one - 1].click()
-            #     time.sleep(Website.SEC_TO_WAIT)
-            #     url_page = self._driver.current_url  # last page
-            #     time.sleep(Website.SEC_TO_WAIT)
-            #     url_first_part = url_page.split("offset=")[0]
-            #     url_second_part = url_page.split("offset=")[1]
-            #     the_constant_offset = url_page.split("offset=")[2]
-            #     the_last_offset = url_second_part.split("&")[0]
-            #     the_third_part = url_second_part.split("&")[1]
-            #     for j in range(MAX_STAYS_IN_PAGE, int(the_last_offset) + MAX_STAYS_IN_PAGE, MAX_STAYS_IN_PAGE):
-            #         list_urls.append(
-            #             url_first_part + "offset=" + str(j) + "&" + the_third_part + "offset=" + the_constant_offset)
         except TimeoutException:
             self._driver.quit()
             sys.exit(f"Failed to find the page buttons or Timeout= {SEC_TO_WAIT} seconds passed.")
+
+        last_url = page_buttons[-1].get_attribute("href")
+        last_offset_number = int(re.search(OFFSET_REGEX, last_url).group())
+        last_equal_sign_index = last_url.rfind('=')
+        base_url = last_url[:last_equal_sign_index] + '='
+        number_of_pages = int(last_offset_number / Website.page_offset) + 1
+        for i in range(1, number_of_pages):
+            list_urls.append(base_url + str(i * Website.page_offset))
+
         return list_urls
 
     def get_all_features(self):
         pages_url_list = self._get_urls()
-        self._pages = [Page(page_url) for page_url in pages_url_list]
-        features_list = [page_obj.get_features() for page_obj in self._pages]
+        features_list = []
+        for page_url in pages_url_list[:3]:
+            features_list.append(Page(page_url, self._driver).get_features())
         return features_list
 
     def teardown(self):
