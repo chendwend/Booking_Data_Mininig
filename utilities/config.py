@@ -48,17 +48,21 @@ WEB_SOURCE = "https://www.booking.com"
 SEARCH_LOCATION_STRING = "ss"
 SEARCH_BUTTON_STRING = "sb-searchbox__button "
 PAGES_LINKS_STRING = ".bui-pagination__pages .bui-pagination__list li a"
+DATES_STRING = "//div[contains(@data-mode,'checkin')]//span[contains(@class,'sb-date-field__icon sb-date-field__icon-btn bk-svg-wrapper calendar-restructure-sb')]"
 MAX_STAYS_IN_PAGE = 25
+
+
+NUMBERS_REGEX = "[0-9]+$"
 OFFSET_REGEX = "[0-9]+$"
 
+MAIN_STRING = "#hotellist_inner"
 STAYS_STRING = ".sr_property_block_main_row"
 FEATURES_DICT = {
     "name": ".sr-hotel__name",
-    "sub_location": ".bui-link",
-    "price": ("div", "class", "bui-price-display__value prco-inline-block-maker-helper "),
+    "location": ".bui-link",
+    "price": "//body[contains(@class, 'prco-wrapper)]",
     "rating": ".bui-review-score__badge",
+    "beds": ".bui-u-sr-only",
     "reviewers_amount": ".bui-review-score__text",
-    "guests_amount": ("span", "class", "_3hmsj"),
-    "wifi": ("span", "class", "_3hmsj")
 }
 

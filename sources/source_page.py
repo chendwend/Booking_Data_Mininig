@@ -6,6 +6,7 @@ from utilities.config import *
 from sources.page import Page
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.select import Select
 import time
 import sys
 import re
@@ -14,6 +15,7 @@ import re
 class Website:
     SEARCH_BUTTON_SELECTOR = (By.CLASS_NAME, SEARCH_BUTTON_STRING)
     SEARCH_LOCATION_SELECTOR = (By.NAME, SEARCH_LOCATION_STRING)
+    DATES_SELECTOR = (By.NAME, DATES_STRING)
     PAGE_BUTTONS_SELECTOR = (By.CSS_SELECTOR, PAGES_LINKS_STRING)
     SEC_TO_WAIT = 10
     page_offset = 25
@@ -33,6 +35,7 @@ class Website:
                 EC.presence_of_element_located(Website.SEARCH_LOCATION_SELECTOR)
             )
             search_location.send_keys(location)
+
         except TimeoutException:
             self._driver.quit()
             sys.exit(f"Failed to find the form for input or Timeout= {SEC_TO_WAIT} seconds passed.")
@@ -46,6 +49,20 @@ class Website:
         except TimeoutException:
             self._driver.quit()
             sys.exit(f"Failed to find the search button or Timeout= {SEC_TO_WAIT} seconds passed.")
+
+    def select_date(self):
+        try:
+            WebDriverWait(self._driver, Website.SEC_TO_WAIT).until(
+                EC.presence_of_all_elements_located((By.CSS_SELECTOR, ".bui-calendar__date"))
+            )
+        except TimeoutException:
+            self._driver.quit()
+            sys.exit(f"Failed to find the checkin field or Timeout= {SEC_TO_WAIT} seconds passed.")
+        # self._driver.find_element_by_css_selector("span[aria-label='5 August 2021']").click()
+        self._driver.find_element_by_css_selector("span[aria-label='7 August 2021']").click()
+        jack = self._driver.find_elements_by_css_selector(".sb-date-field__display")[1].click()
+        self._driver.find_element_by_css_selector("span[aria-label='10 August 2021']").click()
+        self._driver.find_element_by_css_selector(".sb-searchbox__button ").click()
 
     def _get_urls(self):
         list_urls = []
