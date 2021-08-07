@@ -19,8 +19,8 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the req
 ```bash
 pip install -r requirements.txt
 ```
-For this project you will also need a WebDriver and to add executables to your PATH \
-For more information you can use the link below: \
+For this project you will need a WebDriver and adding executables to your PATH \
+For more information you can check the link below: \
 [driver_requirements](https://www.selenium.dev/documentation/en/webdriver/driver_requirements/)
 ## Usage
 
