@@ -15,14 +15,13 @@ import re
 class Website:
     SEARCH_BUTTON_SELECTOR = (By.CLASS_NAME, SEARCH_BUTTON_STRING)
     SEARCH_LOCATION_SELECTOR = (By.NAME, SEARCH_LOCATION_STRING)
-    DATES_SELECTOR = (By.NAME, DATES_STRING)
     PAGE_BUTTONS_SELECTOR = (By.CSS_SELECTOR, PAGES_LINKS_STRING)
     SEC_TO_WAIT = 10
     page_offset = 25
 
     def __init__(self, main_url):
         options = Options()
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         options.add_argument("--blink-settings=imagesEnabled=false")
         options.add_argument(f'user-agent={USER_AGENT}')
         self._driver = webdriver.Chrome(CHROME_DRIVER_PATH, options=options)
@@ -50,7 +49,7 @@ class Website:
             self._driver.quit()
             sys.exit(f"Failed to find the search button or Timeout= {SEC_TO_WAIT} seconds passed.")
 
-    def select_date(self):
+    def select_date(self, start_date, end_date):
         try:
             WebDriverWait(self._driver, Website.SEC_TO_WAIT).until(
                 EC.presence_of_all_elements_located((By.CSS_SELECTOR, ".bui-calendar__date"))
@@ -58,10 +57,10 @@ class Website:
         except TimeoutException:
             self._driver.quit()
             sys.exit(f"Failed to find the checkin field or Timeout= {SEC_TO_WAIT} seconds passed.")
-        # self._driver.find_element_by_css_selector("span[aria-label='5 August 2021']").click()
-        self._driver.find_element_by_css_selector("span[aria-label='7 August 2021']").click()
+        self._driver.find_element_by_css_selector(f"span[aria-label='{start_date.day} {start_date.strftime('%B')} {start_date.year}']").click()
         jack = self._driver.find_elements_by_css_selector(".sb-date-field__display")[1].click()
-        self._driver.find_element_by_css_selector("span[aria-label='10 August 2021']").click()
+        self._driver.find_element_by_css_selector(f"span[aria-label='{end_date.day} {end_date.strftime('%B')} {end_date.year}']").click()
+        # self._driver.find_element_by_css_selector("span[aria-label='11 August 2021']").click()
         self._driver.find_element_by_css_selector(".sb-searchbox__button ").click()
 
     def _get_urls(self):
@@ -90,8 +89,8 @@ class Website:
     def get_all_features(self):
         pages_url_list = self._get_urls()
         features_list = []
-        for page_url in pages_url_list[:3]:
-            features_list.append(Page(page_url, self._driver).get_features())
+        for page_url in pages_url_list:
+            features_list.append(Page(page_url, self._driver).get_data())
         return features_list
 
     def teardown(self):

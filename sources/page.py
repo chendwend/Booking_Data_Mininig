@@ -11,14 +11,6 @@ import os
 
 
 class Page:
-    stays_selector = (By.CSS_SELECTOR, STAYS_STRING)
-    name_selector = (By.CSS_SELECTOR, FEATURES_DICT["name"])
-    location_selector = (By.CSS_SELECTOR, FEATURES_DICT["location"])
-    price_selector = (By.XPATH, FEATURES_DICT["price"])
-    rating_selector = (By.CSS_SELECTOR, FEATURES_DICT["rating"])
-    reviewers_amount_selector = (By.CSS_SELECTOR, FEATURES_DICT["reviewers_amount"])
-    beds_selector = (By.CSS_SELECTOR, FEATURES_DICT["beds"])
-    main_selector = (By.CSS_SELECTOR, MAIN_STRING)
 
     def __init__(self, search_page, driver):
         self._search_page = search_page
@@ -26,89 +18,91 @@ class Page:
         self._driver.get(search_page)
         self._features = []
 
-    def extract_locations(self):
-        print(self._driver.current_url)
+    def get_elements(self, base_element, selector_string=MAIN_STRING):
         try:
-            stays = WebDriverWait(self._driver, SEC_TO_WAIT).until(
-                EC.presence_of_all_elements_located(Page.stays_selector)
+            elements = WebDriverWait(base_element, SEC_TO_WAIT).until(
+                EC.presence_of_all_elements_located((By.CSS_SELECTOR, selector_string))
             )
         except TimeoutException:
             self._driver.quit()
-            sys.exit(f"Failed to find locations in url {self._search_page} or Timeout= {SEC_TO_WAIT} seconds passed.")
-        return stays
+            sys.exit(
+                f"Failed to find {selector_string} in url {self._search_page} or Timeout= {SEC_TO_WAIT} seconds passed.")
+        return elements
 
-    def get_price_accommodation(self):
-        price_accommodation = self._driver.find_elements_by_css_selector(".bui-u-sr-only")[3:]
-        prices = price_accommodation[1::2]
-        accommodations = price_accommodation[0::2]
-        return prices, accommodations
-
-    def extract_features_per_location(self, stays_element):
-        # name
+    def get_element(self, base_element, selector_string=MAIN_STRING):
         try:
-            name = WebDriverWait(stays_element, SEC_TO_WAIT).until(
-                EC.presence_of_element_located(Page.name_selector)
-            ).text
+            element = WebDriverWait(base_element, SEC_TO_WAIT).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, selector_string))
+            )
         except TimeoutException:
+            element = ""
+        return element
+
+    def extract_upper_data(self, upper_elements):
+        single_data_dict = {}
+        data_list = []
+        for element in upper_elements:
+            for data_name, (data_string, data_regex) in DATA_TYPES_UPPER.items():
+                try:
+                    single_data_dict[data_name] = re.search(data_regex, self.get_element(element, data_string).text).group()
+                except AttributeError:
+                    single_data_dict[data_name] = "empty"
+            data_list.append(single_data_dict)
+        return data_list
+
+    def extract_lower_data(self, lower_elements):
+        list_of_prices = []
+        max_persons_elements_list = []
+        for lower_element in lower_elements:
+            price = lower_element.find_elements_by_css_selector(PRICE_STRING)
+            price = price[1].text
+            if not price:  # orange price
+                price = self.get_element(lower_element, ".tpi_price_label tpi_price_label__orange")
+                print(f"orange price = {price}")
+            list_of_prices.append(price)
+
+            max_persons_elements_list.append(self.get_element(lower_element, MAX_PERSONS_STRING))
+
+        try:
+            prices = [int(re.search(PRICE_REGEX, price).group().replace(',', ''))
+                      if price else "empty"
+                      for price in list_of_prices]
+        except AttributeError:
             self._driver.quit()
-            sys.exit(f"Failed to find the name or Timeout= {SEC_TO_WAIT} seconds passed.")
+            sys.exit(f"Encountered a NoneType for prices in {self._search_page}.")
 
-        # sub location
+        # max_persons_elements_list = [self.get_element(lower_element, MAX_PERSONS_STRING) for lower_element in lower_elements]
+        max_persons_full_string = [element.text for element in max_persons_elements_list]
         try:
-            location = WebDriverWait(stays_element, SEC_TO_WAIT).until(
-                EC.presence_of_element_located(Page.location_selector)
-            ).text.split()[:-2]
-        except TimeoutException:
-            # self._driver.quit()
-            print(f"Failed to find the sub_location or Timeout= {SEC_TO_WAIT} seconds passed.")
+            max_persons = [re.search(MAX_PERSONS_REGEX, unfiltered).group()
+                           if unfiltered else "empty"
+                           for unfiltered in max_persons_full_string]
+        except AttributeError:
+            print(f"len(max_persons_full_string)={len(max_persons_full_string)}")
+            self._driver.quit()
+            sys.exit(f"Encountered a NoneType for max_persons in {self._search_page}.")
 
-        # rating
-        try:
-            rating = float(WebDriverWait(stays_element, SEC_TO_WAIT).until(
-                EC.presence_of_element_located(Page.rating_selector)
-            ).text)
-        except TimeoutException:
-            rating = 0
+        if len(prices) != len(max_persons):
+            self._driver.quit()
+            print(f"len(prices) = {len(prices)}, len(persons)={len(max_persons)}")
+            sys.exit(f"lengths of prices & max_persons don't match in URL={self._search_page}.")
+        lower_data = [{"price": price, "max persons": max_person} for price, max_person in zip(prices, max_persons)]
+        return lower_data
 
-        # reviewers amount
-        try:
-            reviewers_amount_full = WebDriverWait(stays_element, SEC_TO_WAIT).until(
-                EC.presence_of_element_located(Page.reviewers_amount_selector)
-            ).text
-            reviewers_amount = int(re.search(REVIEWERS_REGEX, reviewers_amount_full).group())
-        except TimeoutException:
-            reviewers_amount = 0
+    def get_data(self):
+        print(f"processing URL:\n {self._search_page}... \n -------------------------------")
+        main_element = self.get_element(self._driver)
+        upper_elements, lower_elements = self.get_elements(main_element, UPPER_STRING), \
+                                         self.get_elements(main_element, LOWER_STRING)
+        if len(upper_elements) != len(lower_elements):
+            self._driver.quit()
+            sys.exit(f"lengths of lower and upper elements don't match in URL={self._search_page}.")
 
-        self._driver.get_screenshot_as_file(os.getcwd() + "/Selenium0.png")
+        upper_data, lower_data = self.extract_upper_data(upper_elements), self.extract_lower_data(lower_elements)
+        data = []
+        for first, second in zip(upper_data, lower_data):
+            first.update(second)
+            data.append(first)
 
-        features = {
-            # "url": url,
-            "name": name,
-            "location": location,
-            # "price": price,
-            "rating": rating,
-            "reviewers_amount": reviewers_amount
-            # "beds": beds
-            # "guests_amount": guests_amount,
-            # "wifi": wifi
-        }
-        return features
+        return data
 
-    def get_features(self):
-        basic_info_list = self.extract_locations()
-        prices, accommodations = self.get_price_accommodation()
-        index = 0
-        for stays_element in basic_info_list:
-            features = self.extract_features_per_location(stays_element)
-            price = prices[index].text
-            accommodation = accommodations[index].text
-            print(f"price = {price}, accommodation = {accommodation}")
-            if "Max" in price:
-                features["price"] = int(re.search(NUMBERS_REGEX, accommodations[index].text).group())
-                features["accommodation"] = int(re.search(NUMBERS_REGEX, price[index].text).group())
-            else:
-                features["price"] = int(re.search(NUMBERS_REGEX, prices[index].text).group())
-                features["accommodation"] = int(re.search(NUMBERS_REGEX, accommodations[index].text).group())
-            self._features.append(features)
-            index += 1
-        return self._features
