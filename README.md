@@ -1,4 +1,4 @@
-# Scraping Booking.com website
+# Data Mining Project - Scraping Booking.com website
 
 In this project we scrape the website Booking.com, collect specific data and organize the data in dictionaries.
 By selecting the destination country, the check-in and check-out dates by the user, the python program is connecting to the Booking.com website and downloading specific data from any relevant stay which is available by the search on the Booking website.
@@ -24,6 +24,18 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the req
 ```bash
 pip install -r requirements.txt
 ```
+Other alternative is to install: \
+beautifulsoup4==4.9.3 \
+certifi==2021.5.30 \
+charset-normalizer==2.0.3 \
+idna==3.2 \
+requests==2.26.0 \
+selenium==3.141.0 \
+soupsieve==2.2.1 \
+urllib3==1.26.6 
+
+We use Python 3.7.7 
+
 For this project you will need a WebDriver and adding executables to your PATH \
 For more information you can check the link below: \
 [driver_requirements](https://www.selenium.dev/documentation/en/webdriver/driver_requirements/)
@@ -44,8 +56,23 @@ main.py -d germany -s 2021-08-15 -e 2021-08-21
 All you need to do now is wait... \
 For this input it might take about 10 minutes so go make yourself a cup of coffee.
 
-## The output
+## Output
 The output is a list of dictionaries, one dictionary for example: \
 {'name': 'Wyndham Stuttgart Airport Messe', 'location': 'Stuttgart', 'rating': '8', 'reviewers_amount': '3', 'price': 1616, 'max persons': '2'} \
 Each dictionary contain the data about one stay that match the location and available be the dates the user specified.
 
+## Implementation
+We use the beautifulsoup4 and selenium libarary to scrap information from the Booking website.
+We use the argparse module to make a user-friendly command-line interfaces.
+Our project is implemente by hierarchy of two classes:
+1. The class Website that get the url of the Booking website: "https://www.booking.com" and return a list of the urls of all the different pages that match the user search.
+2. The class Page that will be called for each url from the list mention above and will retrieve the data about each stay that appear in that page. 
+
+For each stay we create a dictionary with the information about the stay (name, location, rating, number of reviews, price and the maximum number of persons).
+Then we create a list of all the dictionaries and print it.
+
+## The goal
+Creating a big database with all the data that being extrarct from Booking website. 
+
+## The motivation
+This project is for learning purposes. We will practice with writing a complex code with Python, using Git to collaborate and in the future, creating a big database by working with SQL.
