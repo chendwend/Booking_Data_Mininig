@@ -45,7 +45,7 @@ All you need to do now is wait... \
 For this input it might take about 10 minutes so go make yourself a cup of coffee.
 
 ## The output
-The output is a list of dictionaries, for example: \
+The output is a list of dictionaries, one dictionary for example: \
 {'name': 'Wyndham Stuttgart Airport Messe', 'location': 'Stuttgart', 'rating': '8', 'reviewers_amount': '3', 'price': 1616, 'max persons': '2'} \
 Each dictionary contain the data about one stay that match the location and available be the dates the user specified.
 
