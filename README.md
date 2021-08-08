@@ -65,7 +65,7 @@ Each dictionary contain the data about one stay that match the location and avai
 We use the beautifulsoup4 and selenium libarary to scrap information from the Booking website.
 We use the argparse module to make a user-friendly command-line interfaces.
 Our project is implemente by hierarchy of two classes:
-1. The class Website that get the url of the Booking website: "https://www.booking.com" and return a list of the urls of all the different pages that match the user search.
+1. The class Website that recieve the url of the Booking website: "https://www.booking.com" and return a list of the urls of all the different pages that match the user search.
 2. The class Page that will be called for each url from the list mention above and will retrieve the data about each stay that appear in that page. 
 
 For each stay we create a dictionary with the information about the stay (name, location, rating, number of reviews, price and the maximum number of persons).
