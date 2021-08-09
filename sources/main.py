@@ -5,6 +5,14 @@ from datetime import datetime
 
 
 def valid_date(s):
+    """
+    Validates a date to be of type YYYY-MM-DD and is not in the past
+    If not given in this formant, exits the program.
+    :param s: date
+    :type s: str
+    :return: datetime object representation of the given date
+    :rtype: datetime
+    """
     try:
         date = datetime.strptime(s, "%Y-%m-%d")
         today = datetime.today()
@@ -16,10 +24,19 @@ def valid_date(s):
     return date
 
 
-def valid_destination(dest):
-    if not dest.isalpha():
-        sys.exit(f"the destination {dest} is not alphanumeric.")
-    return dest
+def valid_destination(destination):
+    """
+    Validates the given string to be alphanumeric.
+    If not, exits the program.
+
+    :param destination: desired destination
+    :type destination: str
+    :return: destination, the input
+    :rtype: str
+    """
+    if not destination.isalpha():
+        sys.exit(f"the destination {destination} is not alphanumeric.")
+    return destination
 
 
 if __name__ == '__main__':
@@ -30,17 +47,17 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     start = perf_counter()
-    # destination = input("Enter desired destination: ")
     website = Website(WEB_SOURCE)
-    print(args.destination)
-    print(args.start_date)
     website.enter_location(args.destination)
     website.click_search_button()
-    # start_date, stop_date = datetime.strptime(args.start_date, "%Y-%m-%d"), datetime.strptime(args.stop_date, "%Y-%m-%d")
     website.select_date(args.start_date, args.end_date)
-    features_list = website.get_all_features()
+    data_list, pages, failures = website.get_all_data()
     website.teardown()
     time = perf_counter() - start
-    print(f"\n-----------------\nExecution time: {time:.2f} seconds")
-    for element in features_list:
-        print(element)
+    print(f"Basic statistics for destination= '{args.destination}', between {args.start_date.date()} and {args.end_date.date()}:")
+    print(f"Number of total pages = {pages}")
+    print(f"Number of failed pages = {failures}")
+    print(f"Execution time: {time:.2f} seconds")
+    print(f"{BAR}\nResults:\n{BAR}")
+    for data in data_list:
+        print(data)
