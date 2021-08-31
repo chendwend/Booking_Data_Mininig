@@ -3,8 +3,7 @@ USE booking_data;
 
 CREATE TABLE stays (
   stay_no INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  stay_name varchar(100) NOT NULL,
-  stay_url char NOT NULL
+  stay_name varchar(100) NOT NULL
 );
 
 CREATE TABLE stays_info (
@@ -23,3 +22,7 @@ rating FLOAT(2),
 reviewers_amount SMALLINT,
 FOREIGN KEY (stay_no) REFERENCES stays(stay_no) ON DELETE CASCADE
 );
+
+-- drop database booking_data;
+
+
