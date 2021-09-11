@@ -2,7 +2,7 @@
 
 In this project we scrape the website Booking.com, collect specific data and organize the data in dictionaries.
 By selecting the destination country, the check-in and check-out dates by the user, the python program is connecting to the Booking.com website and downloading specific data from any relevant stay which is available by the search on the Booking website.
-From each stay we will save the name of the stay, the location, the rating, the number of reviews, the price and the maximum number of persons.
+From each stay we will save the name of the stay, the location, the rating, the number of reviews, the price and the maximum number of people.
 
 ## Installation
 After downloading the Data_mininig_project_2021 directory to your computer (or clone the repository from the github) you will need to creat an empty virtual environment.  
@@ -58,7 +58,7 @@ For this input it might take about 10 minutes so go make yourself a cup of coffe
 
 ## Output
 The output is a list of dictionaries, one dictionary for example: \
-{'name': 'Wyndham Stuttgart Airport Messe', 'location': 'Stuttgart', 'rating': '8', 'reviewers_amount': '3', 'price': 1616, 'max persons': '2'} \
+{'name': 'Wyndham Stuttgart Airport Messe', 'location': 'Stuttgart', 'rating': '8', 'reviewers_amount': '3', 'price': 1616, 'max people': '2'} \
 Each dictionary contain the data about one stay that match the location and available be the dates the user specified.
 
 ## Implementation
@@ -68,7 +68,7 @@ Our project is implemente by hierarchy of two classes:
 1. The class Website that recieve the url of the Booking website: "https://www.booking.com" and return a list of the urls of all the different pages that match the user search.
 2. The class Page that will be called for each url from the list mention above and will retrieve the data about each stay that appear in that page. 
 
-For each stay we create a dictionary with the information about the stay (name, location, rating, number of reviews, price and the maximum number of persons).
+For each stay we create a dictionary with the information about the stay (name, location, rating, number of reviews, price and the maximum number of people).
 Then we create a list of all the dictionaries and print it.
 
 ## The goal
