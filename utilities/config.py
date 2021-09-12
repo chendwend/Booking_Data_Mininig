@@ -2,10 +2,9 @@
 BAR = "-----------------------------------"
 
 """########## Webdriver constants #############"""
-CHROME_DRIVER_PATH = "C:/Program Files (x86)/chromedriver.exe"
 SEC_TO_WAIT = 10
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" \
-             " Chrome/92.0.4515.131 Safari/537.36"
+             " Chrome/93.0.4577.63 Safari/537.36"
 
 """########## Website constants #############"""
 WEB_SOURCE = "https://www.booking.com"
@@ -26,15 +25,17 @@ LOCATION_REGEX = "(?!Show)\w+"
 MAX_PERSONS_REGEX = "[0-9]+$"
 
 # --- Selector strings
-MAIN_STRING = "#hotellist_inner"
+MAIN_PAGE_STRING = "#hotellist_inner"
 UPPER_STRING = ".sr_property_block_main_row"
 LOWER_STRING = ".roomrow"
 PRICE_STRING = ".prco-ltr-right-align-helper"
-MAX_PERSONS_STRING = ".roomNameInner .bui-u-sr-only"
+MAX_PEOPLE_STRING = ".roomNameInner .bui-u-sr-only"
 NAME_STRING = ".sr-hotel__name"
 LOCATION_STRING = ".bui-link"
 RATING_STRING = ".bui-review-score__badge"
 REVIEWERS_STRING = ".bui-review-score__text"
+POLICY_STRING = ".sr_card_room_policies__container"
+STAY_FACILITIES_STRING = ".sr-cta-button-row"
 
 DATA_TYPES_UPPER = {
     "name": (NAME_STRING, NAME_REGEX),
@@ -44,5 +45,25 @@ DATA_TYPES_UPPER = {
 }
 DATA_TYPES_LOWER = {
     "price": PRICE_STRING,
-    "max persons": MAX_PERSONS_STRING
+    "max people": MAX_PEOPLE_STRING
 }
+
+"""########## Hotel constants #############"""
+FACILITY_STRING = ".facilitiesChecklist"
+FACILITY_STRING2 = ".hotel-facilities__list"
+PET_STRING = "pets are allowed"
+WIFI_STRING = "wifi is available"
+KITCHEN_STRING = "kitchen"
+PARKING_STRING = "parking is possible"
+AIR_CONDITIONING_STRING = "air conditioning"
+FREE_CANCELLATION_STRING = "free cancellation"
+BREAKFAST_STRING = "breakfast included"
+
+ROOM_FACILITIES = {
+    "pets": PET_STRING,
+    "wifi": WIFI_STRING,
+    "kitchen": KITCHEN_STRING,
+    "parking": PARKING_STRING,
+    "air conditioning": AIR_CONDITIONING_STRING
+}
+
