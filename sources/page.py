@@ -1,13 +1,11 @@
 import re
 from utilities.config import *
-import sys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.common.by import By
+from sources.element import Element
+from sources.place_of_stay import PlaceOfStay
+from selenium.common.exceptions import ElementNotInteractableException
 
 
-class Page:
+class Page(Element):
     """
     A Class to represent each page in a search result
     """
@@ -25,45 +23,6 @@ class Page:
         self._search_page = search_page
         self._driver = driver
         self._driver.get(search_page)
-        self._features = []
-
-    def get_elements(self, base_element, selector_string=MAIN_STRING):
-        """
-        gets all elements from a webdriver from the given base element and selector string
-
-        :param base_element: a Webdriver element in which to search for the selector
-        :param selector_string: the selector string by which to search for specific elements
-        :type selector_string: str
-        :return: list of elements
-        :rtype: list
-        """
-        try:
-            elements = WebDriverWait(base_element, SEC_TO_WAIT).until(
-                EC.presence_of_all_elements_located((By.CSS_SELECTOR, selector_string))
-            )
-        except TimeoutException:
-            self._driver.quit()
-            sys.exit(
-                f"Failed to find {selector_string} in url {self._search_page} or Timeout= {SEC_TO_WAIT} seconds passed.")
-        return elements
-
-    @staticmethod
-    def get_element(base_element, selector_string=MAIN_STRING):
-        """
-        gets an element from a webdriver from the given base element and selector string
-
-        :param base_element: a Webdriver element in which to search for the selector
-        :param selector_string: the selector string by which to search for specific element
-        :type selector_string: str
-        :return: webdriver element
-        """
-        try:
-            element = WebDriverWait(base_element, SEC_TO_WAIT).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, selector_string))
-            )
-        except TimeoutException:
-            element = ""
-        return element
 
     def extract_upper_data(self, upper_elements):
         """
@@ -96,36 +55,78 @@ class Page:
         :return: list of dictionaries with the data, for each location
         :rtype: list
         """
-        list_of_prices = []
-        max_persons_elements_list = []
         empty_list = []
+        list_of_prices = empty_list.copy()
+        max_people_full_string = empty_list.copy()
+        policies_original = empty_list.copy()
         lower_data = empty_list.copy()
+        #########################################################
+        #  First stage parsing - creating lists of unfiltered data
+        #########################################################
         for lower_element in lower_elements:
+            # locates elements for each category
             price = lower_element.find_elements_by_css_selector(PRICE_STRING)
-            price = price[1].text
+            policy = lower_element.find_element_by_css_selector(POLICY_STRING)
+            # parse data (when required) and append to a list
+            price = price[1].text  # non-unique element
             list_of_prices.append(price)
-
-            max_persons_elements_list.append(self.get_element(lower_element, MAX_PERSONS_STRING))
-
+            max_people_full_string.append(self.get_element(lower_element, MAX_PEOPLE_STRING).text)
+            policies_original.append(policy.text)  # each policy.text is a string of all policies for that lower element
+        #########################################################
+        #  Second stage parsing - Filtering data for each list
+        #########################################################
+        breakfasts = ["Yes" if (BREAKFAST_STRING in policy.lower()) else "No" for policy in policies_original]
+        free_cancellations = \
+            ["Yes" if (FREE_CANCELLATION_STRING in policy.lower()) else "No" for policy in policies_original]
         prices = [int(re.search(PRICE_REGEX, price).group().replace(',', ''))
                   if price else "empty"
                   for price in list_of_prices]
+        # max_people_full_string = [element.text for element in max_people_elements_list]
 
-        max_persons_full_string = [element.text for element in max_persons_elements_list]
+        max_people = [re.search(MAX_PERSONS_REGEX, unfiltered).group()
+                      if unfiltered else "empty"
+                      for unfiltered in max_people_full_string]
 
-        max_persons = [re.search(MAX_PERSONS_REGEX, unfiltered).group()
-                       if unfiltered else "empty"
-                       for unfiltered in max_persons_full_string]
-
-        if len(prices) != len(max_persons):
+        if len(prices) != len(max_people):
             return lower_data
 
-        lower_data = [{"price": price, "max persons": max_person} for price, max_person in zip(prices, max_persons)]
+        lower_data = [
+            {"Price": price, "Max people": people, "Breakfast": breakfast, "Free Cancellations": free_cancellation}
+            for
+            price, people, breakfast, free_cancellation in zip(prices, max_people, breakfasts, free_cancellations)]
         return lower_data
+
+    def extract_room_facilities(self):
+        """
+        Extracts room facilities information for each stays in the page
+        :return: list of dictionaries corresponding for each stay
+        :rtype: list
+        """
+        room_facilities_elements = [element for element in self.get_elements(self._driver, STAY_FACILITIES_STRING)]
+        # print(len(self._driver.window_handles))
+        # print(self._driver.window_handles)
+        window_before = self._driver.window_handles[0]
+        room_facilities = []
+        for element in room_facilities_elements:
+            try:
+                element.click()
+            except ElementNotInteractableException:
+                continue
+            window_after = self._driver.window_handles[1]
+            self._driver.switch_to_window(window_after)
+            place_of_stay_obj = PlaceOfStay(self._driver)
+            room_facilities.append(place_of_stay_obj.extract_data())
+            self._driver.close()
+            self._driver.switch_to_window(window_before)
+        return room_facilities
 
     def get_data(self):
         """
-        Extracts data from the page by combining lower & upper parts to single dictionary, for each location.
+        1. locates main element in the page containing all stays
+        2. locates upper & lower elements for each stay
+        3. extracts data corresponding for lower & upper elements
+        4. extracts room facilities data for each stay
+        4. Creates a unified dictionary containing all extracted data for the page
 
         :return: list of dictionaries for each location
         :rtype: list
@@ -133,9 +134,12 @@ class Page:
         data = []
         print(f"processing page number {Page.url_number}... \n {BAR}")
         Page.url_number += 1
-        main_element = self.get_element(self._driver)
-        upper_elements, lower_elements = self.get_elements(main_element, UPPER_STRING), \
-                                         self.get_elements(main_element, LOWER_STRING)
+        main_element = self.get_element(self._driver, MAIN_PAGE_STRING)
+        # lists of upper & lower elements for each stay:
+        upper_elements, lower_elements = \
+            self.get_elements(main_element, UPPER_STRING), \
+            self.get_elements(main_element, LOWER_STRING)
+
         if len(upper_elements) != len(lower_elements):  # when encountered a mismatch, it's an irregular page
             Page.failed_pages += 1
             return data
@@ -144,8 +148,17 @@ class Page:
         if not lower_data or not upper_data:  # when either lower or upper failed to acquire data, irregular page
             Page.failed_pages += 1
             return data
-        for first, second in zip(upper_data, lower_data):
-            first.update(second)
-            data.append(first)
+
+        room_facilities = self.extract_room_facilities()
+        for upper, lower, room in zip(upper_data, lower_data, room_facilities):
+            upper.update(lower)
+            upper.update(room)
+            data.append(upper)
 
         return data
+
+
+
+
+
+
