@@ -51,13 +51,6 @@ class Website(Element):
         :type end_date: datetime
         """
         self.get_elements(self._driver, CALENDAR_STRING)
-        # try:
-        #     WebDriverWait(self._driver, SEC_TO_WAIT).until(
-        #         EC.presence_of_all_elements_located((By.CSS_SELECTOR, CALENDAR_STRING))
-        #     )
-        # except TimeoutException:
-        #     self._driver.quit()
-        #     sys.exit(f"Failed to find the calendar field or Timeout= {SEC_TO_WAIT} seconds passed.")
         self._driver.find_element_by_css_selector(
             f"span[aria-label='{start_date.day} {start_date.strftime('%B')} {start_date.year}']").click()
         self._driver.find_elements_by_css_selector(".sb-date-field__display")[1].click()
@@ -76,13 +69,6 @@ class Website(Element):
         first_page_url = self._driver.current_url
         list_urls.append(first_page_url)
         page_buttons = self.get_elements(self._driver, PAGES_LINKS_STRING)
-        # try:
-        #     page_buttons = WebDriverWait(self._driver, SEC_TO_WAIT).until(
-        #         EC.presence_of_all_elements_located((By.CSS_SELECTOR, PAGES_LINKS_STRING))
-        #     )
-        # except TimeoutException:
-        #     self._driver.quit()
-        #     sys.exit(f"Failed to find the page buttons or Timeout= {SEC_TO_WAIT} seconds passed.")
 
         last_url = page_buttons[-1].get_attribute("href")
         last_offset_number = int(re.search(OFFSET_REGEX, last_url).group())
@@ -106,7 +92,9 @@ class Website(Element):
         data_list = []
         for page_url in pages_url_list[:2]:
             page = Page(page_url, self._driver)
-            data_list.append(page.get_data())
+            data = page.get_data()
+            if data:
+                data_list.append(data)
         number_of_pages = len(pages_url_list)
         number_of_failed_pages = Page.failed_pages
         return data_list, number_of_pages, number_of_failed_pages

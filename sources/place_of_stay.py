@@ -20,18 +20,22 @@ class PlaceOfStay(Element):
 
     @staticmethod
     def extract_service(element, selector_string):
-        return selector_string in element.text.lower()
+        condition = selector_string in element.text.lower()
+        return 1 if condition else 0
 
     def extract_data(self):
         room_facilities = {}
         try:
-            element = self.get_elements(self._driver, FACILITY_STRING)[1]  # facilities element
+            element = self._driver.find_elements_by_css_selector(FACILITY_STRING)[1]  # facilities element
         except MaxRetryError:
             try:
-                element = self.get_element(self._driver, FACILITY_STRING2)
+                element = self._driver.find_element_by_css_selector(FACILITY_STRING2)
             except MaxRetryError:
-                print("failed twice")
+                print(f"Failed to find both in {self._driver.current_url}")
                 sys.exit()
+                return [None]*len(ROOM_FACILITIES)
+        except IndexError:
+            element = self._driver.find_elements_by_css_selector(FACILITY_STRING)[0]
         for service, selector_string in ROOM_FACILITIES.items():
             room_facilities[service] = self.extract_service(element, selector_string)
         return room_facilities
