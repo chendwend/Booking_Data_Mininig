@@ -3,6 +3,7 @@ from utilities.config import *
 from sources.element import Element
 from sources.place_of_stay import PlaceOfStay
 from selenium.common.exceptions import ElementNotInteractableException
+from urllib3.exceptions import MaxRetryError
 
 
 class Page(Element):
@@ -41,8 +42,8 @@ class Page(Element):
                 try:
                     single_data_dict[data_name] = re.search(data_regex,
                                                             self.get_element(element, data_string).text).group()
-                except AttributeError:  # in case data is missing in the element
-                    single_data_dict[data_name] = "empty"
+                except MaxRetryError:  # in case data is missing in the element
+                    single_data_dict[data_name] = None
             data_list.append(single_data_dict)
         return data_list
 
@@ -65,26 +66,34 @@ class Page(Element):
         #########################################################
         for lower_element in lower_elements:
             # locates elements for each category
-            price = lower_element.find_elements_by_css_selector(PRICE_STRING)
-            policy = lower_element.find_element_by_css_selector(POLICY_STRING)
+            try:
+                price = lower_element.find_elements_by_css_selector(PRICE_STRING)
+                price = price[1].text
+            except MaxRetryError:
+                price = None
+            try:
+                policy = lower_element.find_element_by_css_selector(POLICY_STRING)
+                policies_original.append(policy.text)
+            except MaxRetryError:
+                policies_original.append(None)
             # parse data (when required) and append to a list
-            price = price[1].text  # non-unique element
+            # non-unique element
             list_of_prices.append(price)
             max_people_full_string.append(self.get_element(lower_element, MAX_PEOPLE_STRING).text)
-            policies_original.append(policy.text)  # each policy.text is a string of all policies for that lower element
+            # each policy.text is a string of all policies for that lower element
         #########################################################
         #  Second stage parsing - Filtering data for each list
         #########################################################
-        breakfasts = ["Yes" if (BREAKFAST_STRING in policy.lower()) else "No" for policy in policies_original]
+        breakfasts = [1 if (BREAKFAST_STRING in policy.lower()) else 0 for policy in policies_original]
         free_cancellations = \
-            ["Yes" if (FREE_CANCELLATION_STRING in policy.lower()) else "No" for policy in policies_original]
+            [1 if (FREE_CANCELLATION_STRING in policy.lower()) else 0 for policy in policies_original]
         prices = [int(re.search(PRICE_REGEX, price).group().replace(',', ''))
-                  if price else "empty"
+                  if price else None
                   for price in list_of_prices]
         # max_people_full_string = [element.text for element in max_people_elements_list]
 
         max_people = [re.search(MAX_PERSONS_REGEX, unfiltered).group()
-                      if unfiltered else "empty"
+                      if unfiltered else None
                       for unfiltered in max_people_full_string]
 
         if len(prices) != len(max_people):
@@ -103,8 +112,6 @@ class Page(Element):
         :rtype: list
         """
         room_facilities_elements = [element for element in self.get_elements(self._driver, STAY_FACILITIES_STRING)]
-        # print(len(self._driver.window_handles))
-        # print(self._driver.window_handles)
         window_before = self._driver.window_handles[0]
         room_facilities = []
         for element in room_facilities_elements:
@@ -156,9 +163,3 @@ class Page(Element):
             data.append(upper)
 
         return data
-
-
-
-
-
-
