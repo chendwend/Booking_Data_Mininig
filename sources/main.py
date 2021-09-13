@@ -57,7 +57,6 @@ def write_to_csv(data_list, filename="data.csv"):
         for page in data_list:
             dict_writer.writerows(page)
 
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Extract data from Booking.com")
     parser.add_argument('-d', "--destination", help="Desired destination", required=True, type=valid_destination,
