@@ -3,7 +3,7 @@ import csv
 from utilities.config import *
 
 
-def create_db():
+def insert_to_db():
     connection = pymysql.connect(host='localhost',
                                  user='root',
                                  password='root',
