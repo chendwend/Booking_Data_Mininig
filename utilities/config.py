@@ -69,3 +69,4 @@ ROOM_FACILITIES = {
 
 """########## SQL constants ###############"""
 DEFAULT_VALUE = -1
+FILE_NAME = "data.csv"
