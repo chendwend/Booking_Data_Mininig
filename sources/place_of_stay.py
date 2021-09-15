@@ -26,16 +26,19 @@ class PlaceOfStay(Element):
     def extract_data(self):
         room_facilities = {}
         try:
-            element = self._driver.find_elements_by_css_selector(FACILITY_STRING)[1]  # facilities element
-        except MaxRetryError:
+            elements = WebDriverWait(self._driver, SEC_TO_WAIT).until(
+                EC.presence_of_all_elements_located((By.CSS_SELECTOR, FACILITY_STRING))
+            )
+            print(len(elements))
+            element = elements[-1]
+            print(f"found {FACILITY_STRING}")
+        except TimeoutException:
             try:
                 element = self._driver.find_element_by_css_selector(FACILITY_STRING2)
-            except MaxRetryError:
-                print(f"Failed to find both in {self._driver.current_url}")
-                sys.exit()
-                return [None]*len(ROOM_FACILITIES)
-        except IndexError:
-            element = self._driver.find_elements_by_css_selector(FACILITY_STRING)[0]
+                print(f"found {FACILITY_STRING2}")
+            except TimeoutException:
+                print(f"Failed to find all in {self._driver.current_url}")
+                return [-1]*len(ROOM_FACILITIES)
         for service, selector_string in ROOM_FACILITIES.items():
             room_facilities[service] = self.extract_service(element, selector_string)
         return room_facilities
