@@ -43,7 +43,7 @@ class Page(Element):
                     single_data_dict[data_name] = re.search(data_regex,
                                                             self.get_element(element, data_string).text).group()
                 except MaxRetryError:  # in case data is missing in the element
-                    single_data_dict[data_name] = None
+                    single_data_dict[data_name] = DEFAULT_VALUE
             data_list.append(single_data_dict)
         return data_list
 
@@ -70,12 +70,12 @@ class Page(Element):
                 price = lower_element.find_elements_by_css_selector(PRICE_STRING)
                 price = price[1].text
             except MaxRetryError:
-                price = None
+                price = DEFAULT_VALUE
             try:
                 policy = lower_element.find_element_by_css_selector(POLICY_STRING)
                 policies_original.append(policy.text)
             except MaxRetryError:
-                policies_original.append(None)
+                policies_original.append(DEFAULT_VALUE)
             # parse data (when required) and append to a list
             # non-unique element
             list_of_prices.append(price)
@@ -88,12 +88,12 @@ class Page(Element):
         free_cancellations = \
             [1 if (FREE_CANCELLATION_STRING in policy.lower()) else 0 for policy in policies_original]
         prices = [int(re.search(PRICE_REGEX, price).group().replace(',', ''))
-                  if price else None
+                  if price else DEFAULT_VALUE
                   for price in list_of_prices]
         # max_people_full_string = [element.text for element in max_people_elements_list]
 
         max_people = [re.search(MAX_PERSONS_REGEX, unfiltered).group()
-                      if unfiltered else None
+                      if unfiltered else DEFAULT_VALUE
                       for unfiltered in max_people_full_string]
 
         if len(prices) != len(max_people):

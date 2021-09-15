@@ -4,7 +4,7 @@ BAR = "-----------------------------------"
 """########## Webdriver constants #############"""
 SEC_TO_WAIT = 10
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" \
-             " Chrome/93.0.4577.63 Safari/537.36"
+             " Chrome/93.0.4577.82 Safari/537.36"
 
 """########## Website constants #############"""
 WEB_SOURCE = "https://www.booking.com"
@@ -67,3 +67,5 @@ ROOM_FACILITIES = {
     "air conditioning": AIR_CONDITIONING_STRING
 }
 
+"""########## SQL constants ###############"""
+DEFAULT_VALUE = -1
