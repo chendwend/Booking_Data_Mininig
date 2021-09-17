@@ -74,7 +74,7 @@ if __name__ == '__main__':
     data_list, pages, failures = website.get_all_data()
     website.teardown()
     write_to_csv(data_list)
-    insert_to_db()
+    insert_to_db(args.start_date, args.end_date)
     time = perf_counter() - start
     print(
         f"Basic processing information for destination ='{args.destination}',"
