@@ -7,9 +7,6 @@ from datetime import datetime
 import csv
 from sources.from_csv_to_db import insert_to_db
 
-location = "Israel"
-location = location.lower()
-
 
 def valid_date(s):
     """
@@ -77,7 +74,8 @@ if __name__ == '__main__':
     data_list, pages, failures = website.get_all_data()
     website.teardown()
     write_to_csv(data_list)
-    insert_to_db(args.start_date, args.end_date, location)
+    args.destination = args.destination.lower()
+    insert_to_db(args.start_date, args.end_date, args.destination)
     time = perf_counter() - start
     print(
         f"Basic processing information for destination ='{args.destination}',"

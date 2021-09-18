@@ -78,13 +78,13 @@ def insert_to_db(from_date, to_date, location):
                             WHERE NOT EXISTS(
                             SELECT location, sub_location FROM site_location WHERE location = %s and sub_location = %s
                             )LIMIT 1'''
-        values_1 = (location, row.get('sub_location'), location, row.get('sub_location'))
+        values_1 = (location, row.get('sub location'), location, row.get('sub location'))
         cur.execute(insert_query_1, values_1)
 
         query_location_id = '''SELECT location_id
                                FROM site_location
                                WHERE location = %s and sub_location = %s'''
-        cur.execute(query_location_id, (location, row.get('sub_location')))
+        cur.execute(query_location_id, (location, row.get('sub location')))
         result_location = cur.fetchone()
         location_id = result_location["location_id"]
 
