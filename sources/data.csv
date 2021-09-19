@@ -1,9 +1,8 @@
-name,location,rating,reviewers amount,Price,Max people,Breakfast,Free Cancellations,pets,wifi,kitchen,parking,air conditioning
-ARCOTEL Velvet Berlin,Mitte,8.4,2,2040,2,0,1,1,1,0,0,1
-Pineapple Apartments Dresden Zwinger III,Altstadt,9.4,16,3556,4,0,0,0,1,1,0,0
-Feriengut Neuhof,Fehmarn,9.3,149,1806,2,0,0,1,1,1,0,0
-Haus Kleemann,Norderney,8.6,254,2213,2,0,0,0,1,1,0,0
-Das Märchenhaus,Braunlage,8.7,178,2235,2,0,0,0,1,1,0,0
+name,sub location,rating,reviewers amount,Price,Max people,Breakfast,Free Cancellations,pets,wifi,kitchen,parking,air conditioning
+H10 Berlin Ku'damm,Charlottenburg,8.5,4,1928,2,0,1,0,1,0,0,1
+Pineapple Apartments Dresden Zwinger III,Altstadt,9.4,17,3556,4,0,0,0,1,1,0,0
+Haus Kleemann,Norderney,8.6,253,2213,2,0,0,0,1,1,0,0
+Das Märchenhaus,Braunlage,8.8,177,2235,2,0,0,0,1,1,0,0
 Haus Sterntaler,Westerland,8.0,294,5385,4,0,0,1,1,1,0,0
 Pension Marion,Binz,8.6,262,2032,2,0,0,0,1,1,0,0
 Hotel Sonneninsel Fehmarn,Fehmarn,8.2,1,2938,2,0,0,0,1,1,0,0
@@ -11,44 +10,43 @@ Nordic Wave Apartments,Timmendorfer,8.8,108,2105,2,0,0,1,1,1,0,0
 Timberjacks Kassel Motel,Suedstadt,8.9,150,3196,2,0,0,1,1,0,0,1
 3 Äpfel Design Apartments,Ostviertel,8.5,192,2469,2,0,0,1,1,1,0,0
 "Fewo Bernhardt "" App.1 """,Scharbeutz,9.0,37,1631,2,0,0,0,1,1,0,0
-"Gästehaus Tante Tienchen , Eintrittskarten für jeden beliebigen Tag im Europa-Park über uns erhältlich bei Übernachtung",Rust,7.7,361,3059,2,0,0,0,1,1,0,1
 Apartment Simmertal,Simmertal,8.8,58,960,2,0,0,1,1,1,0,0
+"Gästehaus Tante Tienchen , Eintrittskarten für jeden beliebigen Tag im Europa-Park über uns erhältlich bei Übernachtung",Rust,7.7,359,3059,2,0,0,0,1,1,0,1
 Appartment Leo,Schönwald,8.2,24,1203,4,0,0,1,1,1,0,0
 Heidhöhn 8,Sahlenburg,7.9,28,1305,2,0,0,0,0,1,0,0
 Hotel Deitmer,Rhede,8.1,37,1708,2,0,0,0,1,0,0,0
-Hotel-Restaurant Germania,Bernkastel,5.6,112,1836,2,0,1,1,1,0,0,0
+Hotel-Restaurant Germania,Bernkastel,5.6,112,2935,3,1,0,1,1,0,0,0
 ITM Hotel an der Bille,Hammerbrook,6.0,497,1261,2,0,0,0,1,0,0,0
 Sporthotel Wiedenbrueck,Rheda,8.3,225,2224,2,1,0,1,1,0,0,0
 Hotel Residenz Oberhausen,Oberhausen,8.4,2,1700,2,0,1,1,1,0,0,0
-FF&E Hotel Engeln,Papenburg,7.1,209,1784,2,0,1,1,1,0,0,0
-Gasthof zum Bären,Gernrode,7.0,231,1693,2,1,1,1,1,0,0,1
-"Radisson Blu Hotel, Hamburg",St,8.2,6,3425,2,0,1,1,1,1,0,1
-Park Inn by Radisson Berlin Alexanderplatz,Mitte,7.7,20,2687,2,0,1,1,1,1,0,1
-Park Inn by Radisson Berlin Alexanderplatz,Mitte,7.7,20,2687,2,0,1,1,1,1,0,1
-The Westin Hamburg,HafenCity,8.8,6,4234,2,0,1,1,1,1,0,1
-Riu Plaza Berlin,Tempelhof,8.5,11,2333,2,0,1,0,1,1,0,1
-Hampton by Hilton Berlin City Centre Alexanderplatz,Mitte,8.4,10,3098,2,1,1,0,1,1,0,1
-NH Collection Hamburg City,St,8.8,3,3239,2,0,1,1,1,1,0,1
-Schulz Hotel Berlin Wall at the East Side Gallery,Friedrichshain,8.7,18,1837,2,0,1,1,1,1,0,1
-H2 Hotel Berlin-Alexanderplatz,Mitte,8.4,14,2171,2,1,1,1,1,0,0,1
-PLAZA Premium Timmendorfer Strand,Timmendorfer,6.9,3,4076,2,1,1,1,1,1,0,0
-Scandic Hamburg Emporio,Hamburg,8.6,7,3270,2,0,1,1,1,1,0,1
-NH Collection Berlin Mitte Friedrichstrasse,Mitte,8.8,6,2361,2,0,1,1,1,1,0,1
-Apartment-Hotel Hamburg Mitte,Hamburg,8.3,4,-1,-1,0,0,1,1,1,0,0
-Barceló Hamburg,Hamburg,8.5,5,3760,2,0,1,1,1,1,0,1
-"Holiday Inn - Hamburg - Berliner Tor, an IHG Hotel",Hamburg,8.0,3,2303,2,1,1,0,1,1,0,1
-Scandic Berlin Potsdamer Platz,Mitte,8.6,11,2544,2,0,1,1,1,1,0,1
-TITANIC Chaussee Berlin,Mitte,8.4,6,2691,2,0,1,1,1,1,0,1
-Le Méridien Hamburg,St,8.3,3,3443,2,0,1,1,1,1,0,1
-NH Collection Dresden Altmarkt,Altstadt,8.7,6,2338,2,0,1,1,1,1,0,1
-H2 Hotel Leipzig,Mitte,8.4,5,2020,2,1,1,1,1,0,0,1
-NH Collection München Bavaria,Maxvorstadt,8.5,2,2385,2,0,1,1,1,1,0,1
-Hotel Adlon Kempinski Berlin,Mitte,9.3,5,7993,2,1,1,1,1,1,0,1
-Maritim Hotel Frankfurt,Westend,8.0,4,3319,2,0,1,1,1,0,0,1
-Courtyard by Marriott Hamburg City,St,8.4,2,2128,2,0,1,1,1,1,0,1
-Hamburg Marriott Hotel,Hamburg,8.1,3,3741,2,0,1,1,1,1,0,1
-Rugard Thermal Strandhotel,Binz,7.5,1,4545,2,1,1,0,1,0,0,0
-NH Collection Berlin Mitte am Checkpoint Charlie,Mitte,8.6,7,2215,2,0,1,1,1,1,0,1
-Leonardo Hotel Berlin Mitte,Mitte,8.3,8,2217,2,0,1,1,1,1,0,1
-Maritim Hotel Dresden,Altstadt,8.6,6,2476,2,0,1,1,1,0,0,1
-Hyperion Hotel Garmisch – Partenkirchen,Garmisch,8.3,1,5795,2,1,1,1,1,0,0,1
+FF&E Hotel Engeln,Papenburg,7.1,208,1784,2,0,1,1,1,0,0,0
+Gasthof zum Bären,Gernrode,7.0,230,1693,2,1,1,1,1,0,0,1
+Fischerwiege am Passader See,Passade,8.3,447,2653,2,1,1,0,1,0,0,0
+Berghotel Drei Brüder Höhe,Marienberg,7.8,618,2709,2,1,1,1,1,1,0,0
+Hotel Luise Mannheim - by SuperFly Hotels,Mannheim,7.6,1,1559,2,0,1,1,1,0,0,0
+Hotel Luise Mannheim - by SuperFly Hotels,Mannheim,7.6,1,1559,2,0,1,1,1,0,0,0
+Gästehaus Sonneck,Bischofsgrün,8.9,99,1440,2,0,0,0,1,1,0,0
+Heidepension Bispingen,Bispingen,7.8,288,1687,2,0,1,0,1,0,0,1
+Hotel Landhaus Seela,Braunschweig,8.5,1,2235,2,0,1,1,1,1,0,1
+Appartements Katharina,Bremerhaven,7.3,83,1693,2,0,1,0,1,1,0,0
+Mercure Hotel Kaiserhof City Center,Bahnhofsviertel,8.2,931,2391,2,0,1,0,1,1,0,1
+CAREA Residenz Hotel Harzhöhe,Hahnenklee,6.8,1,3048,2,0,1,1,1,0,0,0
+Hotel Agat Hofheim-Wallau,Hofheim,7.1,242,1336,2,0,0,1,1,0,0,0
+Hotel Pension Gelpkes Mühle,Bad,8.0,167,1987,2,1,1,1,1,0,0,0
+AMERON Köln Hotel Regent,Ehrenfeld,8.7,1,2516,2,0,1,1,1,1,0,1
+ipartment Braunschweig,Braunschweig,8.6,35,1897,2,0,1,0,1,1,0,0
+Hotel Fallersleber Spieker,Wolfsburg,8.2,213,4017,2,0,1,0,1,0,0,0
+Ferienwohnung Kransevitz,Kransevitz,8.9,32,1394,2,0,1,0,1,1,0,0
+Steigenberger Graf Zeppelin,Stuttgart,8.4,1,3645,2,0,1,1,1,1,0,1
+Gästehaus Hanseat,Bremerhaven,7.3,287,1806,2,0,1,0,1,0,0,0
+apartment11,Ulm,9.0,51,3229,2,0,1,1,1,1,0,0
+Roomingtons Laichingen Alb,Laichingen,8.8,359,2010,2,0,1,1,1,0,0,1
+Hotel Palace Berlin,Charlottenburg,8.8,2,3899,2,0,1,1,1,1,0,1
+Hotel Landgasthof Blume,Lichtenau,8.2,712,1825,2,1,1,1,1,0,0,0
+Hotel Rose,Weißenburg,7.6,589,1975,2,1,1,1,1,0,0,0
+Hotel Garni Rodenbach,Rodenbach,8.3,225,1919,2,0,1,1,1,1,0,1
+Darchinger Hof,Mitterdarching,8.0,415,2092,2,0,0,0,1,0,0,0
+Hotel Brückenschänke,Sebnitz,8.1,92,2235,2,0,0,0,1,1,0,0
+Landhotel Elterlein,Elterlein,8.0,42,1223,2,0,1,0,1,1,0,0
+Grüner Baum Naturparkhotel & Schwarzwald-Restaurant,Todtnau,8.2,201,4061,2,1,1,1,1,0,0,0
+Miralior Apartment Mainz,Mainz,9.3,25,3631,2,0,0,0,1,1,0,0
