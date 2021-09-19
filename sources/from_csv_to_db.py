@@ -32,7 +32,7 @@ def insert_to_db(from_date, to_date, location):
     cur.execute('''CREATE TABLE site_info (
                    site_id INT AUTO_INCREMENT PRIMARY KEY,
                    location_id INT NOT NULL,
-                   site_name VARCHAR(100) NOT NULL,
+                   site_name VARCHAR(1000) NOT NULL,
                    max_people SMALLINT DEFAULT NULL,
                    rating FLOAT(2) DEFAULT NULL,
                    reviewers_amount SMALLINT DEFAULT NULL,
@@ -78,13 +78,13 @@ def insert_to_db(from_date, to_date, location):
                             WHERE NOT EXISTS(
                             SELECT location, sub_location FROM site_location WHERE location = %s and sub_location = %s
                             )LIMIT 1'''
-        values_1 = (location, row.get('sub_location'), location, row.get('sub_location'))
+        values_1 = (location, row.get('sub location'), location, row.get('sub location'))
         cur.execute(insert_query_1, values_1)
 
         query_location_id = '''SELECT location_id
                                FROM site_location
                                WHERE location = %s and sub_location = %s'''
-        cur.execute(query_location_id, (location, row.get('sub_location')))
+        cur.execute(query_location_id, (location, row.get('sub location')))
         result_location = cur.fetchone()
         location_id = result_location["location_id"]
 

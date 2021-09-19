@@ -39,7 +39,7 @@ STAY_FACILITIES_STRING = ".sr-cta-button-row"
 
 DATA_TYPES_UPPER = {
     "name": (NAME_STRING, NAME_REGEX),
-    "location": (LOCATION_STRING, LOCATION_REGEX),
+    "sub location": (LOCATION_STRING, LOCATION_REGEX),
     "rating": (RATING_STRING, RATING_REGEX),
     "reviewers amount": (REVIEWERS_STRING, REVIEWERS_REGEX)
 }
