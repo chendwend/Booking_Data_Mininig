@@ -18,8 +18,9 @@ def insert_to_db(from_date, to_date, location):
                                  database='booking_data')
     cur = connection.cursor()
 
-    cur.execute('''drop database booking_data''')
+    """cur.execute('''drop database booking_data''')
     cur.execute('''CREATE DATABASE IF NOT EXISTS booking_data''')
+    cur.execute('''ALTER DATABASE booking_data CHARACTER SET utf8''')
     cur.execute('''USE booking_data''')
 
     cur.execute('''CREATE TABLE site_location (
@@ -64,7 +65,7 @@ def insert_to_db(from_date, to_date, location):
                    air_conditioning TINYINT(1) DEFAULT NULL,
                    FOREIGN KEY (site_id) REFERENCES site_info(site_id) ON DELETE CASCADE
                                             )'''
-                )
+                )"""
 
     csv_file = open(FILE_NAME, "r")
     reader = csv.DictReader(csv_file)
