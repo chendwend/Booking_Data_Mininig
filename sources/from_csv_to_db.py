@@ -1,12 +1,10 @@
 import pymysql.cursors
 import csv
 from datetime import datetime
-from utilities.config import *
+from utilities.config import FILE_NAME
 
-#from_date = '2021-10-13'
-#to_date = '2021-10-20'
 
-def insert_to_db(from_date, to_date):
+def insert_to_db(from_date, to_date, destination):
     connection = pymysql.connect(host='localhost',
                                  user='root',
                                  password='root',
@@ -128,6 +126,3 @@ def insert_to_db(from_date, to_date):
     cur.close()
     connection.close()
     print("The DB was created successfully")
-
-
-

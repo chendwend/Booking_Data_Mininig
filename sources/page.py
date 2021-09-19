@@ -11,6 +11,7 @@ class Page(Element):
     A Class to represent each page in a search result
     """
     failed_pages = 0
+    failed_stays = 0
     url_number = 1
 
     def __init__(self, search_page, driver):
@@ -40,8 +41,8 @@ class Page(Element):
             single_data_dict = empty_dict.copy()
             for data_name, (data_string, data_regex) in DATA_TYPES_UPPER.items():
                 try:
-                    single_data_dict[data_name] = re.search(data_regex,
-                                                            self.get_element(element, data_string).text).group()
+                    specific_data_element = self.get_element(element, data_string)
+                    single_data_dict[data_name] = re.search(data_regex, specific_data_element.text).group()
                 except MaxRetryError:  # in case data is missing in the element
                     single_data_dict[data_name] = DEFAULT_VALUE
             data_list.append(single_data_dict)
@@ -138,10 +139,10 @@ class Page(Element):
         :return: list of dictionaries for each location
         :rtype: list
         """
-        data = []
+        data = []  # This will hold all acquired data for each site in the current page
         print(f"processing page number {Page.url_number}... \n {BAR}")
-        Page.url_number += 1
-        main_element = self.get_element(self._driver, MAIN_PAGE_STRING)
+        self.url_number += 1
+        main_element = self.get_element(self._driver, MAIN_PAGE_STRING)  # acquires element containing only sites
         # lists of upper & lower elements for each stay:
         upper_elements, lower_elements = \
             self.get_elements(main_element, UPPER_STRING), \
@@ -160,6 +161,8 @@ class Page(Element):
         for upper, lower, room in zip(upper_data, lower_data, room_facilities):
             upper.update(lower)
             upper.update(room)
-            data.append(upper)
-
+            if upper["name"] != -1 and upper["sub location"] != -1:
+                data.append(upper)
+            else:
+                self.failed_stays += 1
         return data

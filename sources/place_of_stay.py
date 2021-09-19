@@ -1,9 +1,7 @@
-from utilities.config import *
-import sys
+from utilities.config import ROOM_FACILITIES, FACILITY_STRING, SEC_TO_WAIT, FACILITY_STRING2
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-from urllib3.exceptions import MaxRetryError
 from selenium.webdriver.common.by import By
 from sources.element import Element
 

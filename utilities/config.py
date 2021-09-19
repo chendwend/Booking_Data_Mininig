@@ -31,7 +31,7 @@ LOWER_STRING = ".roomrow"
 PRICE_STRING = ".prco-ltr-right-align-helper"
 MAX_PEOPLE_STRING = ".roomNameInner .bui-u-sr-only"
 NAME_STRING = ".sr-hotel__name"
-LOCATION_STRING = ".bui-link"
+SUB_LOCATION_STRING = ".bui-link"
 RATING_STRING = ".bui-review-score__badge"
 REVIEWERS_STRING = ".bui-review-score__text"
 POLICY_STRING = ".sr_card_room_policies__container"
@@ -39,7 +39,7 @@ STAY_FACILITIES_STRING = ".sr-cta-button-row"
 
 DATA_TYPES_UPPER = {
     "name": (NAME_STRING, NAME_REGEX),
-    "location": (LOCATION_STRING, LOCATION_REGEX),
+    "sub location": (SUB_LOCATION_STRING, LOCATION_REGEX),
     "rating": (RATING_STRING, RATING_REGEX),
     "reviewers amount": (REVIEWERS_STRING, REVIEWERS_REGEX)
 }

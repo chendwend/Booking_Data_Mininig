@@ -1,14 +1,14 @@
-import sys
-
-from sources.source_page import *
-from time import perf_counter
-import argparse
-from datetime import datetime
-import csv
 from sources.from_csv_to_db import insert_to_db
+from utilities.config import WEB_SOURCE
+from sources.source_page import Website
+from time import perf_counter
+from datetime import datetime
+import argparse
+import sys
+import csv
 
 
-def valid_date(s):
+def validate_date(s):
     """
     Validates a date to be of type YYYY-MM-DD and is not in the past
     If not given in this formant, exits the program.
@@ -28,7 +28,7 @@ def valid_date(s):
     return date
 
 
-def valid_destination(destination):
+def validate_country(destination):
     """
     Validates the given string to be alphanumeric.
     If not, exits the program.
@@ -40,6 +40,7 @@ def valid_destination(destination):
     """
     if not destination.isalpha():
         sys.exit(f"the destination {destination} is not alphanumeric.")
+
     return destination
 
 
@@ -58,27 +59,28 @@ def write_to_csv(data_list, filename="data.csv"):
         for page in data_list:
             dict_writer.writerows(page)
 
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Extract data from Booking.com")
-    parser.add_argument('-d', "--destination", help="Desired destination", required=True, type=valid_destination,
+    parser.add_argument('-d', "--destination", help="Desired country", required=True, type=validate_country,
                         action="store")
-    parser.add_argument("-s", "--start_date", help="Start date - format YYYY-MM-DD ", required=True, type=valid_date)
-    parser.add_argument("-e", "--end_date", help="End date - format YYYY-MM-DD ", required=True, type=valid_date)
+    parser.add_argument("-s", "--start_date", help="Start date - format YYYY-MM-DD ", required=True, type=validate_date)
+    parser.add_argument("-e", "--end_date", help="End date - format YYYY-MM-DD ", required=True, type=validate_date)
     args = parser.parse_args()
 
     start = perf_counter()
     website = Website(WEB_SOURCE)
     website.insert_location(args.destination)
-    # website.click_search_button()
     website.select_date(args.start_date, args.end_date)
-    data_list, pages, failures = website.get_all_data()
+    data_list, pages, failed_pages, failed_stays = website.get_all_data()
     website.teardown()
     write_to_csv(data_list)
-    insert_to_db(args.start_date, args.end_date)
+    insert_to_db(args.start_date, args.end_date, args.destination)
     time = perf_counter() - start
     print(
         f"Basic processing information for destination ='{args.destination}',"
         f" between {args.start_date.date()} and {args.end_date.date()}:")
     print(f"Number of total pages = {pages}")
-    print(f"Number of failed pages = {failures}")
+    print(f"Number of failed pages = {failed_pages}")
+    print(f"Number of failed stays = {failed_stays}")
     print(f"Execution time: {time / 60:.2f} minutes")
