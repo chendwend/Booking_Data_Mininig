@@ -1,9 +1,7 @@
-from utilities.config import *
-import sys
+from utilities.config import ROOM_FACILITIES, FACILITY_STRING, SEC_TO_WAIT, FACILITY_STRING2
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-from urllib3.exceptions import MaxRetryError
 from selenium.webdriver.common.by import By
 from sources.element import Element
 
@@ -29,13 +27,12 @@ class PlaceOfStay(Element):
             elements = WebDriverWait(self._driver, SEC_TO_WAIT).until(
                 EC.presence_of_all_elements_located((By.CSS_SELECTOR, FACILITY_STRING))
             )
-            print(len(elements))
             element = elements[-1]
-            print(f"found {FACILITY_STRING}")
+            # print(f"found {FACILITY_STRING}")
         except TimeoutException:
             try:
                 element = self._driver.find_element_by_css_selector(FACILITY_STRING2)
-                print(f"found {FACILITY_STRING2}")
+                # print(f"found {FACILITY_STRING2}")
             except TimeoutException:
                 print(f"Failed to find all in {self._driver.current_url}")
                 return [-1]*len(ROOM_FACILITIES)

@@ -1,9 +1,10 @@
 from selenium import webdriver
-from utilities.config import *
+from utilities.config import PAGES_LINKS_STRING, USER_AGENT, SEARCH_LOCATION_STRING, SEARCH_BUTTON_STRING, \
+    CALENDAR_STRING, OFFSET_REGEX
 from sources.page import Page
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
-import re
+from re import search as search_regex
 from sources.element import Element
 
 
@@ -71,7 +72,7 @@ class Website(Element):
         page_buttons = self.get_elements(self._driver, PAGES_LINKS_STRING)
 
         last_url = page_buttons[-1].get_attribute("href")
-        last_offset_number = int(re.search(OFFSET_REGEX, last_url).group())
+        last_offset_number = int(search_regex(OFFSET_REGEX, last_url).group())
         last_equal_sign_index = last_url.rfind('=')
         base_url = last_url[:last_equal_sign_index] + '='
         number_of_pages = int(last_offset_number / Website.page_offset) + 1
@@ -90,14 +91,15 @@ class Website(Element):
         pages_url_list = self._get_urls()
         print(f"Found {len(pages_url_list)} pages. Starting to process...")
         data_list = []
-        for page_url in pages_url_list[:2]:
+        for page_url in pages_url_list[:1]:
             page = Page(page_url, self._driver)
             data = page.get_data()
             if data:
                 data_list.append(data)
         number_of_pages = len(pages_url_list)
         number_of_failed_pages = Page.failed_pages
-        return data_list, number_of_pages, number_of_failed_pages
+        number_of_failed_stays = Page.failed_stays
+        return data_list, number_of_pages, number_of_failed_pages, number_of_failed_stays
 
     def teardown(self):
         """
