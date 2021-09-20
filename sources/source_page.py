@@ -91,7 +91,7 @@ class Website(Element):
         pages_url_list = self._get_urls()
         print(f"Found {len(pages_url_list)} pages. Starting to process...")
         data_list = []
-        for page_url in pages_url_list[:2]:
+        for page_url in pages_url_list[:1]:
             page = Page(page_url, self._driver)
             data = page.get_data()
             if data:

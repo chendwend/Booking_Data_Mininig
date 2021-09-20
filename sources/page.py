@@ -141,7 +141,7 @@ class Page(Element):
         """
         data = []  # This will hold all acquired data for each site in the current page
         print(f"processing page number {Page.url_number}... \n {BAR}")
-        self.url_number += 1
+        Page.url_number += 1
         main_element = self.get_element(self._driver, MAIN_PAGE_STRING)  # acquires element containing only sites
         # lists of upper & lower elements for each stay:
         upper_elements, lower_elements = \

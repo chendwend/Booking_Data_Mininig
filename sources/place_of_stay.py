@@ -27,13 +27,12 @@ class PlaceOfStay(Element):
             elements = WebDriverWait(self._driver, SEC_TO_WAIT).until(
                 EC.presence_of_all_elements_located((By.CSS_SELECTOR, FACILITY_STRING))
             )
-            print(len(elements))
             element = elements[-1]
-            print(f"found {FACILITY_STRING}")
+            # print(f"found {FACILITY_STRING}")
         except TimeoutException:
             try:
                 element = self._driver.find_element_by_css_selector(FACILITY_STRING2)
-                print(f"found {FACILITY_STRING2}")
+                # print(f"found {FACILITY_STRING2}")
             except TimeoutException:
                 print(f"Failed to find all in {self._driver.current_url}")
                 return [-1]*len(ROOM_FACILITIES)
