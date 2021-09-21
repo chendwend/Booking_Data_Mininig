@@ -8,11 +8,12 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 
 """########## Website constants #############"""
 WEB_SOURCE = "https://www.booking.com"
-SEARCH_LOCATION_STRING = "ss"
-SEARCH_BUTTON_STRING = ".sb-searchbox__button "
-PAGES_LINKS_STRING = ".bui-pagination__pages .bui-pagination__list li a"
-CALENDAR_STRING = ".bui-calendar__date"
+SEARCH_BAR = {"name": "search bar", "selector": "ss"}
+SEARCH_BUTTON = {"name": "search button", "selector": ".sb-searchbox__button "}
+PAGE_LINKS = {"name": "page links", "selector": ".bui-pagination__pages .bui-pagination__list li a"}
+CALENDAR = {"name": "calendar", "selector": ".bui-calendar__date"}
 OFFSET_REGEX = "[0-9]+$"
+DEFAULT_VALUE = -1
 
 """########## Page constants #############"""
 
@@ -25,32 +26,24 @@ LOCATION_REGEX = "(?!Show)\w+"
 MAX_PERSONS_REGEX = "[0-9]+$"
 
 # --- Selector strings
-MAIN_PAGE_STRING = "#hotellist_inner"
-UPPER_STRING = ".sr_property_block_main_row"
-LOWER_STRING = ".roomrow"
+MAIN_PAGE = {"name": "main page", "selector": "#hotellist_inner"}
+UPPER = {"name": "upper part", "selector": ".sr_property_block_main_row"}
+LOWER = {"name": "lower part", "selector": ".roomrow"}
 PRICE_STRING = ".prco-ltr-right-align-helper"
-MAX_PEOPLE_STRING = ".roomNameInner .bui-u-sr-only"
-NAME_STRING = ".sr-hotel__name"
-SUB_LOCATION_STRING = ".bui-link"
-RATING_STRING = ".bui-review-score__badge"
-REVIEWERS_STRING = ".bui-review-score__text"
+MAX_PEOPLE = {"name": "max people", "selector": ".roomNameInner .bui-u-sr-only"}
 POLICY_STRING = ".sr_card_room_policies__container"
-STAY_FACILITIES_STRING = ".sr-cta-button-row"
+SUB_LOCATION_FACILITIES = {"name": "sub location facilities", "selector": ".sr-cta-button-row"}
 
-DATA_TYPES_UPPER = {
-    "name": (NAME_STRING, NAME_REGEX),
-    "sub location": (SUB_LOCATION_STRING, LOCATION_REGEX),
-    "rating": (RATING_STRING, RATING_REGEX),
-    "reviewers amount": (REVIEWERS_STRING, REVIEWERS_REGEX)
-}
-DATA_TYPES_LOWER = {
-    "price": PRICE_STRING,
-    "max people": MAX_PEOPLE_STRING
-}
+DATA_TYPES_UPPER = [{"name": "name", "selector": ".sr-hotel__name"},
+                    {"name": "sub location", "selector": ".bui-link"},
+                    {"name": "rating", "selector": ".bui-review-score__badge"},
+                    {"name": "reviewers amount", "selector": ".bui-review-score__text"}]
+DATA_TYPES_UPPER_REGEX = [NAME_REGEX, LOCATION_REGEX, RATING_REGEX, REVIEWERS_REGEX]
+
+DATA_TYPES_LOWER = [{"name": "price", "selector": ".prco-ltr-right-align-helper"},
+                    {"name": "max people", "selector": ".roomNameInner .bui-u-sr-only"}]
 
 """########## Hotel constants #############"""
-FACILITY_STRING = ".facilitiesChecklist"
-FACILITY_STRING2 = ".hotel-facilities__list"
 PET_STRING = "pets are allowed"
 WIFI_STRING = "wifi is available"
 KITCHEN_STRING = "kitchen"
@@ -58,15 +51,13 @@ PARKING_STRING = "parking is possible"
 AIR_CONDITIONING_STRING = "air conditioning"
 FREE_CANCELLATION_STRING = "free cancellation"
 BREAKFAST_STRING = "breakfast included"
+FACILITY_STRING_LIST = [({"name": "facilities - first selector", "selector": ".hotel-facilities__list"}, 0),
+                        ({"name": "facilities - second selector", "selector": ".facilitiesChecklist"}, 1)]
 
-ROOM_FACILITIES = {
-    "pets": PET_STRING,
-    "wifi": WIFI_STRING,
-    "kitchen": KITCHEN_STRING,
-    "parking": PARKING_STRING,
-    "air conditioning": AIR_CONDITIONING_STRING
-}
-
+ROOM_FACILITIES_KEYS = ["pets", "wifi", "kitchen", "parking", "air conditioning"]
+ROOM_FACILITIES_VALUES = [PET_STRING, WIFI_STRING, KITCHEN_STRING, PARKING_STRING, AIR_CONDITIONING_STRING]
+ROOM_FACILITIES = dict(zip(ROOM_FACILITIES_KEYS,ROOM_FACILITIES_VALUES))
+EMPTY_ROOM_FACILITIES = dict(zip(ROOM_FACILITIES_KEYS, [DEFAULT_VALUE]*len(ROOM_FACILITIES_KEYS)))
+SERVICE_AVAILABILITY = {"yes": 1, "no": 0}
 """########## SQL constants ###############"""
-DEFAULT_VALUE = -1
 FILE_NAME = "data.csv"

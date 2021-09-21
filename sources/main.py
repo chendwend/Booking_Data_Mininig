@@ -10,7 +10,7 @@ import csv
 
 def validate_date(s):
     """
-    Validates a date to be of type YYYY-MM-DD and is not in the past
+    Validates a date to be of type YYYY-MM-DD and is not in the past.
     If not given in this formant, exits the program.
     :param s: date
     :type s: str

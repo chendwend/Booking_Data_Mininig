@@ -1,12 +1,9 @@
-from utilities.config import ROOM_FACILITIES, FACILITY_STRING, SEC_TO_WAIT, FACILITY_STRING2
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.common.by import By
+from utilities.config import ROOM_FACILITIES, FACILITY_STRING_LIST, EMPTY_ROOM_FACILITIES, SERVICE_AVAILABILITY
 from sources.element import Element
 
 
 class PlaceOfStay(Element):
+    failed_room_facilities = 0
 
     def __init__(self, driver):
         """
@@ -18,24 +15,35 @@ class PlaceOfStay(Element):
 
     @staticmethod
     def extract_service(element, selector_string):
+        """
+        Checks if the string selector_string is present in the element.
+
+        :param element: selenium object
+        :param selector_string: a string to search for the required service
+        :type selector_string: str
+        :return: the appropriate SERVICE_AVAILABILITY constant from config.py
+        :rtype: int
+        """
         condition = selector_string in element.text.lower()
-        return 1 if condition else 0
+        return SERVICE_AVAILABILITY["yes"] if condition else SERVICE_AVAILABILITY["no"]
 
     def extract_data(self):
+        """
+        Extracts all services from place of stay.
+        If not selector is detected out of known list, a default dictionary is returned
+
+        :return: a dictionary with service name and availability
+        :rtype: dict
+        """
         room_facilities = {}
-        try:
-            elements = WebDriverWait(self._driver, SEC_TO_WAIT).until(
-                EC.presence_of_all_elements_located((By.CSS_SELECTOR, FACILITY_STRING))
-            )
-            element = elements[-1]
-            # print(f"found {FACILITY_STRING}")
-        except TimeoutException:
+        for index, selector in enumerate(FACILITY_STRING_LIST):
             try:
-                element = self._driver.find_element_by_css_selector(FACILITY_STRING2)
-                # print(f"found {FACILITY_STRING2}")
-            except TimeoutException:
-                print(f"Failed to find all in {self._driver.current_url}")
-                return [-1]*len(ROOM_FACILITIES)
-        for service, selector_string in ROOM_FACILITIES.items():
-            room_facilities[service] = self.extract_service(element, selector_string)
+                element = self.get_elements(self._driver, selector[0], "continue")[selector[1]]
+                break
+            except TypeError:
+                if index == len(FACILITY_STRING_LIST) - 1:  # if no selectors are found, return default dictionary
+                    PlaceOfStay.failed_room_facilities += 1
+                    return EMPTY_ROOM_FACILITIES.copy()
+                continue
+        {service: self.extract_service(element, selector_string) for service, selector_string in ROOM_FACILITIES.items()}
         return room_facilities

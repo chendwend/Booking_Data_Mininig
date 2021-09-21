@@ -1,26 +1,26 @@
-name,sub location,rating,reviewers amount,Price,Max people,Breakfast,Free Cancellations,pets,wifi,kitchen,parking,air conditioning
-H10 Berlin Ku'damm,Charlottenburg,8.5,4,3463,2,0,1,0,1,0,0,1
-Halbinsel Resort Peenemünde,Peenemünde,8.7,446,3692,2,0,0,1,1,1,0,0
-Ostseezauber,Ostseebad,9.2,51,2735,2,0,0,0,1,1,0,0
-Apartment Zugspitz,Farchant,8.5,70,3361,2,0,0,0,1,1,0,0
-Pension Seeufer Norddeich,Norden,8.9,41,4054,2,1,0,0,1,1,0,0
-Ferienwohnung Wieksberg Hafen,Neustadt,8.9,27,2252,5,0,0,0,1,1,0,0
-Bremen City,Mitte,8.6,210,2574,2,0,0,1,1,1,0,0
-Villa Meeresgruss,Ostseebad,8.7,61,2984,2,0,0,1,1,1,0,0
-Heidhöhn 8,Sahlenburg,7.9,28,2188,2,0,0,0,0,1,0,0
-NetteMaisonette,Saarbrücken,8.8,22,1448,2,0,0,0,1,1,0,0
-CLOUD No7 LOFTS,Stuttgart,8.3,49,3963,2,0,1,0,1,1,0,0
-Hotel Luise Mannheim - by SuperFly Hotels,Mannheim,7.6,1,2670,2,0,1,1,1,0,0,0
-Heidepension Bispingen,Bispingen,7.8,291,2679,2,0,1,0,1,0,0,1
-CAREA Residenz Hotel Harzhöhe,Hahnenklee,6.8,1,3455,2,0,1,1,1,0,0,0
-Hotel Landhaus Seela,Braunschweig,8.5,1,3876,2,0,1,1,1,1,0,0
-Günzburg City,Günzburg,9.0,2,3556,2,1,1,0,1,0,0,0
-Mercure Hotel Kaiserhof City Center,Bahnhofsviertel,8.2,932,3607,2,0,1,0,1,1,0,1
-"Radisson Blu Hotel, Hamburg",St,8.2,6,4001,2,0,1,1,1,1,0,1
-Boutique Hotel Societe,Baden,8.4,807,3256,2,1,1,1,1,0,0,1
-Hotel Restaurant Da Franco,Rastatt,7.7,479,2735,2,1,1,1,1,0,0,1
-AMERON Köln Hotel Regent,Ehrenfeld,8.7,1,3849,2,0,1,1,1,1,0,1
-Hotel Fallersleber Spieker,Wolfsburg,8.2,214,4906,2,0,1,0,1,0,0,0
-ArtHotel City,Mitte,8.1,727,3078,2,0,1,1,1,0,0,0
-FeWo`s Katharina,Bremerhaven,7.0,178,2540,2,0,1,0,1,1,0,0
-Hotel Sylter Hof Berlin Superior,Tiergarten,8.4,5,3769,2,1,1,1,1,0,0,1
+name,sub location,rating,reviewers amount,Price,Max people,Breakfast,Free Cancellations
+Hotel dasPaul,Mitte,8.9,1,3050,-1,0,1
+Hotel Luise Mannheim - by SuperFly Hotels,Mannheim,7.6,1,2672,-1,0,1
+Heidepension Bispingen,Bispingen,7.8,295,2681,-1,0,1
+CAREA Residenz Hotel Harzhöhe,Hahnenklee,6.8,1,3457,-1,0,1
+FeWo`s Katharina,Bremerhaven,7.0,179,2542,-1,0,1
+Hotel Landhaus Seela,Braunschweig,8.5,1,3879,-1,0,1
+Günzburg City,Günzburg,9.0,2,3559,-1,1,1
+Mercure Hotel Kaiserhof City Center,Bahnhofsviertel,8.2,933,3610,-1,0,1
+"Radisson Blu Hotel, Hamburg",St,8.2,6,3994,-1,0,1
+Boutique Hotel Societe,Baden,8.4,807,3259,-1,1,1
+Apartments Stoll,Bad,8.5,32,4881,-1,0,1
+Hotel Restaurant Da Franco,Rastatt,7.6,481,2737,-1,1,1
+AMERON Köln Hotel Regent,Ehrenfeld,8.7,1,3852,-1,0,1
+ArtHotel City,Mitte,8.1,727,3080,-1,0,1
+Gästehaus Hanseat,Bremerhaven,7.3,289,2711,-1,0,1
+apartment11,Ulm,9.0,50,4899,-1,0,1
+Appartements Katharina,Bremerhaven,7.3,83,2542,-1,0,1
+Hotel Palace Berlin,Charlottenburg,8.8,2,5828,-1,0,1
+Hotel Rose,Weißenburg,7.6,595,3737,-1,1,1
+Hotel Restaurant Schmaus,Viechtach,8.0,265,4033,-1,1,1
+Hotel Garni Rodenbach,Rodenbach,8.3,227,2881,-1,0,1
+Hotel-Restaurant Gasthaus Bonimeier,Niedergottsau,8.8,146,3518,-1,1,1
+ipartment Braunschweig,Braunschweig,8.6,35,2169,-1,0,1
+IDINGSHOF Hotel & Restaurant,Bramsche,8.6,1,4403,-1,0,1
+Grüner Baum Naturparkhotel & Schwarzwald-Restaurant,Todtnau,8.2,200,5520,-1,1,1
