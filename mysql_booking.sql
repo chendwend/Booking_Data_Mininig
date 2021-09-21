@@ -12,7 +12,7 @@ CREATE TABLE site_location (
 CREATE TABLE site_info (
 	site_id INT AUTO_INCREMENT PRIMARY KEY,
 	location_id INT NOT NULL,
-	site_name VARCHAR(1000) NOT NULL,
+	site_name VARCHAR(100) NOT NULL,
 	max_people SMALLINT DEFAULT NULL,
 	rating FLOAT(2) DEFAULT NULL,
 	reviewers_amount SMALLINT DEFAULT NULL,
