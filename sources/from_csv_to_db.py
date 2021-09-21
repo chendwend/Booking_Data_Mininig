@@ -127,3 +127,4 @@ def insert_to_db(from_date, to_date, location):
     cur.close()
     connection.close()
     print("The DB was updated successfully")
+# insert_to_db("2021-10-20","2021-10-29","Germany")

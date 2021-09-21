@@ -10,9 +10,10 @@ class Page(Element):
     """
     A Class to represent each page in a search result
     """
+    sub_location_number = 1
     failed_pages = 0
+    lower_upper_mismatches = 0
     failed_stays = 0
-    url_number = 1
 
     def __init__(self, search_page, driver):
         """
@@ -37,14 +38,12 @@ class Page(Element):
         """
         empty_dict = {}
         data_list = []
-        for element in upper_elements:
+        for element in upper_elements:  # run on all upper elements
             single_data_dict = empty_dict.copy()
-            for data_name, (data_string, data_regex) in DATA_TYPES_UPPER.items():
-                try:
-                    specific_data_element = self.get_element(element, data_string)
-                    single_data_dict[data_name] = re.search(data_regex, specific_data_element.text).group()
-                except MaxRetryError:  # in case data is missing in the element
-                    single_data_dict[data_name] = DEFAULT_VALUE
+            for data_dict, regex in zip(DATA_TYPES_UPPER, DATA_TYPES_UPPER_REGEX):  # run on all types of data
+                singular_data_element = self.get_element_by_css(element, data_dict, on_exception="continue")
+                single_data_dict[data_dict["name"]] = re.search(regex, singular_data_element.text).group() if \
+                    (singular_data_element != DEFAULT_VALUE) else DEFAULT_VALUE
             data_list.append(single_data_dict)
         return data_list
 
@@ -80,7 +79,11 @@ class Page(Element):
             # parse data (when required) and append to a list
             # non-unique element
             list_of_prices.append(price)
-            max_people_full_string.append(self.get_element(lower_element, MAX_PEOPLE_STRING).text)
+            max_people_element = self.get_element_by_css(lower_element, MAX_PEOPLE, on_exception="continue")
+            if max_people_element != DEFAULT_VALUE:
+                max_people_full_string.append(max_people_element.text)
+            else:
+                max_people_full_string.append(DEFAULT_VALUE)
             # each policy.text is a string of all policies for that lower element
         #########################################################
         #  Second stage parsing - Filtering data for each list
@@ -94,7 +97,7 @@ class Page(Element):
         # max_people_full_string = [element.text for element in max_people_elements_list]
 
         max_people = [re.search(MAX_PERSONS_REGEX, unfiltered).group()
-                      if unfiltered else DEFAULT_VALUE
+                      if unfiltered != DEFAULT_VALUE else DEFAULT_VALUE
                       for unfiltered in max_people_full_string]
 
         if len(prices) != len(max_people):
@@ -112,14 +115,15 @@ class Page(Element):
         :return: list of dictionaries corresponding for each stay
         :rtype: list
         """
-        room_facilities_elements = [element for element in self.get_elements(self._driver, STAY_FACILITIES_STRING)]
+        room_facilities_elements = [element for element in
+                                    self.get_elements(self._driver, SUB_LOCATION_FACILITIES, "continue")]
         window_before = self._driver.window_handles[0]
         room_facilities = []
-        for element in room_facilities_elements:
+        for element in room_facilities_elements:  # click to move to each stays' page
             try:
                 element.click()
-            except ElementNotInteractableException:
-                continue
+            except ElementNotInteractableException:  # if not clickable, return dictionary of default values
+                room_facilities.append(EMPTY_ROOM_FACILITIES.copy())
             window_after = self._driver.window_handles[1]
             self._driver.switch_to_window(window_after)
             place_of_stay_obj = PlaceOfStay(self._driver)
@@ -140,16 +144,19 @@ class Page(Element):
         :rtype: list
         """
         data = []  # This will hold all acquired data for each site in the current page
-        print(f"processing page number {Page.url_number}... \n {BAR}")
-        Page.url_number += 1
-        main_element = self.get_element(self._driver, MAIN_PAGE_STRING)  # acquires element containing only sites
+
+        main_element = self.get_element_by_css(self._driver, MAIN_PAGE,
+                                               on_exception="continue")  # acquires element containing only sites
+        if main_element == DEFAULT_VALUE:  #
+            Page.failed_pages += 1
+            return data
         # lists of upper & lower elements for each stay:
         upper_elements, lower_elements = \
-            self.get_elements(main_element, UPPER_STRING), \
-            self.get_elements(main_element, LOWER_STRING)
+            self.get_elements(main_element, UPPER, on_exception="continue"), \
+            self.get_elements(main_element, LOWER, on_exception="continue")
 
         if len(upper_elements) != len(lower_elements):  # when encountered a mismatch, it's an irregular page
-            Page.failed_pages += 1
+            Page.lower_upper_mismatches += 1
             return data
 
         upper_data, lower_data = self.extract_upper_data(upper_elements), self.extract_lower_data(lower_elements)
@@ -158,11 +165,15 @@ class Page(Element):
             return data
 
         room_facilities = self.extract_room_facilities()
+        number_of_sub_locations = len(upper_data)
         for upper, lower, room in zip(upper_data, lower_data, room_facilities):
+            # print(f"processing sub location number {Page.sub_location_number}/{number_of_sub_locations}")
             upper.update(lower)
             upper.update(room)
             if upper["name"] != -1 and upper["sub location"] != -1:
                 data.append(upper)
             else:
                 self.failed_stays += 1
+            Page.sub_location_number += 1
+        Page.sub_location_number = 1
         return data

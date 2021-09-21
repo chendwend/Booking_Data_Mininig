@@ -1,6 +1,6 @@
 from selenium import webdriver
-from utilities.config import PAGES_LINKS_STRING, USER_AGENT, SEARCH_LOCATION_STRING, SEARCH_BUTTON_STRING, \
-    CALENDAR_STRING, OFFSET_REGEX
+from utilities.config import PAGE_LINKS, USER_AGENT, SEARCH_BAR, SEARCH_BUTTON, \
+    CALENDAR, OFFSET_REGEX, BAR, DEFAULT_VALUE
 from sources.page import Page
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
@@ -30,16 +30,16 @@ class Website(Element):
 
     def insert_location(self, location):
         """
-        1. Finds & inserts location into the search bar.
-        2. Finds & clicks the search button
+        - Finds & inserts location into the search bar.
+        - Finds & clicks on the search button
         Upon failure to find anyone of them, stops the program.
 
-        :param location: the desired destination
+        :param location: the desired country
         :type location: str
         """
-        searchbar_element = self.get_element(self._driver, SEARCH_LOCATION_STRING, selector_type="name")
+        searchbar_element = self.get_element_by_name(self._driver, SEARCH_BAR, "quit")
         searchbar_element.send_keys(location)
-        self.click_button(SEARCH_BUTTON_STRING)
+        self.click_button(SEARCH_BUTTON)
 
     def select_date(self, start_date, end_date):
         """
@@ -51,25 +51,28 @@ class Website(Element):
         :param end_date: the end date of visit
         :type end_date: datetime
         """
-        self.get_elements(self._driver, CALENDAR_STRING)
+        self.get_elements(self._driver, CALENDAR, on_exception="quit")
         self._driver.find_element_by_css_selector(
             f"span[aria-label='{start_date.day} {start_date.strftime('%B')} {start_date.year}']").click()
         self._driver.find_elements_by_css_selector(".sb-date-field__display")[1].click()
         self._driver.find_element_by_css_selector(
             f"span[aria-label='{end_date.day} {end_date.strftime('%B')} {end_date.year}']").click()
-        self._driver.find_element_by_css_selector(SEARCH_BUTTON_STRING).click()
+        self._driver.find_element_by_css_selector(SEARCH_BUTTON["selector"]).click()
 
     def _get_urls(self):
         """
         Extracts list of URLs, each representing a page result.
+        If no URLS are found, there's only 1 page result, so only one member in the list.
 
         :return: list of URLs
         :rtype: list
         """
-        list_urls = []
+
         first_page_url = self._driver.current_url
-        list_urls.append(first_page_url)
-        page_buttons = self.get_elements(self._driver, PAGES_LINKS_STRING)
+        list_urls = [first_page_url]
+        page_buttons = self.get_elements(self._driver, PAGE_LINKS, on_exception="continue")
+        if page_buttons == DEFAULT_VALUE:  # in case no other pages are found, we have only one page result
+            return list_urls
 
         last_url = page_buttons[-1].get_attribute("href")
         last_offset_number = int(search_regex(OFFSET_REGEX, last_url).group())
@@ -89,9 +92,11 @@ class Website(Element):
         :rtype: tuple
         """
         pages_url_list = self._get_urls()
-        print(f"Found {len(pages_url_list)} pages. Starting to process...")
+        number_of_pages = len(pages_url_list)
+        print(f"Found {number_of_pages} pages.")
         data_list = []
-        for page_url in pages_url_list[:1]:
+        for index, page_url in enumerate(pages_url_list[:1]):
+            print(f"Starting to process page number {index+1}/{number_of_pages}... \n {BAR}")
             page = Page(page_url, self._driver)
             data = page.get_data()
             if data:
