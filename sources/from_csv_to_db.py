@@ -7,7 +7,7 @@ from utilities.config import FILE_NAME
 def insert_to_db(from_date, to_date, location):
     connection = pymysql.connect(host='localhost',
                                  user='root',
-                                 password='Kostya',
+                                 password='root',
                                  charset='utf8mb4',
                                  cursorclass=pymysql.cursors.DictCursor,
                                  database='booking_data')
@@ -28,7 +28,7 @@ def insert_to_db(from_date, to_date, location):
     # cur.execute('''CREATE TABLE site_info (
     #                site_id INT AUTO_INCREMENT PRIMARY KEY,
     #                location_id INT NOT NULL,
-    #                site_name VARCHAR(100) NOT NULL,
+    #                site_name VARCHAR(1000) NOT NULL,
     #                max_people SMALLINT DEFAULT NULL,
     #                rating FLOAT(2) DEFAULT NULL,
     #                reviewers_amount SMALLINT DEFAULT NULL,
