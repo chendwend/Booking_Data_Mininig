@@ -1,8 +1,9 @@
-# Data Mining Project - Scraping Booking.com website
-
-In this project we scrape the website Booking.com, collect specific data and organize the data in dictionaries.
-By selecting the destination country, the check-in and check-out dates by the user, the python program is connecting to the Booking.com website and downloading specific data from any relevant stay which is available by the search on the Booking website.
-From each stay we will save the name of the stay, the location, the rating, the number of reviews, the price and the maximum number of people.
+# Data Mining Project - Booking.com webscraper
+A booking.com webscraper project 
+## General Information
+- In this project we scrape the website Booking.com using Selenium.
+- The user inputs a desired country, check-in and check-out dates
+- based on that input, specific data is collected from all page results and stored in a local SQL Database
 
 ## Installation
 After downloading the Data_mininig_project_2021 directory to your computer (or clone the repository from the github) you will need to creat an empty virtual environment.  
