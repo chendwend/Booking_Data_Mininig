@@ -1,26 +1,26 @@
-name,sub location,rating,reviewers amount,Price,Max people,Breakfast,Free Cancellations
-Hotel dasPaul,Mitte,8.9,1,3050,-1,0,1
-Hotel Luise Mannheim - by SuperFly Hotels,Mannheim,7.6,1,2672,-1,0,1
-Heidepension Bispingen,Bispingen,7.8,295,2681,-1,0,1
-CAREA Residenz Hotel Harzhöhe,Hahnenklee,6.8,1,3457,-1,0,1
-FeWo`s Katharina,Bremerhaven,7.0,179,2542,-1,0,1
-Hotel Landhaus Seela,Braunschweig,8.5,1,3879,-1,0,1
-Günzburg City,Günzburg,9.0,2,3559,-1,1,1
-Mercure Hotel Kaiserhof City Center,Bahnhofsviertel,8.2,933,3610,-1,0,1
-"Radisson Blu Hotel, Hamburg",St,8.2,6,3994,-1,0,1
-Boutique Hotel Societe,Baden,8.4,807,3259,-1,1,1
-Apartments Stoll,Bad,8.5,32,4881,-1,0,1
-Hotel Restaurant Da Franco,Rastatt,7.6,481,2737,-1,1,1
-AMERON Köln Hotel Regent,Ehrenfeld,8.7,1,3852,-1,0,1
-ArtHotel City,Mitte,8.1,727,3080,-1,0,1
-Gästehaus Hanseat,Bremerhaven,7.3,289,2711,-1,0,1
-apartment11,Ulm,9.0,50,4899,-1,0,1
-Appartements Katharina,Bremerhaven,7.3,83,2542,-1,0,1
-Hotel Palace Berlin,Charlottenburg,8.8,2,5828,-1,0,1
-Hotel Rose,Weißenburg,7.6,595,3737,-1,1,1
-Hotel Restaurant Schmaus,Viechtach,8.0,265,4033,-1,1,1
-Hotel Garni Rodenbach,Rodenbach,8.3,227,2881,-1,0,1
-Hotel-Restaurant Gasthaus Bonimeier,Niedergottsau,8.8,146,3518,-1,1,1
-ipartment Braunschweig,Braunschweig,8.6,35,2169,-1,0,1
-IDINGSHOF Hotel & Restaurant,Bramsche,8.6,1,4403,-1,0,1
-Grüner Baum Naturparkhotel & Schwarzwald-Restaurant,Todtnau,8.2,200,5520,-1,1,1
+name,sub location,rating,reviewers amount,Price,Max people,Breakfast,Free Cancellations,pets,wifi,kitchen,parking,air conditioning
+Dea Guest House,Sorrento,9.7,308,2531,-1,0,1,0,1,1,1,1
+AlMolo5,Oliveto,9.4,38,5232,-1,0,0,1,1,0,1,1
+Appartement FÃ¶rra,Valle,9.8,42,2571,-1,0,0,0,1,1,1,0
+Porto Rooms & Suite,Naples,9.5,229,3571,-1,1,0,0,1,1,1,1
+haus urban B&B,Barbiano,9.2,193,2603,-1,1,0,1,1,0,1,0
+Agriturismo del Pigato - Bio Vio,Albenga,9.2,107,2764,-1,0,0,1,1,1,1,1
+Bed & Breakfast Isola Bella Lampedusa,Lampedusa,9.1,34,1928,-1,1,0,1,1,1,0,1
+Le Suite di Luna Rossella,Bologna,8.3,114,3834,-1,0,0,0,1,1,0,1
+Nigglerhof,Dobbiaco,9.5,110,3928,-1,1,0,0,1,1,1,0
+Residence Villa Rosa dei Venti,Cinisi,9.2,898,4339,-1,1,0,0,1,1,1,1
+Schuster Emma,Valdaora,9.1,104,2571,-1,0,0,1,1,1,1,0
+Tenuta Padre Pio,Vieste,8.6,230,1607,-1,0,0,1,1,1,1,1
+Mancino,Poggibonsi,9.6,365,1832,-1,1,0,0,1,0,1,1
+La Mammola,Positano,8.6,177,4660,-1,0,0,0,1,1,1,1
+Ad un passo dall arco,Pantelleria,9.5,19,1543,-1,0,0,0,1,1,1,0
+B&B Raffiori,Santa,9.2,76,1867,-1,1,0,1,1,1,1,1
+Caprita Guest House,Anacapri,9.6,67,3214,-1,1,0,0,1,1,0,1
+B&B LIONORA,Naples,9.5,161,2571,-1,0,1,0,1,1,1,1
+POLIGNANO BONITA,Polignano,8.5,94,1609,-1,0,0,1,1,1,0,1
+Appartamenti Edia,Lampedusa,8.8,69,1559,-1,0,0,0,0,1,0,1
+B&B Circuit,Borgo,9.0,44,2571,-1,1,0,1,1,1,1,0
+Il Bagattino,Ferrara,9.4,158,3055,-1,0,1,0,1,0,1,1
+B&B LAMEZIA AIRPORT,Lamezia,8.8,300,1511,-1,0,0,0,1,1,1,1
+Bed and Breakfast Aereoparking,Capodichino,7.9,618,1294,-1,0,0,0,1,0,1,1
+B&B Da Arianna,Porto,9.3,170,2250,-1,1,0,1,1,1,1,0
