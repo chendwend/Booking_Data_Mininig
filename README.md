@@ -1,4 +1,5 @@
-# Data Mining Project - Booking.com webscraper
+Data Mining Project - Booking.com Webscraper
+============================  
 A booking.com webscraper project 
 ## General Information
 - In this project we scrape the website Booking.com using Selenium.
@@ -6,51 +7,58 @@ A booking.com webscraper project
 - based on that input, specific data is collected from all page results and stored in a local SQL Database
 
 ## Installation
-After downloading the Data_mininig_project_2021 directory to your computer (or clone the repository from the github) you will need to creat an empty virtual environment.  
-Create & activate virtual environment on bare Python installation: \
-Create: (inside main project folder):
-```bash
-python -m venv venv
-```
-Activate: \
-Linux: 
-```bash
-source venv/bin/activate
-```
-Windows: 
-```bash
-venv\Scripts\activate.bat
-```
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the requirements.txt file. 
+1. Install MySQL server from [MySQL server Download](https://dev.mysql.com/downloads/mysql/).
+2. Install Python 3.7 or above 
+3. Create a new project directory in your local machine and clone the repository into it.
+4. Inside the project directory create a virtual environment and activate it:    
+  Creating the environment (Windows & Linux):
+  ```bash
+  python -m venv venv
+  ```
+  <ins> Activating the environment: </ins>  
+  For Linux  
+  ```bash
+  source venv/bin/activate
+  ```
+  For Windows   
+  ```bash
+  venv\Scripts\activate.bat
+  ```
+5. Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the requirements.txt file. 
 ```bash
 pip install -r requirements.txt
 ```
-Other alternative is to install: \
-beautifulsoup4==4.9.3 \
-certifi==2021.5.30 \
-charset-normalizer==2.0.3 \
-idna==3.2 \
-requests==2.26.0 \
-selenium==3.141.0 \
-soupsieve==2.2.1 \
-urllib3==1.26.6 
 
-We use Python 3.7.7 
-
-For this project you will need a WebDriver and adding executables to your PATH \
-For more information you can check the link below: \
-[driver_requirements](https://www.selenium.dev/documentation/en/webdriver/driver_requirements/)
+## Project Structure
+    .
+    ├── sources                 # Source files
+    ├── test                    # Automated tests 
+    ├── utilities               # Config & Logfiles
+    ├── mysql_booking.sql       # SQL script for DB creation
+    ├── requirements.txt        # package requirements 
+    └── ERD.png                 # Entity Relationship Diagram 
+### Source files
+    .
+    ├── ...
+    ├── sources                 # Source files
+    │   ├── main                # main file from which to run the program 
+    │   ├── source_page.py      # A class to represent a booking.com website element
+    │   ├── page.py             # A Class to represent each page in a search result
+    │   ├── element.py          # A base class from which other classes inherit
+    │   ├── from_csv_to_db.py   # A function to update DB with scraped data
+    │   └── place_of_stay.py    # A Class to represent each place of stay
+    └── ...
 ## Usage
-
-For running the program one need to find the main.py file under the sources directory.
-runing the main.py file with no input will generate the usage message below:
-
+When running for the first time, create the DB by running the  mysql_booking.sql script in your local MySQL server.
+To run the program, Use the command-line interfaces to enter your input:
 ```bash
-usage: main.py [-h] -d DESTINATION -s START_DATE -e END_DATE
-main.py: error: the following arguments are required: -d/--destination, -s/--start_date, -e/--end_date
+main.py [-h] -d DESTINATION -s START_DATE -e END_DATE
 ```
-Use the command-line interfaces to enter your input, for example:
+**DESTINATION** - Desired country   
+**START_DATE**  - Check-in date in format %Y-%m-%d, where Y = year (4 digits), m = month (up to 2 digits), d = day (up to 2 digits)  
+**END_DATE**    - Check-out date in format %Y-%m-%d, where Y = year (4 digits), m = month (up to 2 digits), d = day (up to 2 digits)
 
+example run:
 ```bash
 main.py -d germany -s 2021-08-15 -e 2021-08-21
 ```
@@ -58,22 +66,62 @@ All you need to do now is wait... \
 For this input it might take about 10 minutes so go make yourself a cup of coffee.
 
 ## Output
-The output is a list of dictionaries, one dictionary for example: \
-{'name': 'Wyndham Stuttgart Airport Messe', 'location': 'Stuttgart', 'rating': '8', 'reviewers_amount': '3', 'price': 1616, 'max people': '2'} \
-Each dictionary contain the data about one stay that match the location and available be the dates the user specified.
+The output is stored in a local SQL Database which was created previously.
+
+### SQL DB Design  
+![This is an image](/ERD.png)
+
+```
+    site_location
+    └── Website                 
+        ├── Page                
+        │   ├── Place_of_stay                
+        │   ├── Place_of_stay      
+        │   └── ...    
+        ├── Page
+        └── ...
+```     
 
 ## Implementation
-We use the beautifulsoup4 and selenium libarary to scrap information from the Booking website.
-We use the argparse module to make a user-friendly command-line interfaces.
-Our project is implemente by hierarchy of two classes:
-1. The class Website that recieve the url of the Booking website: "https://www.booking.com" and return a list of the urls of all the different pages that match the user search.
-2. The class Page that will be called for each url from the list mention above and will retrieve the data about each stay that appear in that page. 
+### Special Libraries
+- We utilized Selenium library to scrap information from Booking website.
+- We also use the argparse module to make a user-friendly command-line interface.
+- The SQL Database is updated via PyMySQL library.
 
-For each stay we create a dictionary with the information about the stay (name, location, rating, number of reviews, price and the maximum number of people).
-Then we create a list of all the dictionaries and print it.
+### Code Structure
+From the code structure perspective, Our project is implemented in a hierarchial manner with 4 classes:
+- The Website class: Represents the booking website main page. Instantiates Page objects.  
+- The Page class: Represents a page from the search result.  Instantiates Place_of_stay objects  
+- The Place_of_stay Clas: Represents the availability page (when pressing "availability" button for each place of stay). 
+- The Elemet Class: A custom defined base class with recurring methods to be used by all other classes. All classes mentioned above inherit from it.  
+Here is a diagram depicting the relations:
 
-## The goal
-Creating a big database with all the data that being extrarct from Booking website. 
+```
+    Element
+    └── Website                 
+        ├── Page                
+        │   ├── Place_of_stay                
+        │   ├── Place_of_stay      
+        │   └── ...    
+        ├── Page
+        └── ...
+```     
+### Scrapable Information Structure
+- Presently "Booking.com" limits search results to 40 pages. 
+- Each page result contains up to 25 sub locations. 
+- Each sub location result is divided into 2 parts: lower & upper element. These elements hold different information which we would like to scrape.  
+  Each can be found using appropriate selector.
+- Each sub location has also "availability" button that opens up a new page containing "Facilities" - more elaborate information, which we also scrape. Here we use one selector and filter with appropriate string.
 
-## The motivation
-This project is for learning purposes. We will practice with writing a complex code with Python, using Git to collaborate and in the future, creating a big database by working with SQL.
+### The Algorithmic Steps
+1. Accept country, check-in & check-out dates from user.
+2. Instantiate a Webdriver element with booking URL.
+3. Find the searchbar and insert country. Press search button.
+4. Find the calenader and insert corresponding dates. Press search button.
+5. Get URLs of all page results.
+6. For each page URL:
+   - click the link. 
+   - Find all upper and lower elements and extract relevant information
+   - for each sub location inside the page, press the "availability" button and extract more information.
+8. All results are stored in an intermediary data.csv file.
+9. Update the Database using the data.csv file.
