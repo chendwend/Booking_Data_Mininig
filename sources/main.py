@@ -53,7 +53,7 @@ def write_to_csv(data_list, filename="data.csv"):
     :type filename: str
     """
     keys = data_list[0][0].keys()
-    with open(filename, 'w', newline='') as csv_file:
+    with open(filename, 'w', newline='', encoding='utf-8') as csv_file:
         dict_writer = csv.DictWriter(csv_file, keys)
         dict_writer.writeheader()
         for page in data_list:
@@ -72,7 +72,7 @@ if __name__ == '__main__':
     website = Website(WEB_SOURCE)
     website.insert_location(args.destination)
     website.select_date(args.start_date, args.end_date)
-    data_list, pages, failed_pages, failed_stays = website.get_all_data()
+    data_list, pages, failed_pages, failed_stays, tricky_pages = website.get_all_data()
     website.teardown()
     write_to_csv(data_list)
     insert_to_db(args.start_date, args.end_date, args.destination)
@@ -83,4 +83,5 @@ if __name__ == '__main__':
     print(f"Number of total pages = {pages}")
     print(f"Number of failed pages = {failed_pages}")
     print(f"Number of failed stays = {failed_stays}")
+    print(f"Number of tricky stays = {tricky_pages}")
     print(f"Execution time: {time / 60:.2f} minutes")

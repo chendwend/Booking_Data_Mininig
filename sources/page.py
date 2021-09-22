@@ -1,9 +1,9 @@
-import re
 from utilities.config import *
 from sources.element import Element
 from sources.place_of_stay import PlaceOfStay
 from selenium.common.exceptions import ElementNotInteractableException
 from urllib3.exceptions import MaxRetryError
+import re
 
 
 class Page(Element):
@@ -14,6 +14,9 @@ class Page(Element):
     failed_pages = 0
     lower_upper_mismatches = 0
     failed_stays = 0
+    max_num_sub_locations = 25
+    tricky_page_count = 0
+    number_of_sub_locations = 0
 
     def __init__(self, search_page, driver):
         """
@@ -97,7 +100,7 @@ class Page(Element):
         # max_people_full_string = [element.text for element in max_people_elements_list]
 
         max_people = [re.search(MAX_PERSONS_REGEX, unfiltered).group()
-                      if unfiltered != DEFAULT_VALUE else DEFAULT_VALUE
+                      if (unfiltered != DEFAULT_VALUE and unfiltered != EMPTY_STRING) else DEFAULT_VALUE
                       for unfiltered in max_people_full_string]
 
         if len(prices) != len(max_people):
@@ -117,17 +120,20 @@ class Page(Element):
         """
         room_facilities_elements = [element for element in
                                     self.get_elements(self._driver, SUB_LOCATION_FACILITIES, "continue")]
+        if room_facilities_elements == DEFAULT_VALUE:
+            room_facilities = [EMPTY_ROOM_FACILITIES.copy()]*Page.number_of_sub_locations
+            return room_facilities
         window_before = self._driver.window_handles[0]
         room_facilities = []
         for element in room_facilities_elements:  # click to move to each stays' page
             try:
                 element.click()
+                window_after = self._driver.window_handles[1]
+                self._driver.switch_to_window(window_after)
+                place_of_stay_obj = PlaceOfStay(self._driver)
+                room_facilities.append(place_of_stay_obj.extract_data())
             except ElementNotInteractableException:  # if not clickable, return dictionary of default values
                 room_facilities.append(EMPTY_ROOM_FACILITIES.copy())
-            window_after = self._driver.window_handles[1]
-            self._driver.switch_to_window(window_after)
-            place_of_stay_obj = PlaceOfStay(self._driver)
-            room_facilities.append(place_of_stay_obj.extract_data())
             self._driver.close()
             self._driver.switch_to_window(window_before)
         return room_facilities
@@ -159,11 +165,16 @@ class Page(Element):
             Page.lower_upper_mismatches += 1
             return data
 
+        if len(lower_elements) > Page.max_num_sub_locations:
+            Page.tricky_page_count += 1
+            return data
+
         upper_data, lower_data = self.extract_upper_data(upper_elements), self.extract_lower_data(lower_elements)
         if not lower_data or not upper_data:  # when either lower or upper failed to acquire data, irregular page
             Page.failed_pages += 1
             return data
 
+        Page.number_of_sub_locations = len(lower_data)
         room_facilities = self.extract_room_facilities()
         number_of_sub_locations = len(upper_data)
         for upper, lower, room in zip(upper_data, lower_data, room_facilities):
@@ -176,4 +187,5 @@ class Page(Element):
                 self.failed_stays += 1
             Page.sub_location_number += 1
         Page.sub_location_number = 1
+        Page.number_of_sub_locations = 0
         return data

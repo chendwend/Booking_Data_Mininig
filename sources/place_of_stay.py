@@ -45,5 +45,5 @@ class PlaceOfStay(Element):
                     PlaceOfStay.failed_room_facilities += 1
                     return EMPTY_ROOM_FACILITIES.copy()
                 continue
-        {service: self.extract_service(element, selector_string) for service, selector_string in ROOM_FACILITIES.items()}
+        room_facilities.update({service: self.extract_service(element, selector_string) for service, selector_string in ROOM_FACILITIES.items()})
         return room_facilities

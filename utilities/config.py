@@ -14,6 +14,7 @@ PAGE_LINKS = {"name": "page links", "selector": ".bui-pagination__pages .bui-pag
 CALENDAR = {"name": "calendar", "selector": ".bui-calendar__date"}
 OFFSET_REGEX = "[0-9]+$"
 DEFAULT_VALUE = -1
+EMPTY_STRING = ''
 
 """########## Page constants #############"""
 

@@ -3,7 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
-import sys
+# import sys
 
 
 class Element:
@@ -20,7 +20,7 @@ class Element:
             if on_exception == "continue":
                 return DEFAULT_VALUE
             else:
-                sys.exit(
+                exit(
                     f"Failed to find {selector_dict['name']} with selector {selector_dict['selector']} "
                     f"after {SEC_TO_WAIT} seconds.\nURL: \n {self._driver.current_url}")
         return elements
@@ -34,7 +34,7 @@ class Element:
             if on_exception == "continue":
                 return DEFAULT_VALUE
             else:
-                sys.exit(
+                exit(
                     f"Failed to find {selector_dict['name']} with selector {selector_dict['selector']} "
                     f"after {SEC_TO_WAIT} seconds.\nURL: \n {self._driver.current_url}")
         return element
@@ -48,7 +48,7 @@ class Element:
             if on_exception == "continue":
                 return DEFAULT_VALUE
             else:
-                sys.exit(
+                exit(
                     f"Failed to find {selector_dict['name']} with selector {selector_dict['selector']} "
                     f"after {SEC_TO_WAIT} seconds.\nURL: \n {self._driver.current_url}")
         return element
@@ -65,5 +65,5 @@ class Element:
             search_button.click()
         except TimeoutException:
             self._driver.quit()
-            sys.exit(f"Failed to find {button_dict['name']} with selector {button_dict['selector']} after {SEC_TO_WAIT}"
+            exit(f"Failed to find {button_dict['name']} with selector {button_dict['selector']} after {SEC_TO_WAIT}"
                      f"seconds.\nURL: \n {self._driver.current_url}")

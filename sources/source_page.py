@@ -95,7 +95,7 @@ class Website(Element):
         number_of_pages = len(pages_url_list)
         print(f"Found {number_of_pages} pages.")
         data_list = []
-        for index, page_url in enumerate(pages_url_list[:1]):
+        for index, page_url in enumerate(pages_url_list[:2]):
             print(f"Starting to process page number {index+1}/{number_of_pages}... \n {BAR}")
             page = Page(page_url, self._driver)
             data = page.get_data()
@@ -104,7 +104,8 @@ class Website(Element):
         number_of_pages = len(pages_url_list)
         number_of_failed_pages = Page.failed_pages
         number_of_failed_stays = Page.failed_stays
-        return data_list, number_of_pages, number_of_failed_pages, number_of_failed_stays
+        number_of_tricky_pages = Page.tricky_page_count
+        return data_list, number_of_pages, number_of_failed_pages, number_of_failed_stays,number_of_tricky_pages
 
     def teardown(self):
         """
