@@ -1,3 +1,5 @@
+drop database booking_data;
+  
 CREATE DATABASE IF NOT EXISTS booking_data;
 ALTER DATABASE booking_data CHARACTER SET utf8;
 USE booking_data;
@@ -6,6 +8,8 @@ CREATE TABLE site_location (
 	location_id INT AUTO_INCREMENT PRIMARY KEY,
 	location VARCHAR(100) NOT NULL,
 	sub_location VARCHAR(100) NOT NULL,
+    sub_location_latitude FLOAT DEFAULT NULL,
+    sub_location_longitude FLOAT DEFAULT NULL,
 	UNIQUE (location, sub_location) 
 );
 
@@ -20,6 +24,8 @@ CREATE TABLE site_info (
 	parking TINYINT(1) DEFAULT NULL,
 	breakfast TINYINT(1) DEFAULT NULL,
 	pets TINYINT(1) DEFAULT NULL,
+    temperature INT DEFAULT NULL,
+    feelslike INT DEFAULT NULL, 
 	UNIQUE (location_id, site_name),
 	FOREIGN KEY (location_id) REFERENCES site_location(location_id) ON DELETE CASCADE
 );
