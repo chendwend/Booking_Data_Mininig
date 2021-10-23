@@ -1,6 +1,6 @@
 from selenium import webdriver
 from utilities.config import PAGE_LINKS, USER_AGENT, SEARCH_BAR, SEARCH_BUTTON, \
-    CALENDAR, OFFSET_REGEX, BAR, DEFAULT_VALUE
+    CALENDAR, OFFSET_REGEX, BAR, DEFAULT_VALUE, USER_AGENT_LINUX
 from sources.page import Page
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
@@ -22,9 +22,9 @@ class Website(Element):
         :type main_url: str
         """
         options = Options()
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         options.add_argument("--blink-settings=imagesEnabled=false")
-        options.add_argument(f'user-agent={USER_AGENT}')  # Without this -> doesn't find pages
+        options.add_argument(f'user-agent={USER_AGENT_LINUX}')  # Without this -> doesn't find pages
         self._driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         self._driver.get(main_url)
 

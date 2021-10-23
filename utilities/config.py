@@ -5,13 +5,17 @@ BAR = "-----------------------------------"
 SEC_TO_WAIT = 10
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" \
              " Chrome/93.0.4577.82 Safari/537.36"
+USER_AGENT_LINUX = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)" \
+                   " Chrome/92.0.4515.159 Safari/537.36"
 
 """########## Website constants #############"""
 WEB_SOURCE = "https://www.booking.com"
 SEARCH_BAR = {"name": "search bar", "selector": "ss"}
 SEARCH_BUTTON = {"name": "search button", "selector": ".sb-searchbox__button "}
-PAGE_LINKS = {"name": "page links", "selector": ".bui-pagination__pages .bui-pagination__list li a"}
+# PAGE_LINKS = {"name": "page links", "selector": ".bui-pagination__pages .bui-pagination__list li a"}
+PAGE_LINKS = {"name": "page links", "selector": ".e603a69fe1 ._5312cbccb li a "}
 CALENDAR = {"name": "calendar", "selector": ".bui-calendar__date"}
+
 OFFSET_REGEX = "[0-9]+$"
 DEFAULT_VALUE = -1
 EMPTY_STRING = ''
@@ -62,3 +66,8 @@ EMPTY_ROOM_FACILITIES = dict(zip(ROOM_FACILITIES_KEYS, [DEFAULT_VALUE]*len(ROOM_
 SERVICE_AVAILABILITY = {"yes": 1, "no": 0}
 """########## SQL constants ###############"""
 FILE_NAME = "data.csv"
+
+"""########## API constants ###############"""
+COLUMNS = ['latitude', 'longitude', 'temperature', 'feelslike']
+ACCESS_KEY = 'c97f8ed4ab7a775dd2abe77f28bac6be'
+TYPE_OF_REQUEST = 'current'
