@@ -1,5 +1,5 @@
 from selenium import webdriver
-from utilities.config import PAGE_LINKS, USER_AGENT, SEARCH_BAR, SEARCH_BUTTON, \
+from utilities.config import PAGES_BUTTONS, USER_AGENT, SEARCH_BAR, SEARCH_BUTTON, \
     CALENDAR, OFFSET_REGEX, BAR, DEFAULT_VALUE, USER_AGENT_LINUX
 from sources.page import Page
 from selenium.webdriver.chrome.options import Options
@@ -59,6 +59,10 @@ class Website(Element):
             f"span[aria-label='{end_date.day} {end_date.strftime('%B')} {end_date.year}']").click()
         self._driver.find_element_by_css_selector(SEARCH_BUTTON["selector"]).click()
 
+    def _get_page_elements(self):
+        pages_elements = self.get_elements(self, PAGES_BUTTONS, on_exception='quit')
+        return pages_elements[1:]
+
     def _get_urls(self):
         """
         Extracts list of URLs, each representing a page result.
@@ -84,6 +88,9 @@ class Website(Element):
 
         return list_urls
 
+    def _get_data_from_page(self,element):
+
+
     def get_all_data(self):
         """
         Extracts all data from all pages
@@ -91,10 +98,12 @@ class Website(Element):
         :return: list of lists of dictionaries, number of total pages, number of failed pages
         :rtype: tuple
         """
-        pages_url_list = self._get_urls()
-        number_of_pages = len(pages_url_list)
-        print(f"Found {number_of_pages} pages.")
+        # pages_url_list = self._get_urls()
+        # number_of_pages = len(pages_url_list)
+        # print(f"Found {number_of_pages} pages.")
+        page_number = 1
         data_list = []
+
         for index, page_url in enumerate(pages_url_list[:2]):
             print(f"Starting to process page number {index+1}/{number_of_pages}... \n {BAR}")
             page = Page(page_url, self._driver)

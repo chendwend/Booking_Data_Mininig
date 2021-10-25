@@ -13,7 +13,7 @@ WEB_SOURCE = "https://www.booking.com"
 SEARCH_BAR = {"name": "search bar", "selector": "ss"}
 SEARCH_BUTTON = {"name": "search button", "selector": ".sb-searchbox__button "}
 # PAGE_LINKS = {"name": "page links", "selector": ".bui-pagination__pages .bui-pagination__list li a"}
-PAGE_LINKS = {"name": "page links", "selector": ".e603a69fe1 ._5312cbccb li a "}
+PAGES_BUTTONS = {"name": "page links", "selector": "ol[class='_5312cbccb'] li"}
 CALENDAR = {"name": "calendar", "selector": ".bui-calendar__date"}
 
 OFFSET_REGEX = "[0-9]+$"
