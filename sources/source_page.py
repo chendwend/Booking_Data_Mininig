@@ -1,10 +1,10 @@
+import time
 from selenium import webdriver
 from utilities.config import PAGES_BUTTONS, USER_AGENT, SEARCH_BAR, SEARCH_BUTTON, \
-    CALENDAR, OFFSET_REGEX, BAR, DEFAULT_VALUE, USER_AGENT_LINUX
+    CALENDAR, BAR, DEFAULT_VALUE, USER_AGENT_LINUX
 from sources.page import Page
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
-from re import search as search_regex
 from sources.element import Element
 
 
@@ -22,9 +22,9 @@ class Website(Element):
         :type main_url: str
         """
         options = Options()
-        # options.add_argument("--headless")
+        options.add_argument("--headless")
         options.add_argument("--blink-settings=imagesEnabled=false")
-        options.add_argument(f'user-agent={USER_AGENT_LINUX}')  # Without this -> doesn't find pages
+        options.add_argument(f'user-agent={USER_AGENT}')  # Without this -> doesn't find pages
         self._driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         self._driver.get(main_url)
 
@@ -59,62 +59,44 @@ class Website(Element):
             f"span[aria-label='{end_date.day} {end_date.strftime('%B')} {end_date.year}']").click()
         self._driver.find_element_by_css_selector(SEARCH_BUTTON["selector"]).click()
 
-    def _get_page_elements(self):
-        pages_elements = self.get_elements(self, PAGES_BUTTONS, on_exception='quit')
-        return pages_elements[1:]
-
-    def _get_urls(self):
+    def _get_next_page_element(self, page_number):
         """
-        Extracts list of URLs, each representing a page result.
-        If no URLS are found, there's only 1 page result, so only one member in the list.
-
-        :return: list of URLs
-        :rtype: list
+        gets the adequate page number element from the DOM
+        :param page_number: the current page to be processed
+        :type page_number: int
+        :return:  Webdriver element
         """
 
-        first_page_url = self._driver.current_url
-        list_urls = [first_page_url]
-        page_buttons = self.get_elements(self._driver, PAGE_LINKS, on_exception="continue")
-        if page_buttons == DEFAULT_VALUE:  # in case no other pages are found, we have only one page result
-            return list_urls
-
-        last_url = page_buttons[-1].get_attribute("href")
-        last_offset_number = int(search_regex(OFFSET_REGEX, last_url).group())
-        last_equal_sign_index = last_url.rfind('=')
-        base_url = last_url[:last_equal_sign_index] + '='
-        number_of_pages = int(last_offset_number / Website.page_offset) + 1
-        for i in range(1, number_of_pages):
-            list_urls.append(base_url + str(i * Website.page_offset))
-
-        return list_urls
-
-    def _get_data_from_page(self,element):
-
+        pages_elements = self.get_elements(self._driver, PAGES_BUTTONS, on_exception='quit')
+        if page_number < 8:
+            return pages_elements[page_number + 1]
+        else:
+            print(len(pages_elements))
+            return pages_elements[7]
 
     def get_all_data(self):
         """
-        Extracts all data from all pages
-
-        :return: list of lists of dictionaries, number of total pages, number of failed pages
-        :rtype: tuple
+        gets all data from all pages
+        :return: a pandas DataFrame with columns as a stay service, records as stays
         """
-        # pages_url_list = self._get_urls()
-        # number_of_pages = len(pages_url_list)
-        # print(f"Found {number_of_pages} pages.")
-        page_number = 1
-        data_list = []
 
-        for index, page_url in enumerate(pages_url_list[:2]):
-            print(f"Starting to process page number {index+1}/{number_of_pages}... \n {BAR}")
-            page = Page(page_url, self._driver)
-            data = page.get_data()
-            if data:
-                data_list.append(data)
-        number_of_pages = len(pages_url_list)
-        number_of_failed_pages = Page.failed_pages
-        number_of_failed_stays = Page.failed_stays
-        number_of_tricky_pages = Page.tricky_page_count
-        return data_list, number_of_pages, number_of_failed_pages, number_of_failed_stays,number_of_tricky_pages
+        pages_elements = self.get_elements(self._driver, PAGES_BUTTONS, on_exception='quit')
+        number_of_pages = int(pages_elements[-2].text)
+        print(f"Found {number_of_pages} pages.")
+        for page_number in range(1, 3):  # number_of_pages + 1
+            print(f"Processing page number  {page_number}/{number_of_pages}... \n {BAR}")
+            page = Page(self._driver)
+            if page_number == 1:
+                data = page.get_data()
+            else:
+                data = data.append(page.get_data(), ignore_index=True)
+            next_page_element = self._get_next_page_element(page_number)
+            next_page_element.click()
+            time.sleep(2)
+        # number_of_failed_pages = Page.failed_pages
+        # number_of_failed_stays = Page.failed_stays
+        # number_of_tricky_pages = Page.tricky_page_count
+        return data, number_of_pages  # , number_of_failed_pages, number_of_failed_stays, number_of_tricky_pages
 
     def teardown(self):
         """

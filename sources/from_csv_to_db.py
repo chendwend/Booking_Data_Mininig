@@ -14,7 +14,7 @@ def insert_to_db(from_date, to_date, location):
     """
     connection = pymysql.connect(host='localhost',
                                  user='root',
-                                 password='root',
+                                 password='Kostya',
                                  charset='utf8mb4',
                                  cursorclass=pymysql.cursors.DictCursor,
                                  database='booking_data')
