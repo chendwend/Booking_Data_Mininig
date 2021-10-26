@@ -1,26 +1,52 @@
-name,sub location,rating,reviewers amount,Price,Max people,Breakfast,Free Cancellations,pets,wifi,kitchen,parking,air conditioning
-Kibbutz Malkiya Travel Hotel,Malkiyya,8.2,285,2932,2,1,1,1,1,1,0,1
-Savoy Sea Side Hotel,Tel,8.6,897,3760,2,0,1,0,1,1,0,1
-Embassy Hotel Tel Aviv מלון אמבסי תל אביב,Tel,8.6,2,2972,2,0,1,0,1,1,0,1
-BY14 TLV Hotel,Tel,8.6,769,3417,2,0,1,0,1,1,0,1
-Yafo 35 Apartments By IndigInn,West,8.5,506,2798,2,0,1,0,1,1,0,1
-Sun City Hotel,Tel,7.1,338,2107,2,0,1,0,1,1,0,1
-Al Mutran Guest House,Nazareth,8.6,413,1815,2,0,1,0,1,1,0,1
-The American Colony Hotel - Small Luxury Hotels of the World,East,8.7,998,6143,2,0,1,0,1,1,0,1
-Hotel Nordoy By 7Minds,Neve,8.9,1,7132,2,1,1,1,1,1,0,1
-Cucu Hotel By 7Minds,Tel,9.0,1,5046,2,0,1,1,1,1,0,1
-Mike's House,West,8.8,465,2362,2,0,1,0,1,1,0,1
-Loui Hotel Haifa,Haifa,6.9,51,1881,2,0,1,1,1,1,0,1
-Desert View,Yeroẖam,9.1,180,2907,2,0,1,0,1,1,0,1
-Setai Sea Of Galilee,Ein,7.6,1,14957,2,1,1,0,1,0,0,1
-Lavender In The Mountains,Ramot,8.1,145,3600,2,0,1,1,1,1,0,1
-Sadot Hotel Ben Gurion Airport - an Atlas Boutique Hotel,Assaf,8.5,731,3426,2,0,1,1,1,1,0,1
-Estate Spa - Boutique Hotel,Rechovot,8.9,683,5026,2,0,1,0,1,1,0,1
-Honny - Boutique Hotel,Amirim,8.9,222,4192,2,1,1,0,1,1,0,1
-Zemer Lodging,Sede,9.3,50,4290,2,0,1,0,1,1,0,1
-צימר נוף להר,Shlomi,9.3,23,6150,2,0,1,0,1,1,0,1
-Avigail Guest House,Yavneʼel,9.4,172,2846,2,0,1,1,1,1,0,1
-Nof kinnert,Moshav,8.9,182,4751,2,0,1,1,1,1,0,1
-Noa'm Bagalil,Peqi,8.9,91,4320,2,0,1,1,1,1,0,1
-Beit Shalom Historical boutique Hotel,Metulla,8.6,149,4761,2,0,1,0,1,1,0,1
-Bachar House By 7Minds,Neve,9.4,353,5501,2,1,1,0,1,0,0,1
+name,sub location,rating,reviewers amount,price,0,1,2,3,4
+Hotel Stachus, Munich,7.7,3,4175,1,1,0,1,0
+relexa hotel München, Munich,8.3,2,3659,1,1,0,0,1
+Rugard Thermal Strandhotel,Binz,7.4,1,5194,0,1,0,1,0
+Der schöne Asten - Resort Winterberg, Winterberg,7.3,1,2825,1,1,0,1,0
+Am Achterwasser DORF 12,Rankwitz,7.6,142,1926,1,1,1,1,0
+Café Orth,Westerland,8.0,159,2540,1,1,0,0,0
+Baltic House Timmendorf,Timmendorfer Strand,8.6,96,2915,1,1,1,1,0
+Hotel Residenz Waldoase,Ahlbeck,8.3,491,2203,0,1,1,1,0
+Klassik Appartements,Helgoland,7.6,180,3071,1,1,1,0,0
+Hotel Bett und Buch, Berlin,8.6,346,2237,0,1,0,1,0
+Ferienhauspark Asgard im Dampland,Damp,7.3,1,2491,1,1,1,1,0
+Heaven House Timmendorf,Timmendorfer Strand,8.6,55,2472,1,1,1,1,0
+Haus Kaiser,Rottach-Egern,8.8,199,3796,1,1,1,1,0
+Speedys Gästehaus direkt am Brünnchen,Herresbach,9.6,359,2769,1,1,1,1,0
+Ferienwohnungen am Rosenhof,Kühlungsborn,7.9,86,1300,1,1,1,1,0
+Familien Aparthotel Panoramic,Bad Lauterberg,6.7,463,2942,0,1,0,1,0
+Hotel Paintner,Germering,8.1,168,2589,1,1,0,1,0
+Germina Apart,Oberhof,8.9,176,1903,0,1,1,1,0
+Seebrise mit Musik und Wein,Meersburg,9.3,225,2212,0,1,1,1,0
+Hotel Berliner Hof, Düsseldorf,6.2,973,2320,0,1,0,1,0
+THE FLAG München M., Munich,8.6,1,2891,1,1,1,1,0
+Hotel Kolossos Düsseldorf - Neuss,Neuss,8.0,224,2454,0,1,0,1,0
+Blissberg Winterberg, Winterberg,8.9,168,2107,1,1,1,1,0
+Premium Appartement Rosenmöwe Sylt,Wenningstedt,8.0,23,2316,0,1,1,1,0
+Hotel Pension Am Hafen,Norddeich,8.3,448,2354,1,1,0,1,0
+Hotel Pension Am Hafen,Norddeich,8.3,448,2354,1,1,0,1,0
+Haus Nordland,Langeoog,9.0,67,3383,1,1,1,0,0
+Osteiner Hof by The Apartment Suite, Mainz,9.4,1,3792,1,1,1,1,0
+WachtRaum Reutlingen - Altstadt Apartment & Design Rooms an Stadthalle & Marktplatz,Reutlingen,9.0,316,2423,0,1,1,1,0
+Hotel Zum grünen Kranz,Zell an der Mosel,8.7,142,3071,1,1,0,1,0
+Haus OF,Binz,9.2,32,1431,0,1,1,1,0
+Pension Norddeich & Ferienwohnungen Strandglück,Norden,8.4,137,2424,1,1,1,1,0
+Budget-Hotel Atlantik,Celle,7.6,548,2007,1,1,1,1,0
+Appartementhaus Martin,Badenweiler,8.7,283,1692,0,1,1,1,0
+CaLegna Ferienchalet,Bad Kohlgrub,9.6,60,1967,0,1,1,1,0
+PENSION zur alten Gärtnerei,Reichenbach im Vogtland,8.3,100,1561,1,1,1,1,0
+Hotel Sylter Hof,Westerland,8.6,592,4034,1,1,1,1,0
+Almhof Lässer,Balderschwang,9.0,38,2550,0,1,1,1,0
+"Zwischen Erfurt, Weimar & Thüringer Wald",Elleben,9.7,49,1509,1,1,1,1,0
+Haus Adele,Laboe,9.2,44,2342,1,1,1,1,0
+Gästehaus berge,Aschau im Chiemgau,9.2,64,4684,1,1,1,1,0
+Panoramahotel Lilienstein,Königstein an der Elbe,6.7,593,2751,1,1,0,1,0
+discovAIR Graal Müritz -Haus Quisisana- Strandnah mit Netflix,Graal-Müritz,9.1,25,1603,0,1,1,1,0
+Apartment Mittendrin in Bad Harzburg,Bad Harzburg,9.7,37,1822,0,1,1,1,0
+Ostseebrise-Fehmarn,Fehmarn,9.4,35,1822,0,1,1,1,0
+Hotel Kunibert der Fiese - Superior, Cologne,7.0,463,3120,0,1,0,1,0
+Ferienwohnung Gaffelschoner,Hohen Wieschendorf,8.9,24,1134,0,1,1,1,0
+Pension An der Kamske,Lübbenau,8.5,247,1952,0,1,1,1,0
+Hotel Victoria, Frankfurt/Main,8.2,841,2578,1,0,0,0,1
+Hotel Villa Weststrand,Borkum,8.2,397,2595,1,1,0,0,0
+Das Märchenhaus,Braunlage,8.7,180,1574,0,1,1,0,0

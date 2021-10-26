@@ -5,7 +5,7 @@ from time import perf_counter
 from datetime import datetime
 import argparse
 import sys
-import csv
+from sources.weather_api import weather_api
 
 
 def validate_date(s):
@@ -44,22 +44,6 @@ def validate_country(destination):
     return destination
 
 
-def write_to_csv(data_list, filename="data.csv"):
-    """
-    Writes all data into a csv file
-    :param data_list: a list of dictionaries
-    :type data_list: list
-    :param filename: the name of the csv file to be written to
-    :type filename: str
-    """
-    keys = data_list[0][0].keys()
-    with open(filename, 'w', newline='', encoding='utf-8') as csv_file:
-        dict_writer = csv.DictWriter(csv_file, keys)
-        dict_writer.writeheader()
-        for page in data_list:
-            dict_writer.writerows(page)
-
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Extract data from Booking.com")
     parser.add_argument('-d', "--destination", help="Desired country", required=True, type=validate_country,
@@ -72,16 +56,14 @@ if __name__ == '__main__':
     website = Website(WEB_SOURCE)
     website.insert_location(args.destination)
     website.select_date(args.start_date, args.end_date)
-    data_list, pages, failed_pages, failed_stays, tricky_pages = website.get_all_data()
+    data, pages, failed_pages, failed_stays, tricky_pages = website.get_all_data()
     website.teardown()
-    write_to_csv(data_list)
+    data.to_csv('data.csv', index=False)
+    weather_api('data.csv')
     insert_to_db(args.start_date, args.end_date, args.destination)
     time = perf_counter() - start
     print(
         f"Basic processing information for destination ='{args.destination}',"
         f" between {args.start_date.date()} and {args.end_date.date()}:")
     print(f"Number of total pages = {pages}")
-    print(f"Number of failed pages = {failed_pages}")
-    print(f"Number of failed stays = {failed_stays}")
-    print(f"Number of tricky stays = {tricky_pages}")
     print(f"Execution time: {time / 60:.2f} minutes")

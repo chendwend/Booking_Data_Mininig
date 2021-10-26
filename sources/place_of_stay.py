@@ -1,4 +1,4 @@
-from utilities.config import ROOM_FACILITIES, FACILITY_STRING_LIST, EMPTY_ROOM_FACILITIES, SERVICE_AVAILABILITY
+from utilities.config import ROOM_FACILITIES, SERVICE_AVAILABILITY, FACILITY
 from sources.element import Element
 
 
@@ -36,14 +36,6 @@ class PlaceOfStay(Element):
         :rtype: dict
         """
         room_facilities = {}
-        for index, selector in enumerate(FACILITY_STRING_LIST):
-            try:
-                element = self.get_elements(self._driver, selector[0], "continue")[selector[1]]
-                break
-            except TypeError:
-                if index == len(FACILITY_STRING_LIST) - 1:  # if no selectors are found, return default dictionary
-                    PlaceOfStay.failed_room_facilities += 1
-                    return EMPTY_ROOM_FACILITIES.copy()
-                continue
+        element = self.get_element_by_css(self._driver, FACILITY, "continue")
         room_facilities.update({service: self.extract_service(element, selector_string) for service, selector_string in ROOM_FACILITIES.items()})
         return room_facilities

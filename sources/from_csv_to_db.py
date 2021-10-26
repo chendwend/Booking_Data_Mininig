@@ -5,9 +5,16 @@ from utilities.config import FILE_NAME
 
 
 def insert_to_db(from_date, to_date, location):
+    """
+
+    :param from_date:
+    :param to_date:
+    :param location:
+    :return:
+    """
     connection = pymysql.connect(host='localhost',
                                  user='root',
-                                 password='root',
+                                 password='Kostya',
                                  charset='utf8mb4',
                                  cursorclass=pymysql.cursors.DictCursor,
                                  database='booking_data')
