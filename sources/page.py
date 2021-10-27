@@ -104,9 +104,8 @@ class Page(Element):
             kitchen.append(stay_facilities["kitchen"])
             parking.append(stay_facilities["parking"])
             air_conditioning.append(stay_facilities["air conditioning"])
-        df_new = pd.DataFrame([pets, wifi, kitchen, parking, air_conditioning])
-        df_new = df_new.transpose()
-        df = pd.concat([df, df_new], axis=1, names=ROOM_FACILITIES_KEYS)
+        df_new = pd.DataFrame({"pets": pets, "wifi": wifi, "kitchen": kitchen, "parking": parking, "air conditioning": air_conditioning})
+        df = pd.concat([df, df_new], axis=1)
         return df
 
     def get_data(self):
@@ -125,4 +124,3 @@ class Page(Element):
         facilities_list = self.extract_room_facilities()
 
         return self._arrange_data(facilities_list, data)
-
