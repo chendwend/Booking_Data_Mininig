@@ -19,7 +19,6 @@ CREATE TABLE location_dates (
 CREATE TABLE site_info (
 	site_id INT AUTO_INCREMENT PRIMARY KEY,	
   	location_dates_id INT NOT NULL,
-	max_people SMALLINT DEFAULT NULL,
 	rating FLOAT(2) DEFAULT NULL,
 	reviewers_amount SMALLINT DEFAULT NULL,
 	free_cancellation TINYINT(1) DEFAULT NULL,
