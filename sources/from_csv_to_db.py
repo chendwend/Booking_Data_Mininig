@@ -3,7 +3,7 @@ import csv
 from datetime import datetime
 from utilities.config import FILE_NAME
 
-#FILE_NAME="data.csv"
+#FILE_NAME="output.csv"
 
 def insert_to_db(from_date, to_date, location):
     """
@@ -86,8 +86,8 @@ def insert_to_db(from_date, to_date, location):
                                              )LIMIT 1
                                              '''
 
-        values_1 = (location, row.get('sub location'), row.get('sub_location_latitude'),
-                    row.get('sub_location_longitude'), row.get('name'), from_date, to_date, location,
+        values_1 = (location, row.get('sub location'), row.get('latitude'),
+                    row.get('longitude'), row.get('name'), from_date, to_date, location,
                     row.get('sub location'), row.get('name'), from_date, to_date)
         cur.execute(insert_query_1, values_1)
 
@@ -103,7 +103,7 @@ def insert_to_db(from_date, to_date, location):
         insert_query_2 = '''INSERT INTO site_info (location_dates_id, rating, reviewers_amount,
                                                    free_cancellation, parking, breakfast, pets, price,
                                                    date_time, temperature, feelslike)
-                            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                             ON DUPLICATE KEY UPDATE 
                             rating = VALUES(rating),
                             reviewers_amount = VALUES(reviewers_amount),
@@ -115,9 +115,9 @@ def insert_to_db(from_date, to_date, location):
                             date_time = VALUES(date_time),
                             temperature = VALUES(temperature),
                             feelslike = VALUES(feelslike)'''
-        values_2 = (the_id, row.get('Max people'), row.get('rating'), row.get('reviewers amount'),
-                    row.get('Free Cancellations'), row.get('parking'), row.get('Breakfast'), row.get('pets'),
-                    row.get('Price'), formatted_date, row.get('temperature'), row.get('feelslike'))
+        values_2 = (the_id, row.get('rating'), row.get('reviewers amount'),
+                    row.get('free cancellation'), row.get('parking'), row.get('breakfast'), row.get('pets'),
+                    row.get('price'), formatted_date, row.get('temperature'), row.get('feelslike'))
         cur.execute(insert_query_2, values_2)
 
         # filling the facilities table with the option to update existing rows.
