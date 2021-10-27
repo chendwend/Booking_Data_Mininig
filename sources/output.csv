@@ -1,26 +1,26 @@
-name,sub location,rating,reviewers amount,price,pets,wifi,kitchen,parking,air conditioning,latitude,longitude,temperature,feelslike
-Rottach Apartments - Ferienwohnungen am Tegernsee,Rottach-Egern,9.0,84,1781,0,1,1,1,0,47.700,11.767,5,4
-relexa hotel München, Munich,8.3,2,3323,1,1,0,0,1,48.150,11.583,5,3
-Europa Hotel Kühlungsborn,Kühlungsborn,8.5,2,3891,0,1,1,1,0,-1,-1,-1,-1
-Der schöne Asten - Resort Winterberg, Winterberg,7.3,1,2685,1,1,0,1,0,51.200,8.533,9,8
-Am Achterwasser DORF 12,Rankwitz,7.6,142,1921,1,1,1,1,0,53.950,13.933,14,12
-Rugard Thermal Strandhotel,Binz,7.4,1,4596,0,1,0,1,0,37.367,118.017,13,13
-Café Orth,Westerland,8.0,159,2534,1,1,0,0,0,54.900,8.300,14,11
-Baltic House Timmendorf,Timmendorfer Strand,8.6,96,2908,1,1,1,1,0,54.000,10.783,14,12
-Klassik Appartements,Helgoland,7.6,180,3064,1,1,1,0,0,54.167,7.883,14,12
-Hotel Bett und Buch, Berlin,8.6,345,2232,0,1,0,1,0,52.517,13.400,13,12
-Ferienhauspark Asgard im Dampland,Damp,7.3,1,3375,1,1,1,1,0,-7.129,112.381,27,30
-Hotel Kolossos Düsseldorf - Neuss,Neuss,8.0,225,2782,0,1,1,1,0,51.200,6.683,13,13
-Osteiner Hof by The Apartment Suite, Mainz,9.4,1,3783,1,1,1,1,0,50.000,8.271,12,12
-Heaven House Timmendorf,Timmendorfer Strand,8.6,55,2467,1,1,1,1,0,54.000,10.783,14,12
-Hotel Residenz Waldoase,Ahlbeck,8.3,495,2198,0,1,1,1,0,53.933,14.200,13,11
-Speedys Gästehaus direkt am Brünnchen,Herresbach,9.6,359,2763,1,1,1,1,0,50.367,7.017,8,7
-Ferienwohnungen am Rosenhof,Kühlungsborn,7.9,86,1297,1,1,1,1,0,-1,-1,-1,-1
-Familien Aparthotel Panoramic,Bad Lauterberg,6.8,462,2935,0,1,0,1,0,51.650,10.467,8,7
-Inselhotel Cornelius,Norderney,7.6,84,2824,0,0,0,0,0,53.700,7.150,14,12
-Hotel Paintner,Germering,8.1,168,2454,1,1,0,1,0,48.133,11.367,5,3
-Hotel Im Tannengrund,Langelsheim,7.7,613,4154,1,1,0,1,0,51.933,10.333,13,12
-Germina Apart,Oberhof,8.9,176,1899,0,1,1,1,0,48.783,7.867,8,8
-smûk - Luxus Dachgeschoss,Westerland,9.4,41,3272,0,1,1,1,0,54.900,8.300,14,11
-Seebrise mit Musik und Wein,Meersburg,9.3,225,2207,0,1,1,1,0,47.700,9.267,8,8
-THE FLAG München M., Munich,8.6,1,2651,1,1,1,1,0,48.150,11.583,5,3
+name,sub location,rating,reviewers amount,price,breakfast,free cancellation,pets,wifi,kitchen,parking,air conditioning,latitude,longitude,temperature,feelslike
+Rottach Apartments - Ferienwohnungen am Tegernsee,Rottach-Egern,9.0,84,1781,0,0,0,1,1,1,0,47.700,11.767,4,3
+relexa hotel München, Munich,8.3,2,3432,0,0,1,1,0,0,1,48.150,11.583,4,2
+Europa Hotel Kühlungsborn,Kühlungsborn,8.5,2,3891,1,1,0,1,1,1,0,-1,-1,-1,-1
+Der schöne Asten - Resort Winterberg, Winterberg,7.3,1,2685,1,0,1,1,0,1,0,51.200,8.533,10,9
+Am Achterwasser DORF 12,Rankwitz,7.6,142,1921,1,0,1,1,1,1,0,53.950,13.933,14,12
+Rugard Thermal Strandhotel,Binz,7.4,1,4596,1,1,0,1,0,1,0,37.367,118.017,13,13
+Café Orth,Westerland,8.0,159,2534,1,0,1,1,0,0,0,54.900,8.300,14,11
+Baltic House Timmendorf,Timmendorfer Strand,8.6,96,2908,1,0,1,1,1,1,0,54.000,10.783,14,12
+Klassik Appartements,Helgoland,7.6,180,3064,1,0,1,1,1,0,0,54.167,7.883,14,11
+Ferienhauspark Asgard im Dampland,Damp,7.3,1,3375,0,0,1,1,1,1,0,-7.183,112.463,26,29
+Hotel Kolossos Düsseldorf - Neuss,Neuss,8.0,225,2782,1,0,0,1,1,1,0,51.200,6.683,11,10
+Osteiner Hof by The Apartment Suite, Mainz,9.4,1,3783,1,0,1,1,1,1,0,50.000,8.271,9,9
+Heaven House Timmendorf,Timmendorfer Strand,8.6,55,2467,1,0,1,1,1,1,0,54.000,10.783,14,12
+Hotel Residenz Waldoase,Ahlbeck,8.3,495,2198,0,0,0,1,1,1,0,53.933,14.200,13,11
+Speedys Gästehaus direkt am Brünnchen,Herresbach,9.6,359,2763,0,0,1,1,1,1,0,50.367,7.017,8,7
+Ferienwohnungen am Rosenhof,Kühlungsborn,7.9,86,1297,1,0,1,1,1,1,0,-1,-1,-1,-1
+Familien Aparthotel Panoramic,Bad Lauterberg,6.8,462,2935,0,0,0,1,0,1,0,51.650,10.467,8,7
+Inselhotel Cornelius,Norderney,7.6,84,2824,1,1,0,0,0,0,0,53.700,7.150,14,12
+Hotel Paintner,Germering,8.1,168,2454,0,1,1,1,0,1,0,48.133,11.367,5,3
+Hotel Im Tannengrund,Langelsheim,7.7,613,4154,0,1,1,1,0,1,0,51.933,10.333,10,9
+Germina Apart,Oberhof,8.9,176,1899,0,0,0,1,1,1,0,48.783,7.867,9,9
+smûk - Luxus Dachgeschoss,Westerland,9.4,41,3272,1,0,0,1,1,1,0,54.900,8.300,14,11
+Seebrise mit Musik und Wein,Meersburg,9.3,225,2207,1,0,0,1,1,1,0,47.700,9.267,7,7
+THE FLAG München M., Munich,8.6,1,2738,0,0,1,1,1,1,0,48.150,11.583,4,2
+WachtRaum Reutlingen - Altstadt Apartment & Design Rooms an Stadthalle & Marktplatz,Reutlingen,9.0,316,2220,1,0,0,1,1,1,0,48.483,9.217,7,6

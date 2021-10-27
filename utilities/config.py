@@ -25,8 +25,11 @@ PAGE_DATA_DICT = \
      "sub location": "._cff98816f",
      "rating": "._9c5f726ff.bd528f9ea6",
      "reviewers amount": "._4abc4c3d5._1e6021d2f._fb3ba087b._6e869d6e0",
-     "price": ".fde444d7ef._e885fdc12"
+     "price": ".fde444d7ef._e885fdc12",
+     "breakfast": "._371410fad",
+     "free cancellation": "._371410fad"
      }
+
 REGEX_DATA_DICT = \
     {"reviewers amount": "[0-9]+",
      "price": "[0-9,]+$"

@@ -58,6 +58,15 @@ class Page(Element):
             data_list_filtered = [data[data.find(',') + 1:data.find('Show')]
                                   if data.find(',') != -1 else data[0:data.find('Show')]
                                   for data in data_list]
+        elif data_type == "breakfast":
+            data_list_filtered = [1
+                                  if "free cancellation" in data.lower() else 0
+                                  for data in data_list]
+        elif data_type == "free cancellation":
+            data_list_filtered = [1
+                                  if "breakfast included" in data.lower() else 0
+                                  for data in data_list]
+
         return data_list_filtered
 
     def extract_room_facilities(self):
