@@ -56,7 +56,7 @@ if __name__ == '__main__':
     website = Website(WEB_SOURCE)
     website.insert_location(args.destination)
     website.select_date(args.start_date, args.end_date)
-    data, pages, failed_pages, failed_stays, tricky_pages = website.get_all_data()
+    data, pages = website.get_all_data()
     website.teardown()
     data.to_csv('data.csv', index=False)
     weather_api('data.csv')
