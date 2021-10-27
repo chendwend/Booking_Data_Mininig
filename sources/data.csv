@@ -1,26 +1,7 @@
-name,sub location,rating,reviewers amount,Price,Max people,Breakfast,Free Cancellations,pets,wifi,kitchen,parking,air conditioning
-Kibbutz Malkiya Travel Hotel,Malkiyya,8.2,285,2932,2,1,1,1,1,1,0,1
-Savoy Sea Side Hotel,Tel,8.6,897,3760,2,0,1,0,1,1,0,1
-Embassy Hotel Tel Aviv מלון אמבסי תל אביב,Tel,8.6,2,2972,2,0,1,0,1,1,0,1
-BY14 TLV Hotel,Tel,8.6,769,3417,2,0,1,0,1,1,0,1
-Yafo 35 Apartments By IndigInn,West,8.5,506,2798,2,0,1,0,1,1,0,1
-Sun City Hotel,Tel,7.1,338,2107,2,0,1,0,1,1,0,1
-Al Mutran Guest House,Nazareth,8.6,413,1815,2,0,1,0,1,1,0,1
-The American Colony Hotel - Small Luxury Hotels of the World,East,8.7,998,6143,2,0,1,0,1,1,0,1
-Hotel Nordoy By 7Minds,Neve,8.9,1,7132,2,1,1,1,1,1,0,1
-Cucu Hotel By 7Minds,Tel,9.0,1,5046,2,0,1,1,1,1,0,1
-Mike's House,West,8.8,465,2362,2,0,1,0,1,1,0,1
-Loui Hotel Haifa,Haifa,6.9,51,1881,2,0,1,1,1,1,0,1
-Desert View,Yeroẖam,9.1,180,2907,2,0,1,0,1,1,0,1
-Setai Sea Of Galilee,Ein,7.6,1,14957,2,1,1,0,1,0,0,1
-Lavender In The Mountains,Ramot,8.1,145,3600,2,0,1,1,1,1,0,1
-Sadot Hotel Ben Gurion Airport - an Atlas Boutique Hotel,Assaf,8.5,731,3426,2,0,1,1,1,1,0,1
-Estate Spa - Boutique Hotel,Rechovot,8.9,683,5026,2,0,1,0,1,1,0,1
-Honny - Boutique Hotel,Amirim,8.9,222,4192,2,1,1,0,1,1,0,1
-Zemer Lodging,Sede,9.3,50,4290,2,0,1,0,1,1,0,1
-צימר נוף להר,Shlomi,9.3,23,6150,2,0,1,0,1,1,0,1
-Avigail Guest House,Yavneʼel,9.4,172,2846,2,0,1,1,1,1,0,1
-Nof kinnert,Moshav,8.9,182,4751,2,0,1,1,1,1,0,1
-Noa'm Bagalil,Peqi,8.9,91,4320,2,0,1,1,1,1,0,1
-Beit Shalom Historical boutique Hotel,Metulla,8.6,149,4761,2,0,1,0,1,1,0,1
-Bachar House By 7Minds,Neve,9.4,353,5501,2,1,1,0,1,0,0,1
+name,sub location,rating,reviewers amount,Price,Max people,Breakfast,Free Cancellations,pets,wifi,kitchen,parking,air conditioning,sub_location_latitude,sub_location_longitude,temperature,feelslike
+anat,tel,10,100,100000,4,1,1,1,1,1,1,1,11.1,22.2,100,100
+anat,tel,10,100,100000,40,1,1,1,1,1,1,1,11.1,22.2,100,100
+anat,tel,10,100,100000,4,1,1,1,0,1,1,0,11.1,22.2,100,100
+
+
+
