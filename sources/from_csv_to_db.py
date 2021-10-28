@@ -64,7 +64,7 @@ def insert_to_db(from_date, to_date, location):
     #                                         )'''
     #             )
 
-    csv_file = open(FILE_NAME, "r", encoding="utf-8")
+    csv_file = open('output_files/'+FILE_NAME, "r", encoding="utf-8")
     reader = csv.DictReader(csv_file)
     now = datetime.now()
     formatted_date = now.strftime('%Y-%m-%d %H:%M:%S')

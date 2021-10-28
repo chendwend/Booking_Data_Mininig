@@ -1,10 +1,11 @@
 from sources.from_csv_to_db import insert_to_db
-from utilities.config import WEB_SOURCE
+from utilities.config import WEB_SOURCE, FILE_NAME
 from sources.source_page import Website
 from time import perf_counter
 from datetime import datetime
 import argparse
 import sys
+import os
 from sources.weather_api import weather_api
 
 
@@ -58,8 +59,9 @@ if __name__ == '__main__':
     website.select_date(args.start_date, args.end_date)
     data, pages = website.get_all_data()
     website.teardown()
-    data.to_csv('data.csv', index=False)
-    weather_api('data.csv')
+    os.chdir('output_files')
+    data.to_csv(FILE_NAME, index=False)
+    weather_api(FILE_NAME)
     insert_to_db(args.start_date, args.end_date, args.destination)
     time = perf_counter() - start
     print(
