@@ -1,26 +1,1079 @@
 name,sub location,rating,reviewers amount,price,breakfast,free cancellation,pets,wifi,kitchen,parking,air conditioning
-Classik Hotel Alexander Plaza, Berlin,8.5,574,2377,1,0,1,1,1,0,0
-relexa hotel München, Munich,8.3,2,2946,0,0,1,1,0,0,1
-Europa Hotel Kühlungsborn,Kühlungsborn,8.5,2,3359,1,1,0,1,1,0,0
-Hotel Rheingold, Düsseldorf,6.5,882,2904,1,0,0,1,0,0,0
-Am Achterwasser DORF 12,Rankwitz,7.6,142,1642,1,0,1,1,1,0,0
-Der schöne Asten - Resort Winterberg, Winterberg,7.3,1,2301,0,0,1,1,0,0,0
-Café Orth,Westerland,8.0,159,2166,1,0,1,1,0,0,0
-Hotel Bett und Buch, Berlin,8.6,345,1908,1,0,0,1,0,0,0
-Baltic House Timmendorf,Timmendorfer Strand,8.6,96,2486,1,0,1,1,1,0,0
-Ferienhaus Butterfly,Garmisch-Partenkirchen,8.4,256,1776,1,0,0,1,1,0,0
-Hotel Kolossos Düsseldorf - Neuss,Neuss,8.0,225,2515,1,0,0,1,1,0,0
-Klassik Appartements,Helgoland,7.6,180,2619,1,0,1,1,1,0,0
-Ferienhauspark Asgard im Dampland,Damp,7.3,1,2959,0,0,1,1,1,0,0
-Heaven House Timmendorf,Timmendorfer Strand,8.6,55,2109,1,0,1,1,1,0,0
-EastSeven Berlin, Berlin,9.0,1,2178,0,0,0,1,1,0,0
-Hotel Residenz Waldoase,Ahlbeck,8.3,496,1893,1,0,0,1,1,0,0
-Speedys Gästehaus direkt am Brünnchen,Herresbach,9.6,359,2376,0,0,1,1,1,0,0
-Familien Aparthotel Panoramic,Bad Lauterberg,6.8,462,2509,0,0,0,1,0,0,0
-Inselhotel Cornelius,Norderney,7.6,84,2723,1,1,0,0,0,0,0
-Hotel Paintner,Germering,8.1,168,2098,0,1,1,1,0,0,0
-Hotel Im Tannengrund,Langelsheim,7.7,614,3551,0,1,1,1,0,0,0
-Germina Apart,Oberhof,8.9,176,1716,1,0,0,1,1,0,0
-smûk - Luxus Dachgeschoss,Westerland,9.4,41,2797,0,0,0,1,1,0,0
-THE FLAG München M., Munich,8.6,1,2736,0,0,1,1,1,0,0
-Insel Landhaus Bernstein,Gager,9.1,11,3773,1,0,1,1,1,0,0
+GRONERS Leipzig, Leipzig,9.0,1,2517,0,0,1,1,1,0,1
+relexa hotel München, Munich,8.3,2,3451,0,0,1,1,0,0,1
+Hotel Sylter Blaumuschel,Westerland,8.9,863,3828,1,1,1,1,0,1,1
+Ferienpark Scharmützelsee,Wendisch Rietz,8.4,501,2262,1,0,1,1,0,1,1
+Europa Hotel Kühlungsborn,Kühlungsborn,8.5,2,3883,1,1,0,1,0,1,1
+Der schöne Asten - Resort Winterberg, Winterberg,7.3,1,2808,1,1,1,1,0,1,1
+Café Orth,Westerland,8.0,158,2525,1,0,1,1,0,0,1
+Hotel Bett und Buch, Berlin,8.6,346,2223,1,0,0,1,0,1,1
+Haus Kaiser,Rottach-Egern,8.8,200,4308,1,1,1,1,1,1,1
+Am Achterwasser DORF 12,Rankwitz,7.5,143,1914,1,0,1,1,1,1,1
+Rugard Thermal Strandhotel,Binz,7.4,1,4578,1,1,0,1,0,1,1
+Hotel Atlantik,Borkum,7.0,551,2897,1,1,1,1,0,0,1
+Ferienhaus Butterfly,Garmisch-Partenkirchen,8.4,257,2069,1,0,0,1,1,1,1
+Hotel Kolossos Düsseldorf - Neuss,Neuss,8.0,225,2771,1,0,0,1,0,1,1
+Klassik Appartements,Helgoland,7.6,180,3052,1,0,1,1,0,0,1
+Ferienhauspark Asgard im Dampland,Damp,7.3,1,3362,0,0,1,1,1,1,1
+Germina Apart,Oberhof,8.9,176,1986,1,0,0,1,1,1,1
+Heaven House Timmendorf,Timmendorfer Strand,8.6,56,2457,1,0,1,1,1,1,1
+Speedys Gästehaus direkt am Brünnchen,Herresbach,9.6,359,2752,0,0,1,1,1,1,1
+Ferienwohnungen am Rosenhof,Kühlungsborn,7.9,88,1292,1,0,1,1,1,1,1
+Familien Aparthotel Panoramic,Bad Lauterberg,6.8,462,2924,0,0,0,1,0,1,1
+Inselhotel Cornelius,Norderney,7.6,84,2813,1,1,0,0,0,0,1
+Hotel Paintner,Germering,8.2,170,2445,0,1,1,1,0,1,1
+Hotel Sylter Hof,Westerland,8.6,593,4888,1,1,1,1,0,1,1
+Hotel Im Tannengrund,Langelsheim,7.7,615,4138,0,1,1,1,0,1,1
+Hotel Bayerischer Hof,Oberstaufen,8.1,1,3713,1,1,1,1,0,1,1
+Villa Christina,Norderney,8.9,53,2845,0,0,0,1,1,0,1
+smûk - Luxus Dachgeschoss,Westerland,9.4,41,3259,1,0,0,1,1,1,1
+THE FLAG München M., Munich,8.6,1,2697,0,0,1,1,1,1,1
+Ferienhaus Butterfly,Garmisch-Partenkirchen,8.4,257,2069,1,0,0,1,1,1,1
+Insel Landhaus Bernstein,Gager,9.1,11,4397,1,0,1,1,1,1,1
+Bauernhof Lafrenz,Fehmarn,9.1,37,2457,0,0,1,1,1,1,1
+Hotel Residenz Waldoase,Ahlbeck,8.3,497,2189,1,0,0,1,0,1,1
+Aparthotel MyCologne, Cologne,8.9,65,3232,1,0,0,1,0,0,1
+WachtRaum Reutlingen - Altstadt Apartment & Design Rooms an Stadthalle & Marktplatz,Reutlingen,8.9,314,2211,1,0,0,1,1,1,1
+Klassik Appartements,Helgoland,7.6,180,3052,1,0,1,1,0,0,1
+Relitto Boutique und Aparthotel Borkum,Borkum,8.4,184,3362,1,1,1,1,0,1,1
+Timberjacks Kassel Motel, Kassel,8.9,181,3854,1,0,1,1,0,1,1
+Strandhuus Norddeich,Norddeich,9.0,477,2845,1,1,0,1,0,1,1
+Schieferhof, Schmallenberg,8.3,118,2479,1,0,1,1,0,1,1
+Hotel Pension Am Hafen,Norddeich,8.3,450,2340,1,0,1,1,0,1,1
+Haus Nordland,Langeoog,9.0,67,3362,0,0,1,1,1,0,1
+Europa Pension zum Grünen Baum,Rust,8.9,459,6440,0,0,0,1,0,1,1
+Haus Windhook,Dierhagen,8.6,381,2069,1,0,1,1,1,1,1
+Locanda Boutique Hotel,Stollberg,9.0,91,3104,1,1,1,1,0,1,1
+Uthland EG,Westerland,8.5,46,1759,0,0,1,1,1,1,1
+Villa Fresena,Norderney,8.0,1,2767,1,0,1,1,1,0,1
+Trip Inn Hotel Messe Westend, Frankfurt/Main,9.2,32,3078,1,0,0,1,0,0,1
+Haus OF,Binz,8.4,141,1423,1,0,0,1,1,1,1
+Pension Norddeich & Ferienwohnungen Strandglück,Norden,9.3,17,2409,1,0,1,1,1,1,1
+Nordlichthuus,Tönning,8.4,36,1552,1,0,1,1,1,1,1
+Authentiek Eifelhuis,Hecken,,,2941,0,0,1,1,1,1,1
+Authentiek Eifelhuis,Hecken,8.4,36,2941,0,0,1,1,1,1,1
+PENSION zur alten Gärtnerei,Reichenbach im Vogtland,8.3,100,1552,1,0,1,1,1,1,1
+A-Partments, Cologne,5.3,808,2482,1,0,0,1,1,0,1
+Five Elements Hostel Frankfurt, Frankfurt/Main,7.8,3,1015,1,1,0,1,1,0,1
+Germina Apart,Oberhof,8.9,176,1986,1,0,0,1,1,1,1
+Casa Manderscheid,Manderscheid,9.6,42,3521,0,0,0,1,1,1,1
+"Zwischen Erfurt, Weimar & Thüringer Wald",Elleben,9.7,49,1500,1,0,1,1,1,1,1
+Baltic House Timmendorf,Timmendorfer Strand,8.6,96,2897,1,0,1,1,1,1,1
+Gästehaus berge,Aschau im Chiemgau,9.2,64,4914,1,0,1,1,1,1,1
+Panoramahotel Lilienstein,Königstein an der Elbe,6.7,596,2734,1,1,1,1,0,1,1
+Heaven House Timmendorf,Timmendorfer Strand,8.6,56,2457,1,0,1,1,1,1,1
+Haus-Wolter,Goslar,9.4,43,1513,1,0,0,1,1,1,1
+Apartment Mittendrin in Bad Harzburg,Bad Harzburg,9.7,37,1810,1,0,0,1,1,1,1
+Ostseebrise-Fehmarn,Fehmarn,9.4,35,1810,1,0,0,1,1,1,1
+Apartment in der Alexandrinenstrasse,Warnemünde,7.6,93,2154,1,0,1,0,1,0,1
+Strandhotel Senftenberger See,Senftenberg,8.5,620,3412,0,1,0,1,0,1,1
+Hotel Sonnenmatte nahe Badeparadies Schwarzwald,Titisee-Neustadt,6.3,1,1866,0,0,0,1,0,1,1
+Villa Usedom,Heringsdorf,8.2,420,2638,1,0,1,1,1,1,1
+Smarthotel Flamingo,Gießen,7.4,131,2154,1,0,1,1,0,1,1
+Haus Bergblick,Mauth,8.8,17,1616,1,0,1,1,1,1,1
+Appartement Marianne,Westerland,9.1,17,2095,1,0,0,1,1,1,1
+Haus H Stangassinger Apartments,Berchtesgaden,8.3,52,2457,1,0,1,1,1,0,1
+Ferienwohnung Gaffelschoner,Hohen Wieschendorf,8.9,24,1127,0,0,0,1,1,1,1
+Strandhotel Dagebüll,Dagebüll,8.0,1,2948,1,1,1,1,0,1,1
+Hotel La Fleur,Überlingen,7.6,417,1888,1,0,0,1,0,0,1
+Hotel Villa Weststrand,Borkum,8.2,396,2232,1,1,1,1,0,0,1
+Das Märchenhaus,Braunlage,8.7,178,1565,0,0,0,1,1,0,1
+Ferienapartment Usedom,Ostseebad Koserow,8.2,37,1164,0,0,0,0,1,1,1
+Adonde,Neuried,9.7,24,3695,0,0,1,1,1,1,1
+Ferienwohnung Kraft,Clausthal-Zellerfeld,9.2,77,1500,1,0,0,1,1,1,1
+Budget-Hotel Atlantik,Celle,7.7,550,1994,1,0,1,1,1,1,1
+Speedys Gästehaus direkt am Brünnchen,Herresbach,9.6,359,2752,0,0,1,1,1,1,1
+Landhaus Julia,Kobern-Gondorf,9.7,285,2250,1,1,0,1,1,1,1
+Landhaus Haveltreff,Caputh,7.8,290,6466,0,0,1,1,0,0,1
+Häcker´s Grand Hotel,Bad Ems,8.5,566,5294,0,0,1,1,0,1,1
+ReetTraum Prerow,Prerow,8.9,27,2893,1,0,0,1,1,1,1
+Hotel Zum grünen Kranz,Zell an der Mosel,8.7,144,3052,1,1,1,1,0,1,1
+Ferienwohnungen am Rosenhof,Kühlungsborn,7.9,88,1292,1,0,1,1,1,1,1
+Hamburger Alm Hotel St. Pauli, Hamburg,5.8,371,2043,1,0,0,1,0,1,1
+Apartmentanlage Seezeichen,Ahrenshoop,8.4,386,2017,1,0,1,1,1,1,1
+Appartementhaus Martin,Badenweiler,8.7,283,1681,1,0,0,1,1,1,1
+Lodge am Meer,Glücksburg,9.1,702,3192,1,1,0,1,0,1,1
+Hotel LACIN, Nürnberg,8.5,368,2005,1,0,0,1,0,1,1
+Ferienwohnung Königswinter,Königswinter,9.3,34,1862,0,0,0,1,1,1,1
+Apartments im Ferienhaus zum alten Spital,Dornstetten,9.5,19,2618,1,0,1,0,1,0,1
+Altes Forsthaus Braunlage,Braunlage,7.7,220,1903,0,1,1,1,0,1,1
+Gästehaus am Wasserturm, Lüneburg,8.5,196,2494,0,0,1,1,1,1,1
+Hanse Haus Pension,Greifswald,6.9,440,1552,1,0,0,1,1,1,1
+CLOUD No7 LOFTS, Stuttgart,8.1,67,2491,0,0,0,1,0,0,1
+Apartment Viktoria,Püttlingen,7.5,44,1035,1,0,1,1,1,1,1
+Ferienresort Texas MV,Kirch Jesar,8.0,387,2173,1,0,1,1,0,1,1
+Wohnen im Hühnerhaus,Thale,9.2,71,1241,1,0,1,1,1,1,1
+Altstadt Ferienwohnung Wagner,Limburg an der Lahn,9.6,79,2043,1,0,1,1,1,1,1
+The Liberty,Bremerhaven,8.6,2,3628,1,1,1,1,0,1,1
+"""Strand-Gut""",Börgerende-Rethwisch,8.8,158,1293,1,0,0,1,1,1,1
+Pension Holmer Moorhof,Hartenholm,8.6,103,1810,1,0,1,1,1,1,1
+Allee Apartment,Baden-Baden,8.5,47,3233,1,0,1,1,1,1,1
+Ferienwohnung Waldeck am Edersee,Waldeck,8.4,29,2561,1,0,0,1,1,1,1
+Villa Christina,Norderney,8.9,53,2845,0,0,0,1,1,0,1
+Luminos,Warnemünde,7.3,41,1681,1,0,0,1,1,1,1
+Pension Ziemann,Nartum,8.2,84,1391,0,0,0,1,1,1,1
+Domizil, Bremen,7.5,120,1611,1,0,0,1,1,0,1
+Eschenhof,Syke,8.8,66,1759,1,0,0,1,0,1,1
+Ferienwohnung Ohanna Goslar,Goslar,9.2,29,1179,1,0,0,1,1,1,1
+smûk - Luxus Dachgeschoss,Westerland,9.4,41,3259,1,0,0,1,1,1,1
+FF&E Hotel Bavaria,Fürth,6.8,949,1457,0,1,1,1,0,1,1
+Ferienwohnung von Postel,Büsumer Deichhausen,8.6,12,1164,1,0,0,1,1,1,1
+Wolfˋs Apartment,Neubeuern,9.6,115,1323,0,0,1,1,1,1,1
+Aparthotel Deutscher Kaiser Ferienwohnungen,Kurort Oberwiesenthal,9.0,127,1324,0,0,0,1,1,1,1
+Boardinghaus P5-Heilbronn,Heilbronn,8.2,15,2561,1,0,0,0,1,1,1
+Hotel Oranien,Nastätten,8.6,66,2043,0,1,1,1,0,1,1
+Hotel Schwanau garni,Schwanau,8.1,249,2561,1,1,1,1,0,0,1
+"""Fränkischer Hof"" Hotel in Pegnitz - Inhaber Schlabeck Thomas",Pegnitz,8.8,206,2281,0,0,1,1,0,1,1
+Comfort Apartment Oldenburg,Oldenburg,8.9,298,2302,1,0,0,1,1,1,1
+Seebrise mit Musik und Wein,Meersburg,9.3,225,2198,1,0,0,1,1,1,1
+enjoy hotel Berlin City Messe, Berlin,7.4,284,2069,0,0,0,1,0,0,1
+Hotel abaton,Kirchheim unter Teck,7.9,59,2362,1,0,0,1,0,1,1
+Ferienstudio,Oberwiesenthal,8.0,12,1397,1,1,1,1,0,0,1
+M-Kinghotel, Cologne,6.1,1,2513,0,0,0,1,0,1,1
+Hampton by Hilton Berlin City Centre Alexanderplatz, Berlin,8.3,11,2905,0,1,0,1,0,1,1
+Berghotel Drei Brüder Höhe,Marienberg,7.8,661,4009,1,1,1,1,1,1,1
+COR-Resort - Boutique Villa,Brannenburg,9.2,314,3215,1,1,1,1,0,1,1
+BRISTOL Hotel Bad Kissingen,Bad Kissingen,6.7,1,2819,1,1,1,1,0,1,1
+"Eifelferienwohnungen ""Familie Saxler""",Bereborn,9.4,58,1429,0,0,0,1,1,1,1
+Hotel Luise Mannheim - by SuperFly Hotels, Mannheim,7.6,1,1687,0,0,1,1,0,1,1
+THE FLAG München M., Munich,8.6,1,2697,0,0,1,1,1,1,1
+Günzburg City,Günzburg,9.0,2,2328,0,1,0,1,0,1,1
+Hotel Garni Stadt Milin,Reichenbach im Vogtland,8.2,316,1825,1,0,1,1,0,1,1
+pentahotel Leipzig, Leipzig,8.3,3,3298,0,0,1,1,0,1,1
+Gästehaus Siebert,Lobbe,8.9,108,1940,1,0,0,1,1,1,1
+Hotel Restaurant Da Franco,Rastatt,7.6,529,2198,1,1,1,1,1,1,1
+Insel Landhaus Bernstein,Gager,9.1,11,4397,1,0,1,1,1,1,1
+City Partner Central-Hotel Wuppertal,Wuppertal,8.5,510,2291,1,0,1,1,0,1,1
+Hotel Agat Hofheim-Wallau,Hofheim am Taunus,7.1,241,1611,1,0,1,1,0,0,1
+Boutique Hotel Societe,Baden-Baden,8.4,899,1851,1,1,1,1,0,1,1
+Helvetia Hotel Munich City Center, Munich,7.8,965,2208,0,0,0,1,0,0,1
+Landhaus Kaltenborn,Trebsen,8.8,35,2494,1,0,1,1,1,1,1
+Ferienwohnung Maria Waldblick,Burtenbach,9.2,40,2457,0,0,0,1,1,1,1
+ArtHotel City, Nürnberg,8.1,756,2705,1,0,1,1,0,1,1
+Haus Lavendel,Lancken,8.9,33,2069,0,0,0,1,1,1,1
+AMERON Köln Hotel Regent, Cologne,8.7,1,3596,1,0,1,1,0,1,1
+Öko-Apartments Casa da Enzo,Goslar,7.8,200,1895,1,0,0,1,1,1,1
+FeWo`s Katharina,Bremerhaven,7.0,182,1940,1,0,0,1,1,1,1
+Ferienwohnung Alpensonne,Oberstdorf,7.7,217,1976,0,0,1,1,1,1,1
+Carl.22 City Appartements,Eisenach,9.4,167,1718,0,0,1,1,1,1,1
+Hotel Sylter Hof Berlin Superior, Berlin,8.4,5,2755,0,0,1,1,0,1,1
+Gästehaus Hanseat,Bremerhaven,7.2,291,2069,1,0,0,1,0,1,1
+Arotel Best living Nürnberg, Nürnberg,7.6,845,2154,1,0,1,1,0,1,1
+Villa Monsei,Bad Schandau,8.9,177,2328,1,0,1,1,1,1,1
+Ferienwohnung Hugo,Zempin,8.6,14,1513,0,0,0,0,1,1,1
+Roomingtons Laichingen Alb,Laichingen,8.8,467,1810,1,0,1,1,0,1,1
+Hotel Landgasthof Blume,Lichtenau,8.2,740,1980,0,1,0,1,0,1,1
+WachtRaum Reutlingen - Altstadt Apartment & Design Rooms an Stadthalle & Marktplatz,Reutlingen,8.9,314,2211,1,0,0,1,1,1,1
+Hotel Rose,Weißenburg in Bayern,7.6,648,1906,1,1,1,1,0,0,1
+SK Apartments -Apartment mit 2 Schlafzimmern-Option auf EP Eintrittskart,Rust,9.3,328,3990,1,0,0,1,1,1,1
+Milde Hotel,Kalbe,8.0,111,2043,0,1,0,1,0,1,1
+Hotel Garni Rodenbach,Rodenbach,8.3,225,2198,1,0,1,1,0,1,1
+Appartements Katharina,Bremerhaven,7.2,84,1940,1,0,0,1,1,1,1
+Premium Appartement Rosenmöwe Sylt,Wenningstedt,8.0,23,2302,0,0,0,1,1,1,1
+Pension LeLiLa Rust - ex Gästehaus Milella mit EP Ticketgarantie,Rust,8.3,545,3990,1,1,1,1,1,1,1
+Darchinger Hof,Mitterdarching,8.0,454,2302,1,0,0,1,0,1,1
+Seeperle 2,Meersburg,8.2,44,3263,1,0,1,1,1,1,1
+apartment11,Ulm,9.0,51,2584,0,0,1,1,1,1,1
+Landhotel Elterlein,Elterlein,8.1,50,1474,1,0,0,1,1,1,1
+Hotel Restaurant Schmaus,Viechtach,8.0,290,2147,1,1,1,1,0,1,1
+Hotel-Restaurant Gasthaus Bonimeier,Niedergottsau,8.8,160,2684,1,1,0,1,0,1,1
+Ferienwohnung Kirchblick,Langenbrand,9.4,17,1810,0,0,1,1,1,1,1
+B&B Hotel Leipzig-City, Leipzig,8.1,2,1766,1,0,1,1,0,0,1
+Hotel Gut Moschenhof, Düsseldorf,8.5,93,5440,0,0,1,1,0,1,1
+B&B Hotel Dortmund-City,Dortmund,8.1,2,2036,1,0,1,1,0,0,1
+Miralior Apartment Mainz,Mainz,9.3,25,4365,0,0,0,1,1,1,1
+Terminal Park,Bischofsheim,8.0,119,1600,1,0,0,1,0,1,1
+B&B Hotel Aachen-City, Aachen,8.1,550,1578,1,0,1,1,0,1,1
+Hotel Sonnenschein,Herzogsweiler,8.6,114,2793,0,0,1,1,1,1,1
+Hotel Campus At Home,Planegg,8.6,66,3724,1,1,0,1,0,0,1
+Courtyard by Marriott Oberpfaffenhofen Munich South,Gilching,8.6,2,1871,1,0,1,1,0,1,1
+Schwalehof Gästewohnungen,Bönebüttel,8.5,31,1810,1,0,0,1,1,1,1
+Staycity Aparthotels Heidelberg,Heidelberg,8.3,1,2428,1,0,0,1,0,1,1
+Pension Elisabeth am Elberadweg,Prödel,9.4,123,1363,1,0,1,1,0,1,1
+Haus Nordland,Langeoog,9.0,67,3362,0,0,1,1,1,0,1
+B&B Hotel Kempten,Kempten,8.2,928,1604,0,0,1,1,0,0,1
+Zum Fuchsbau,Niederhövels,8.3,74,1286,1,0,1,1,0,1,1
+B&B Hotel Rosenheim,Rosenheim,8.0,3,2191,1,0,1,1,0,1,1
+Grand Palace Hotel Hannover, Hannover,7.9,1,3841,0,1,0,1,0,0,1
+B&B Hotel Hamm,Hamm,8.0,1,1658,0,0,1,1,0,1,1
+Haus Windhook,Dierhagen,8.6,381,2069,1,0,1,1,1,1,1
+Hotel Montana Lauenau,Lauenau,8.1,393,2198,1,0,1,1,0,1,1
+B&B Hotel Hannover-City,Hannover,8.4,886,1267,1,0,1,1,0,0,1
+B&B Hotel Ravensburg,Ravensburg,8.0,665,1862,1,0,1,1,0,1,1
+B&B Hotel Nürnberg-City, Nürnberg,8.3,3,1278,0,0,1,1,0,1,1
+ibis budget Dortmund Airport,Holzwickede,7.1,2,1500,1,0,1,1,0,1,1
+Flemings Express Hotel Wuppertal,Wuppertal,8.4,1,2511,0,0,0,1,0,1,1
+Hotel Gasthaus Kreuz Post,Staufen im Breisgau,8.3,154,3362,1,1,1,1,0,1,1
+Romantik Hotel Alte Posthalterei,Zusmarshausen,8.8,70,3995,1,0,1,1,0,1,1
+Landgasthaus Alter Posthof,Halsenbach,8.6,499,1759,0,0,1,1,1,1,1
+B&B Hotel Bremen-Überseestadt, Bremen,8.2,1,1888,1,0,1,1,0,1,1
+eXo Square Heidelberg/Schwetzingen - by SuperFly Hotels,Schwetzingen,7.8,43,1465,0,0,1,0,0,0,1
+1907,Neuenstadt am Kocher,7.9,277,2308,0,1,1,1,0,1,1
+Gutshof Havelland,Ketzin,7.5,351,2187,0,0,0,1,0,1,1
+Hotel Am Wald,Elgersburg,8.5,354,2974,0,1,0,1,0,1,1
+Wein und Gästehaus Marlene Pohl,Kinheim,8.7,39,2069,1,1,0,1,0,1,1
+Ferienwohnung Erzgebirgswohnung Götze,Glashütte,9.7,4,2379,0,0,0,1,1,1,1
+Hotel Schmiedhubers,Engelsberg,8.8,99,2716,1,0,1,1,0,1,1
+B&B Hotel Wolfsburg-Weyhausen,Wolfsburg,8.2,546,1799,1,0,1,1,0,1,1
+Hotel Gasthof am Selteltor,Wiesensteig,7.9,194,2793,1,1,1,1,0,0,1
+N8-Hotel by Villa-Dörr,Wörrstadt,8.3,53,2354,1,0,0,1,1,1,1
+Villa Fresena,Norderney,8.5,46,2767,1,0,1,1,1,0,1
+Wellness & Landhotel Prinz- Wellness & Romantik,Anger,8.2,293,3362,0,0,0,1,0,1,1
+Gästehaus Sonneck,Bischofsgrün,8.8,102,1914,1,0,0,1,1,1,1
+Ferienwohnung Küper,Getelo,8.9,15,1571,0,0,0,1,1,1,1
+Schloss Grube,Bad Wilsnack,9.0,408,3737,1,0,1,1,1,1,1
+B&B Hotel Rust-Ettenheim,Ettenheim,8.2,916,1932,1,0,1,1,0,1,1
+Haus OF,Binz,9.2,32,1423,1,0,0,1,1,1,1
+Vogelhaus Gobbin,Lancken-Granitz,9.3,102,1862,1,0,0,1,1,1,1
+JustStay Hotel Solingen,Solingen,8.7,190,2708,1,0,0,1,0,0,1
+Landgasthof Ochsen,Sinzheim,8.2,353,2980,1,1,0,1,0,1,1
+Nigel Restaurant & Hotel im Wendland,Bergen an der Dumme,8.4,213,2840,0,0,1,1,0,1,1
+NH Collection Dresden Altmarkt, Dresden,8.7,6,2644,0,0,1,1,0,1,1
+Hotel garni Zwickau-Mosel,Mülsen,7.7,429,1733,1,0,1,1,1,1,1
+Hotel Ammerländer Hof,Westerstede,7.8,315,2302,0,1,1,1,0,1,1
+Hotel Kuhfelder Hof,Kuhfelde,7.9,382,1655,1,0,1,1,0,1,1
+Landguthotel-Barbarossa-Garni bei Hanau,Rodenbach,8.0,261,2211,1,1,1,1,0,1,1
+Hotel Panorama,Niederfüllbach,7.9,312,2770,0,0,1,1,0,0,1
+Gasthof Hotel Bauer,Hersbruck,8.4,380,2845,1,1,1,1,0,1,1
+Motel Herbold,Knüllwald,8.0,669,1681,0,0,1,1,0,1,1
+Quality Hotel Dresden West,Kesselsdorf,7.3,229,1604,1,0,1,1,0,1,1
+Thurner Wirtshaus,Sankt Märgen,8.4,302,1935,0,1,1,1,0,1,1
+Melvi Hotel Göppingen,Göppingen,7.7,252,1522,0,0,1,1,0,0,1
+NH Collection Nürnberg City, Nürnberg,8.5,3,2544,1,0,1,1,0,1,1
+NH Collection Nürnberg City, Nürnberg,8.5,3,2544,1,0,1,1,0,1,1
+NH Collection Frankfurt City, Frankfurt/Main,8.4,5,4595,0,0,1,1,0,1,1
+"Holiday Inn Express Stuttgart-Waiblingen, an IHG Hotel",Waiblingen,8.5,862,2960,1,1,1,1,0,1,1
+The Little Britain Inn,Linz am Rhein,9.2,83,2586,1,0,1,1,0,1,1
+Nordlichthuus,Tönning,9.3,17,1552,1,0,1,1,1,1,1
+Louis Hotels,Schmitten,7.5,152,1513,0,0,1,1,0,1,1
+Hotel Best one,Roßdorf,7.0,228,1681,1,0,0,1,0,1,1
+Akzent Hotel Borchers,Dörpen,7.3,118,2601,0,1,1,1,0,1,1
+Hotel Birkenwerder,Birkenwerder,7.5,231,1843,1,1,1,1,0,1,1
+zeitlos Hotel und Restaurant am Fuchsbach,Pattensen,7.9,600,1564,0,1,1,1,0,1,1
+Authentiek Eifelhuis,Hecken,8.4,36,2941,0,0,1,1,1,1,1
+Hotel Deutscher Hof,Babenhausen,8.7,334,2003,1,1,1,1,0,1,1
+Forsthof,Steinheim an der Murr,7.5,204,2793,0,1,1,1,0,1,1
+Hotel l'adresse garni,Heusweiler,8.8,208,2026,1,0,1,1,0,1,1
+Motel 44,Geseke,8.4,533,1401,0,0,0,1,0,1,1
+Hotel Residenz Stockstadt,Stockstadt am Main,9.0,487,2433,1,1,0,1,0,1,1
+Stadthotel Geis,Bad Neustadt an der Saale,8.2,524,2845,1,1,0,1,1,1,1
+Michel Hotel Frankfurt Maintal,Maintal,7.9,1,2205,0,1,1,1,0,1,1
+Hotel am Schlosspark Herten,Herten,6.9,517,1699,1,0,1,1,0,1,1
+GRONERS Leipzig, Leipzig,9.0,1,2517,0,0,1,1,1,0,1
+Amaro Hotel,Bergkirchen,8.5,540,2236,0,0,0,1,0,1,1
+Hotel Bildungsblick,Kirchseeon,8.7,356,2408,1,1,0,1,0,1,1
+Hotel Resort Schloss Auerstedt,Auerstedt,8.6,201,2597,0,0,1,1,0,1,1
+Leezdorfer Hof,Leezdorf,7.9,3,1490,0,1,1,1,0,1,1
+NH Collection Köln Mediapark, Cologne,8.4,2,3115,0,0,1,1,0,1,1
+Blockhaus Stamsried,Stamsried,8.9,142,2089,1,0,1,1,1,1,1
+Zur Linde,Heede,7.7,187,2069,1,0,0,1,0,1,1
+Hotel New In,Gaimersheim,8.3,1,2246,1,0,0,1,0,1,1
+Novum Hotel Sportlife,Elmshorn,7.1,451,1796,0,0,0,1,0,1,1
+Hotel Atlas Halle,Halle an der Saale,8.1,941,1810,1,0,1,1,0,1,1
+Gasthof zum Rödelseer Schwan,Rödelsee,8.1,345,2573,1,1,0,1,0,1,1
+A-Partments, Cologne,5.3,808,2482,1,0,0,1,1,0,1
+REGIOHOTEL Wolmirstedter Hof Wolmirstedt,Wolmirstedt,8.1,533,1872,1,0,0,1,0,1,1
+Lechpark Hotel,Untermeitingen,7.4,309,3185,1,1,1,1,0,1,1
+Ferienwohnung im Harz Wohlfühltempel,Winzenburg,9.4,36,1513,1,0,1,1,1,1,1
+Rheinhessen Inn GmbH,Wörrstadt,7.5,184,2069,1,0,0,1,0,1,1
+Hotel Reiter Bräu,Wartenberg,8.2,164,2302,1,1,1,1,0,1,1
+Casa Manderscheid,Manderscheid,9.6,42,3521,0,0,0,1,1,1,1
+Comfort Hotel Lüneburg,Melbeck,7.8,439,2339,1,1,1,1,0,1,1
+Residenz Hotel Neu Wulmstorf,Neu Wulmstorf,8.6,364,2678,1,1,1,1,0,1,1
+Hausele,Sulzbach an der Murr,7.8,31,1781,1,0,0,1,1,0,1
+Landgasthaus Löwen mit Gästehaus,Holzhausen,8.0,274,1810,1,0,0,1,0,1,1
+Hotel Waldlust B&B,Schwandorf in Bayern,8.3,100,2923,1,1,1,1,0,1,1
+Hotel Wandinger Hof by Lehmann Hotels,Markt Schwaben,8.1,1,2265,1,0,1,1,0,1,1
+LOOK Hotel & Rooms,Crailsheim,7.2,154,2561,1,0,0,1,0,0,1
+Boutique Hotel Atrium München, Munich,8.1,3,3380,0,0,1,1,0,1,1
+Hotel Am Dalwigker Tor,Korbach,9.1,614,2457,0,0,1,1,0,1,1
+Kärntner Stub'n,Königslutter am Elm,8.0,294,1901,1,0,1,1,0,1,1
+Montana Hotel Senden,Senden,8.0,451,2354,1,0,1,1,0,1,1
+ACHAT Hotel Buchholz Hamburg,Buchholz in der Nordheide,7.7,599,2010,0,0,1,1,0,1,1
+Hotel Restaurant Nehrener Hof,Nehren,7.8,442,2405,1,0,1,1,0,0,1
+Hotel Strandräuber,Kalifornien,8.6,598,1810,1,0,0,1,0,1,1
+NH Collection München Bavaria, Munich,8.5,3,4182,1,0,1,1,0,1,1
+Brauerei Gasthof Hotel Sperber-Bräu 3 Sterne-Superior,Sulzbach-Rosenberg,8.5,560,2594,1,1,1,1,0,1,1
+Best Pension,Glückstadt,8.4,475,1785,1,0,1,1,1,1,1
+Hotel Rhön Residence,Dipperz,7.9,1,3325,0,1,1,1,0,1,1
+Gartenhotel Fettehenne,Erkrath,7.7,14,2394,0,0,1,1,0,1,1
+Schloßhotel Althörnitz,Bertsdorf,7.5,888,1893,0,1,1,1,0,1,1
+"Zwischen Erfurt, Weimar & Thüringer Wald",Elleben,9.7,49,1500,1,0,1,1,1,1,1
+H24 Hoteltow,Teltow,7.6,542,1832,0,0,1,1,0,1,1
+NH München Airport,Oberding,8.1,3,1663,1,0,1,1,0,1,1
+Motel Inn Simbach,Simbach am Inn,9.0,742,1808,1,0,1,1,0,1,1
+Hotel Altdeutsche Weinstuben,Freyburg,7.0,189,2198,1,1,1,1,0,1,1
+Hotel am Park,Stadtkyll,7.1,572,1729,1,0,1,1,0,1,1
+Baltic House Timmendorf,Timmendorfer Strand,8.6,96,2897,1,0,1,1,1,1,1
+REGIOHOTEL Wittekind Burg,Burg bei Magdeburg,7.9,276,1866,1,0,0,1,0,1,1
+Comfort Hotel Atlantic Muenchen Sued,Ottobrunn,8.1,635,2476,1,0,1,1,0,1,1
+Michel & Friends Hotel Lüneburger Heide,Hodenhagen,6.9,1,1989,0,1,1,1,0,1,1
+Gutshof im Oertzetal Hotel und Restaurant,Hermannsburg,8.4,459,2308,1,1,1,1,0,1,1
+AWA Hotel, Munich,7.9,3,3738,0,0,1,1,0,1,1
+Hotel Kaiserhof,Lehrte,7.8,578,1578,1,0,1,1,1,1,1
+Hotel-Restaurant Zum Schwanen,Wermelskirchen,8.3,199,2433,1,0,0,1,0,1,1
+Hotel Rosengarten Leipzig-Naunhof,Naunhof,7.9,224,1319,1,0,1,1,0,1,1
+Comfort Hotel Bernau,Bernau bei Berlin,8.0,972,2302,1,1,1,1,0,1,1
+Pension ILMHOF,Bad Berka,8.6,301,1966,1,0,0,1,0,1,1
+Flair Hotel Hopfengarten,Miltenberg,8.4,411,3030,1,1,1,1,0,1,1
+NH Berlin Kurfürstendamm, Berlin,8.2,3,1940,0,0,1,1,0,1,1
+Hotel Fasanengarten,Sarstedt,8.5,354,1737,1,0,0,1,0,1,1
+H+ Hotel Leipzig-Halle,Landsberg OT Peißen,8.3,2,1883,0,1,1,1,0,1,1
+Hotel Schlee,Hohenschäftlarn,8.1,635,2302,1,1,1,1,0,1,1
+Das Waldhotel - Genuss & Wellness am Notschreipass,Todtnau,8.6,262,6743,0,1,1,1,0,1,1
+Burgdacherl,Neubeuern,7.7,900,1839,1,0,1,1,0,1,1
+Landhotel Mühle zu Gersbach,Gersbach,8.8,140,3063,0,0,0,1,0,1,1
+Hotel Landgasthof Simon,Waldrach,7.8,120,2017,1,0,1,1,0,1,1
+Motel Schönefeld,Großziethen,7.9,342,1646,1,0,1,1,0,1,1
+Baltic House Timmendorf,Timmendorfer Strand,8.6,96,2897,1,0,1,1,1,1,1
+Saar Galerie,Saarburg,7.9,621,2396,1,0,1,1,0,1,1
+Hotel Rheinischer Hof,Dinklage,8.3,237,2845,1,1,1,1,0,1,1
+Landhaus Schend,Immerath,8.7,262,3621,1,1,0,1,0,1,1
+Balland's Hotel & Restaurant,Lindwedel,8.9,523,2664,1,1,0,1,0,1,1
+Hotel-Gasthof Zur Post,Velburg,8.3,265,2198,0,0,1,1,0,1,1
+Gästehaus berge,Aschau im Chiemgau,9.2,64,4914,1,0,1,1,1,1,1
+Landgasthof zum Muller,Ruderting,9.0,276,2535,1,1,0,1,0,1,1
+Hotel Ristorante Ätna,Ulrichstein,7.1,202,1642,1,1,1,1,0,1,1
+Hotel Lüttje Burg,Lütjenburg,7.6,976,2483,1,1,0,1,0,1,1
+Van der Valk Resort Linstow,Linstow,7.4,1,2671,0,0,1,1,0,1,1
+Hotel Wetterau,Wölfersheim,7.8,74,2767,1,1,0,1,0,1,1
+Vienna House MQ Kronberg im Taunus,Kronberg im Taunus,7.7,117,2255,1,0,1,1,0,1,1
+Hotel Brauerei Gasthof Höhn,Memmelsdorf,8.6,386,2948,1,1,1,1,0,1,1
+Hotel Holst,Sieversen,7.3,342,1992,1,0,1,1,0,1,1
+Landhotel Spornitz,Spornitz,7.2,277,2239,1,0,1,1,0,1,1
+B&S Hotel,Weißenhorn,8.9,329,2535,1,1,1,1,0,1,1
+Waldhotel Albachmühle mit Albacher Stuben,Wasserliesch,8.0,889,2121,1,0,1,1,0,1,1
+Schulz Hotel Berlin Wall at the East Side Gallery, Berlin,8.7,18,2586,1,0,1,1,1,1,1
+Hotel Zur Linde,Hohenlinden,7.6,153,2312,0,0,1,1,0,1,1
+Landhotel Grätz,Emmering,7.7,233,2147,1,0,0,1,0,1,1
+Hotel ZOE Sankt Wendel,Oberthal,6.7,298,1963,1,0,1,1,0,1,1
+Hotel & Pension Aßmann,Hochkirch,8.3,127,1785,1,0,0,1,0,1,1
+Hotel & Restaurant Wilhelm von Nassau,Diez,8.2,949,1853,1,0,0,1,0,1,1
+City Hotel Mark Michelstadt,Michelstadt,7.2,515,2379,1,0,1,1,0,0,1
+the niu Kettle, Stuttgart,8.5,233,1867,0,0,0,1,0,1,1
+Hotel Hochwaldcafe & 4-Witz,Morbach,8.8,430,2974,1,1,1,1,0,1,1
+Haus-Wolter,Goslar,9.4,43,1513,1,0,0,1,1,1,1
+Hotel Greive,Haren,8.6,682,2561,1,1,1,1,0,1,1
+Gasthof Wimmer Weissbräu,Simbach am Inn,7.8,724,1810,1,1,1,1,0,1,1
+Gut Hotel Stadt Beelitz,Beelitz,7.8,398,2819,1,1,1,1,0,1,1
+Steig-Alm Hotel Superior,Bad Marienberg,9.3,145,4038,1,1,1,1,0,1,1
+Hotel Saaletalstuben,Gräfendorf,8.9,158,1862,1,0,0,1,0,1,1
+Apartment Mittendrin in Bad Harzburg,Bad Harzburg,9.7,37,1810,1,0,0,1,1,1,1
+Dorint Resort & Spa Bad Brückenau,Staatsbad Brückenau,8.6,950,5773,0,1,1,1,0,1,1
+B-Hotel,Brüggen,6.4,287,1345,0,0,1,1,0,1,1
+Luga Homes - Stadthaus, Leipzig,8.0,1,1196,1,0,1,1,1,1,1
+Amadeus Boutique Hotel Deutscher Hof,Georgenthal,8.5,605,1909,1,0,1,1,0,1,1
+Hotel Brunnenhaus Schloss Landau,Bad Arolsen,9.2,857,2866,0,1,1,1,0,1,1
+Legend Hotel,Biebesheim,7.1,123,1983,0,0,0,1,0,1,1
+Hotel Sonne29,Ebermannstadt,7.5,441,2224,1,1,1,1,0,1,1
+Libarty Hotels,Weinstadt,8.4,93,2819,1,0,1,1,0,1,1
+Hotel Kammweg,Grossbreitenbach,7.4,722,2431,1,1,1,1,0,1,1
+Hotel Rosenhof bei Bamberg,Kemmern,7.7,617,1976,0,0,1,1,0,1,1
+Landhotel Lembergblick,Feilbingert,8.2,184,2561,0,0,1,1,0,1,1
+AKZENT Hotel Restaurant Roter Ochse,Rhens,8.1,606,2383,0,1,1,1,0,1,1
+Askania Hotel & Brauhaus,Bernburg,8.3,456,2173,1,1,1,1,0,1,1
+Hotel Jägerhof,Mayen,8.1,222,2025,0,0,0,1,0,1,1
+Hotel Reichskrone,Heidenau,7.7,1,1888,1,1,1,1,0,1,1
+Landhaus Schulze,Herzberg am Harz,8.7,549,2827,1,1,1,1,0,1,1
+Landhaus Schulze,Herzberg am Harz,8.7,549,2827,1,1,1,1,0,1,1
+Hotel Sonne Garni,Bad Friedrichshall,8.2,182,2535,1,1,1,1,0,1,1
+Designhotel Kronjuwel,Waldkirch,8.8,490,2561,1,0,0,1,0,1,1
+"Hotel Heuberger Hof, Wehingen",Wehingen,7.5,206,2306,1,1,1,1,1,1,1
+Ostseebrise-Fehmarn,Fehmarn,9.4,35,1810,1,0,0,1,1,1,1
+Hotel zur Post,Landkern,7.6,155,2328,1,1,1,0,0,1,1
+Betsie`s Place,Großsander,8.8,79,1319,0,0,0,1,1,1,1
+Land-gut-Hotel Westerkrug,Wanderup,8.3,631,2354,0,1,0,1,0,1,1
+Soibelmanns Hotel Rügen,Samtens,6.8,1,1940,0,1,1,0,0,1,1
+Arthotel Nagold,Nagold,7.6,68,2379,1,0,0,1,0,1,1
+Apartment in der Alexandrinenstrasse,Warnemünde,7.6,93,2154,1,0,1,0,1,0,1
+Kurhaushotel Bad Salzhausen,Bad Salzhausen,8.2,345,2178,0,1,1,1,0,1,1
+Gasthof Adler,Tennenbronn,8.2,291,1737,0,0,1,1,0,1,1
+Hotel Hessischer Hof - Superior,Butzbach,8.6,600,3233,1,1,1,1,0,1,1
+Hotel Schlemmer,Montabaur,8.1,1,3142,0,1,1,1,0,1,1
+Hotel Villa Altenburg,Pößneck,9.0,563,3207,0,1,1,1,0,1,1
+Hotel Klosterhof,St. Blasien,7.9,347,2418,1,1,1,1,0,1,1
+Nordischer Hof,Krakow am See,8.0,658,2198,1,1,1,1,0,0,1
+Seehotel Schorfheide,Althüttendorf,7.5,807,1862,1,0,1,1,0,1,1
+Hotel Schloessmann,Bad König,7.6,319,2276,1,1,1,0,0,1,1
+Hotel Villa von Sayn Rheinbreitbach,Rheinbreitbach,7.9,270,2302,1,1,0,1,0,1,1
+Landhotel Weisses Ross garni,Bad Brückenau,9.3,271,2439,1,1,0,1,0,1,1
+Hotel Restaurant Zum Alten Ritter,Bad Bodenteich,7.5,180,2483,1,1,1,1,0,1,1
+Haus Schlematal Hotel und Restaurant,Bad Schlema,7.0,236,1759,1,0,1,1,0,1,1
+Hotel Zum Stern,Werben,7.6,497,1712,0,0,1,1,0,1,1
+Best Motel,Vilsbiburg,8.4,118,2609,1,0,1,1,0,1,1
+Hotel & Brauereigasthof Drei Kronen,Memmelsdorf,8.7,386,3170,1,1,1,1,0,1,1
+Moselhotel Weinhaus Simon,Wintrich,8.8,475,1650,1,1,0,1,0,1,1
+Ferien Hotel Fläming,Niemegk,8.1,1,2697,1,0,1,1,0,1,1
+Waldperle Altenbrak Ferienwohnungen,Altenbrak,6.5,41,1852,0,0,1,0,0,1,1
+Hotel-Nachtwächter,Unna,7.2,249,2302,1,0,1,1,0,0,1
+Haus Bergblick,Mauth,8.8,17,1616,1,0,1,1,1,1,1
+Stadthotel Freilassing,Freilassing,8.5,660,2588,0,0,0,1,0,1,1
+Flemings Hotel München-Schwabing, Munich,7.9,2,2760,1,0,1,1,0,1,1
+Carolinger Hüttendorf,Weyer,8.8,385,3440,1,1,1,1,0,1,1
+Landhotel Schöll,Parsberg,8.1,337,2235,1,0,1,1,0,1,1
+Merfelder Hof,Dülmen,7.9,515,1759,0,0,0,1,0,1,1
+Appartement Marianne,Westerland,9.1,17,2095,1,0,0,1,1,1,1
+Hotel Mila,Salach,7.7,116,2089,1,0,1,1,0,1,1
+Gästehaus in der Brückenstraße Jagsthausen,Jagsthausen,7.4,146,2304,1,1,1,1,0,1,1
+Hotel Bergschlößchen,Simmern,8.5,304,3281,1,1,1,1,0,1,1
+Hotel-Restaurant Berghof,Johannesberg,8.6,326,2328,1,1,1,1,0,1,1
+Hotel Stadt Peine,Peine,7.0,855,2043,1,1,1,1,0,1,1
+Weißes Rössel,Mondfeld,7.2,185,1769,0,0,1,1,0,1,1
+Gasthof Linden & Wildkräuterhotel,Windelsbach,8.9,907,1966,1,1,1,1,0,1,1
+Locanda del Castello,Eching,8.2,180,1606,0,0,1,1,0,1,1
+Pension-Maustmühle,Peitz,8.8,287,1940,1,0,0,0,0,1,1
+sevenDays Hotel and Boardinghouse Kirchheim,Kirchheim,8.9,180,2431,1,0,0,1,0,1,1
+"Strandhotel ""Strandhaus La Mar""",Neustadt am Rübenberge,7.2,1,1515,1,0,1,1,0,1,1
+Hotel-Landrestaurant Schnittker,Delbrück,8.2,255,2431,1,0,1,1,0,1,1
+Hotel am Engelberg,Winterbach,8.2,216,2982,0,0,1,1,0,1,1
+NH München Ost Conference Center,Munich,8.1,2,2371,1,0,1,1,0,1,1
+Hotel Reifenstein,Kleinbartloff,8.1,286,1966,1,0,1,1,0,1,1
+Burghotel Witzenhausen,Witzenhausen,7.7,255,2069,1,0,1,1,0,1,1
+Hotel Heidenauer Hof,Heidenau,8.2,348,2121,1,0,1,1,0,1,1
+Hotel Seehalde,Nonnenhorn,8.0,727,2211,0,1,1,1,0,1,1
+"Hotel Restaurant ""Athen""",Münstermaifeld,8.3,154,1681,1,0,1,1,0,1,1
+besttime Hotel Bendorf Koblenz,Bendorf,7.3,94,1495,0,0,0,1,0,1,1
+Haus H Stangassinger Apartments,Berchtesgaden,8.3,52,2457,1,0,1,1,1,0,1
+Hotel Asemann Planegg,Planegg,8.9,523,3769,1,1,1,1,0,1,1
+centra Hotel,Schwedt,8.1,285,2328,1,0,1,1,0,1,1
+Dorint Resort Baltic Hills Usedom,Korswandt,8.3,1,2847,0,1,0,1,0,1,1
+Altes Rathaus Hotel-Restaurant-Café,Wolfhagen,8.6,186,1940,1,0,0,1,0,1,1
+Hotel Zum Löwenbräu,Adelsdorf,8.5,341,3026,1,1,1,1,0,1,1
+Ferienwohnung Gaffelschoner,Hohen Wieschendorf,8.9,24,1127,0,0,0,1,1,1,1
+Bescheider Mühle,Bescheid,7.5,292,2017,1,0,1,1,0,1,1
+Hotel Am Mühlenteich,Schwelm,7.8,135,2474,0,0,1,1,0,0,1
+Hotel Landhaus Berghof,Wenden,9.1,154,2612,0,0,0,1,0,1,1
+Radduscher Hafen,Vetschau,8.0,1,2439,1,1,1,1,0,1,1
+Hotel Weimarer Berg,Apolda,8.0,616,1785,1,0,0,1,0,1,1
+Le petit Palais - Hotel/Pension,Bad Suderode,8.6,275,1629,0,0,0,1,0,1,1
+Haus Herrenweide,Diepholz,7.7,157,2302,1,0,1,1,0,1,1
+Hotel Hagspihl,Quakenbrück,7.9,205,2483,1,1,1,1,0,1,1
+Van der Valk Hotel Berlin Brandenburg,Blankenfelde,8.5,911,3447,0,0,1,1,0,1,1
+Hotel Alttolkewitzer Hof, Dresden,8.0,888,1914,1,0,1,1,0,0,1
+Zeiskamer Mühle,Zeiskam,8.6,432,4035,1,1,1,1,0,1,1
+Central-Hotel Torgau,Torgau,8.1,559,2276,1,0,0,1,0,1,1
+Hotel Kramer,Lennestadt,8.4,274,2561,1,1,0,1,0,1,1
+Donau-Hotel,Sinzing,8.0,238,2302,1,0,1,1,0,1,1
+Hotel An der Sauer,Minden,6.9,270,1219,1,0,1,1,0,1,1
+Hotel An Der Havel,Oranienburg,8.0,1,2431,1,1,1,1,0,1,1
+Hotel An Der Havel,Oranienburg,8.0,1,2431,1,1,1,1,0,1,1
+Hotel Hamburg-Wittenburg van der Valk,Wittenburg,7.5,435,4049,1,0,1,1,0,1,1
+Da Franco - Ristorante & Hotel,Reken,7.2,73,2638,1,1,1,1,0,1,1
+Hotel Restaurant Bürgerklause Tapken,Garrel,8.9,136,2797,1,0,1,1,0,1,1
+Ferienwohnung Gaffelschoner,Hohen Wieschendorf,8.9,24,1127,0,0,0,1,1,1,1
+Zum treuen Bartel,Markgröningen,7.0,140,1611,0,0,1,1,0,1,1
+NH Collection Berlin Mitte Friedrichstrasse, Berlin,8.8,6,4037,0,0,1,1,0,1,1
+Auszeit Das Hotel Himmelkron,Himmelkron,7.1,1,1680,1,0,1,1,0,1,1
+Pension Röhrig,Hirzenach,8.6,150,1550,0,0,1,1,1,1,1
+Hotel-Cafe Rathaus,Bad Abbach,8.3,201,2487,1,1,1,1,0,1,1
+Das Märchenhaus,Braunlage,8.7,178,1565,0,0,0,1,1,0,1
+Hotel Am Moosrain Garni,Eitting,9.5,1,2509,1,0,0,1,0,1,1
+Königsteiner Hof,Königstein in der Oberpfalz,8.4,288,2276,1,1,0,1,0,1,1
+Flair Seehotel Zielow,Ludorf,7.9,501,2638,0,1,1,1,0,1,1
+Ringhotel Zweibruecker Hof,Herdecke,8.5,1,3332,0,1,1,1,0,1,1
+Best Western Hotel Rhön Garden,Poppenhausen,8.1,604,2531,1,0,1,1,0,1,1
+Hotel Wirtshaus am Schloss,Aicha vorm Wald,8.9,90,2948,1,1,0,1,0,1,1
+ART-Hotel Braun,Kirchheimbolanden,8.4,263,3093,1,0,1,1,0,1,1
+Hotel Pappelhof,Weidenbach,7.9,302,1810,1,1,1,1,0,1,1
+Stössels Hotel & Restaurant,Altenmedingen,7.4,181,3414,1,1,1,1,0,1,1
+Schwarzwald Parkhotel,Königsfeld im Schwarzwald,7.2,687,2974,1,1,1,1,0,1,1
+Landhotel Möllhagen,Schülp,8.8,762,3233,1,1,1,1,0,1,1
+Hotel Wittgensteiner Hof,Bad Laasphe,8.1,293,2147,1,0,0,1,0,1,1
+Apartment Leuchtturm 16,Großenbrode,9.4,46,2561,0,0,0,1,1,1,1
+Hotel & Pension Haus Dewenter,Lichtenau,7.8,152,1869,1,0,1,1,0,1,1
+Pension Schulze,Oranienbaum-Wörlitz,7.0,194,1940,1,1,1,1,0,1,1
+Gasthof zur Krone,Bad König,8.3,499,2379,1,1,1,1,0,0,1
+Hotel Platzhirsch,Gaggenau,7.7,206,2224,1,0,0,1,0,1,1
+Hotel zur Bever,Telgte,8.5,477,2265,1,0,1,1,0,1,1
+Hotel Garni am Markt,Neustadt bei Coburg,7.9,219,2871,1,1,1,1,0,1,1
+Hotel Speeter,Weisenheim am Berg,8.3,763,3854,1,1,1,1,0,1,1
+Ferienapartment Usedom,Ostseebad Koserow,8.2,37,1164,0,0,0,0,1,1,1
+Hotel Kipphut,Sarstedt,6.8,378,1578,1,1,1,1,0,1,1
+Pension Grenzenlos,Selfkant,8.1,63,2002,0,0,1,1,0,1,1
+Hotel Landgasthof Adler,Bernau im Schwarzwald,7.6,717,2561,1,0,1,1,0,1,1
+i-Motel,Obertshausen,7.7,863,1112,1,0,0,1,1,1,1
+AVALON Hotelpark Königshof,Königslutter am Elm,7.8,805,2405,1,0,1,1,0,1,1
+Adonde,Neuried,9.7,24,3695,0,0,1,1,1,1,1
+Hotel Englischer Hof,Herzberg am Harz,8.3,374,2742,1,0,1,1,0,1,1
+Hotel Zur Mühle,Bad Brückenau,7.4,290,2638,1,1,1,1,0,1,1
+Comfort Hotel Muenchen Markt Schwaben Georgenhof,Markt Schwaben,8.4,252,2437,0,1,1,1,0,1,1
+Radisson Blu Hotel Hannover, Hannover,8.5,1,3041,0,0,0,1,0,1,1
+"Ferienparadies Waldidylle, Familiengeführt seit 16 Jahren!",Haida,8.4,149,1792,1,0,0,1,1,1,1
+Land-gut-Hotel Zur Brücke,Drolshagen,8.6,328,2678,0,1,1,1,0,1,1
+Landhotel-Neunburg,Neunburg vorm Wald,7.6,396,2043,1,0,0,1,0,0,1
+Hotel Maximilian,Zeitz,7.8,333,1769,1,0,1,1,0,1,1
+Zur Rennbahn,Drage,7.7,377,1810,1,0,1,1,0,1,1
+Landhotel Sonnenhof im Wendland,Clenze,8.6,164,2483,1,1,1,1,0,1,1
+Hotel Restaurant Kastanjehoff,Timmel,8.1,166,2043,1,0,1,1,0,1,1
+Schwarzwaldhotel / Wolfach,Wolfach,8.9,479,2121,1,1,1,1,0,1,1
+Hotel garni Landhaus Burs,Löningen,8.4,323,1423,1,0,1,1,0,1,1
+Median Hotel Hannover Lehrte,Lehrte,7.9,810,2450,1,0,1,1,0,1,1
+"Hotel & Restaurant ""Deutscher Kaiser""",Perleberg,8.5,850,1733,1,0,1,1,0,1,1
+Hotel Vorderburg,Schlitz,8.9,1,2043,1,0,1,1,0,1,1
+Hotel Hanauerhof,Appenweier,8.4,629,2653,1,0,0,1,0,1,1
+An der Stadthalle,Braunschweig,8.3,428,2572,1,0,1,1,1,1,1
+Tannmühle Hotel und Restaurant,Callenberg,8.6,150,2431,1,0,1,1,0,0,1
+Ferienpark Geyersberg,Freyung,6.7,466,1009,1,0,1,1,0,1,1
+ReetTraum Prerow,Prerow,8.9,27,2893,1,0,0,1,1,1,1
+Hotel Rössle,Fürstenberg,7.9,361,2431,1,1,1,1,0,0,1
+Sunibel Inn,Reinheim,8.2,286,1888,1,0,0,1,0,1,1
+Hotel zur Burg,Burg Stargard,8.1,989,2457,1,1,1,1,0,1,1
+Zum neuen Schwan,Walluf,7.9,559,2561,1,1,1,1,0,1,1
+Hotel Schempp,Bobingen,8.2,614,2548,0,1,1,1,0,1,1
+Apartmentanlage Seezeichen,Ahrenshoop,8.4,386,2017,1,0,1,1,1,1,1
+Hotel El Capitan,Schermbeck,7.8,230,2162,0,0,1,1,0,1,1
+24/7 Selfcheckin,Leer,8.4,548,1869,0,0,0,1,0,1,1
+Hotel Villa Keller,Saarburg,8.4,171,3362,1,1,1,1,0,1,1
+Hollywood Media Hotel am Kurfürstendamm, Berlin,8.5,3,2218,0,0,1,1,0,1,1
+City Hotel Frankfurt Bad Vilbel,Bad Vilbel,7.9,1,2065,0,0,1,1,0,1,1
+Landhotel Klosterhof,Wienhausen,8.6,211,2793,1,1,0,1,0,1,1
+Hotel Laufelder Hof,Laufeld,7.6,299,1862,1,1,0,1,0,1,1
+KIShotel am Kurpark,Bad Soden-Salmünster,8.4,196,2043,1,0,0,1,0,1,1
+Styles Hotel Piding,Piding,8.2,2,2403,0,0,1,1,0,1,1
+CityMotel Ziegenhain,Schwalmstadt,8.7,246,1785,1,0,0,1,0,1,1
+Hotel sleep-station,Börnsen,8.1,166,1659,1,0,1,1,1,1,1
+Hotel Villa Magnolia,Rödermark,8.8,542,2819,1,1,1,1,0,1,1
+Landferienhotel Augustin,Schwabthal,8.7,413,3026,1,1,0,1,0,1,1
+Landgasthaus Kreuz Michelbach,Gaggenau,8.6,246,2457,1,1,0,1,0,1,1
+Hotel Krone,Bad Münster am Stein-Ebernburg,7.6,447,1914,1,0,1,1,0,1,1
+Hotel am Neumarkt,Zeitz,7.3,72,1552,1,0,0,1,0,1,1
+Der Hirschen,Sankt Märgen,8.2,781,2734,1,1,1,1,0,1,1
+Hotel Aichtalerhof,Grötzingen,7.7,178,2729,0,1,1,1,0,1,1
+Hotel Vicinity,Neubrücke,8.0,513,1552,1,0,1,1,0,1,1
+Hotel Weisses Ross,Konnersreuth,8.4,234,2224,1,1,1,1,0,1,1
+Apartmentanlage Seezeichen,Ahrenshoop,8.4,386,2017,1,0,1,1,1,1,1
+Hotel - Landgasthof Rebstock,Nimburg,8.2,935,2690,1,1,1,1,0,1,1
+Hotel Cafe Waldeck,Wüstenrot,8.5,176,2586,1,0,1,1,0,1,1
+Hotel Flora,Herzlake,8.5,168,2379,1,1,0,1,0,1,1
+Hotel Bergheim,Bergheim,7.7,430,1940,1,0,1,1,0,1,1
+Gasthaus und Landhotel Wiedmann,Eresing,8.5,935,2227,1,0,1,1,0,1,1
+Appartementhaus Martin,Badenweiler,8.7,283,1681,1,0,0,1,1,1,1
+Ho(s)tel Ahrbergen,Giesen,8.8,58,4748,1,0,1,1,1,1,1
+Silberkönig Schwarzwald Hotel & Restaurant Ringhotel,Gutach im Breisgau,8.1,582,3548,1,1,1,1,0,1,1
+Ringhotel Zum Goldenen Ochsen,Stockach,7.4,470,3631,1,1,0,1,0,1,1
+Hotel Athletik Kiel,Altenholz,8.1,850,1297,1,0,1,1,0,1,1
+Hotel Well Garni,Wittlich,8.6,539,2285,0,0,1,1,0,0,1
+Appartementhaus am Dom,Halle an der Saale,8.1,1,2325,0,0,1,1,1,0,1
+Schwarzwaldgasthaus Linde,Tennenbronn,8.1,158,1552,0,0,0,1,0,1,1
+Hotel Waldgasthof Buchenhain,Baierbrunn,8.2,513,3843,1,1,1,1,0,1,1
+Hotel Trebeltal,Demmin,7.7,334,2586,1,1,1,1,0,1,1
+Hotel u. Restaurant der Schwan,Schwanstetten,8.6,582,2845,1,1,1,1,0,1,1
+Hotel Peenhauser,Peenhaüser,7.5,96,2121,1,0,0,0,0,1,1
+Landhotel Witte-König,Garrel,9.0,128,2572,1,1,0,1,0,1,1
+Landhotel Rückerhof,Welschneudorf,8.2,218,1552,0,0,1,1,0,1,1
+Hotel Zur alten Mühle,Neuenbürg,8.7,335,3492,1,1,1,1,0,1,1
+Montana Landhotel Gummersbach-Nord,Marienheide,8.2,731,2043,1,0,1,1,0,1,1
+Hotel Wittensee Schützenhof,Groß Wittensee,8.0,382,2535,1,0,1,1,0,1,1
+Hotel Wittensee Schützenhof,Groß Wittensee,8.0,382,2535,1,0,1,1,0,1,1
+Parkhotel Obertshausen,Obertshausen,8.0,261,2274,0,0,1,1,0,1,1
+Hotel & Restaurant Hüllen,Barweiler,9.1,114,2514,1,1,1,1,0,1,1
+Hotel am Markt,Fürstenau,8.2,300,2072,0,0,1,1,0,1,1
+Ferienwohnung Königswinter,Königswinter,9.3,34,1862,0,0,0,1,1,1,1
+Hotel Zur Linde,Neddenaverbergen,8.6,263,2328,1,1,0,1,0,1,1
+Hotel Scholz,Hitzacker,7.4,414,2535,1,0,1,1,0,1,1
+Landgasthof Weisses Lamm,Engelthal,8.9,298,2819,1,1,1,1,0,1,1
+Werrapark Resort Hotel Frankenblick,Masserberg,7.4,385,2091,1,1,1,1,0,1,1
+Herzstück Waldkirchen,Waldkirchen,8.9,244,3383,1,1,0,1,0,1,1
+Apartments im Ferienhaus zum alten Spital,Dornstetten,9.5,19,2618,1,0,1,0,1,0,1
+Gengs Linde,Stühlingen,9.3,455,2716,1,1,0,1,0,1,1
+Weinstadt Hotel,Weinstadt,8.7,134,2910,0,0,0,1,0,1,1
+Domizil Hotel bei Welter Nideggen,Nideggen,8.4,242,2072,1,0,0,1,0,0,1
+Villa Meuselwitz,Meuselwitz,7.5,69,1141,1,0,1,1,1,1,1
+Zur Sonne,Alsbach-Hähnlein,8.0,123,2302,1,0,0,1,0,1,1
+Hotel & Apart 4 you (ehemals Hotel Marienhof),Dorfen,8.6,218,2616,1,0,1,1,0,1,1
+Hotel Overdiek,Prenzlau,7.2,202,2095,0,0,1,0,0,1,1
+Landgasthof Frankentor,Wasserlosen,7.4,338,1746,0,0,1,1,0,1,1
+Gästehaus beim Prinz,Kürten,8.2,156,2043,1,0,1,1,1,1,1
+"Gasthaus&Pension ""Grünes Herz""",Unterschönau,7.9,85,1940,0,0,1,1,1,0,1
+Ratskeller Hotel & Restaurant Lindow,Lindow,8.2,187,2701,1,1,1,1,0,1,1
+Hotel Adler,Lichtenstein/ Baden Wurttemberg,7.5,427,2418,0,0,0,1,0,1,1
+Hotel Lang,Breidenbach,8.2,82,2871,1,1,1,1,0,1,1
+Hotel Restaurant Clemens-August,Ascheberg,8.2,546,2986,0,1,1,1,0,1,1
+Naturresort Bieleboh,Beiersdorf,8.8,230,3104,1,0,1,1,1,1,1
+Hotel-Restaurant Sonne,Talheim,8.4,165,2561,1,1,0,1,0,1,1
+Landgasthof Eschbacher Katz,Usingen,7.6,152,1681,1,0,1,1,0,1,1
+Bluhm's Hotel & Restaurant am Markt,Kyritz,8.2,290,2121,1,1,1,1,0,1,1
+Waldgasthaus Stiefelburg,Nauendorf,8.0,232,3370,0,1,1,1,0,1,1
+Schlosshotel Braunfels,Braunfels,8.0,680,2739,1,0,1,1,0,1,1
+CLOUD No7 LOFTS, Stuttgart,8.1,67,2491,0,0,0,1,0,0,1
+Altes Gasthaus Stover,Löningen,8.0,177,1667,1,0,0,1,0,1,1
+Hotel am Schloß Apolda,Apolda,8.0,1,2433,0,0,1,1,0,1,1
+Weser Nah,Fünfhausen,9.6,26,2430,0,0,1,1,1,1,1
+Hotel Zum Fährturm,Mehring,8.2,289,2125,1,1,1,1,0,1,1
+Mauritius Komfort Hotel in der Altstadt, Cologne,8.1,1,4109,0,0,0,1,0,1,1
+Wohnen im Hühnerhaus,Thale,9.2,71,1241,1,0,1,1,1,1,1
+Hotel Sonne,Wolfach,8.1,391,1862,1,0,1,1,0,1,1
+Hotel das Q,Aldingen,9.1,479,2191,1,0,1,1,0,1,1
+Villa Wilisch,Amtsberg,8.8,158,1914,1,0,1,1,0,1,1
+GenoHotel Baunatal,Baunatal,8.5,557,2579,1,0,0,1,0,1,1
+Albhotel Fortuna,Riederich,7.6,415,2983,1,1,1,1,0,1,1
+"""Haus auf dem Berg""",Westensee,9.2,93,1912,1,0,0,1,1,1,1
+Gasthaus Tannengrün,Nachtsheim,6.8,52,1785,1,0,1,1,0,1,1
+Gästehaus Zur Linde,Otterndorf,8.8,299,2198,1,0,0,1,0,1,1
+Hotel-Landhaus Birkenmoor,Neuferchau,8.4,139,2302,1,0,0,1,0,1,1
+Hotel Dömitzer Hafen,Dömitz,7.6,990,3170,0,1,1,1,0,1,1
+Zur Alten Oberförsterei,Benneckenstein,9.7,12,1423,1,0,1,1,1,1,1
+Dagstuhler Hof,Wadern,8.5,192,3233,1,1,0,1,0,1,1
+Euro Hotel Friedberg,Friedberg,8.3,376,2214,0,0,0,1,0,1,1
+Seehotel Leoni,Berg am Starnberger See,7.2,729,3706,0,1,1,1,0,1,1
+Hotel Bess,Albersdorf,8.9,358,2819,1,1,1,1,0,1,1
+Economy Hotel Kronach,Kronach,8.0,325,1847,1,0,1,1,0,1,1
+Landhotel Küffner,Pfedelbach,8.2,264,2304,1,0,1,1,0,1,1
+Hotel Mozart,Traunreut,7.3,937,2561,1,1,1,1,0,1,1
+WAGNERS Hotel im Frankenwald,Steinwiesen,7.1,799,1423,1,1,1,1,0,1,1
+"Landgasthof & Hotel ""Merje""",Kreuztal,8.1,122,2069,1,0,1,1,0,1,1
+Altstadt Ferienwohnung Wagner,Limburg an der Lahn,9.6,79,2043,1,0,1,1,1,1,1
+Landgasthof Krone,Offingen,8.1,69,2302,1,0,0,1,0,1,1
+Schozacher Stüble,Talheim,7.9,37,2328,1,0,1,1,0,1,1
+Landhotel Bayerwald,Grafling,8.2,308,1552,0,0,0,1,0,1,1
+Hotel Igel,Püchersreuth,7.8,131,2250,1,1,1,1,0,1,1
+Hotel & Gasthaus Nagel,Südlohn,8.3,374,2054,1,0,1,1,0,1,1
+"""Strand-Gut""",Börgerende-Rethwisch,8.8,158,1293,1,0,0,1,1,1,1
+Gasthof Adler,Bad Wurzach,8.1,366,2561,1,1,1,1,0,1,1
+Postillion,Velpke,7.2,35,2069,0,0,0,1,0,1,1
+Hotel Strandhörn,Wenningstedt,8.4,466,4046,0,0,1,1,0,1,1
+Hotel Römer,Butzbach,8.4,250,2607,1,0,1,1,0,1,1
+Hotel Drei Linden,Twist,8.3,78,2302,1,0,0,1,0,1,1
+Lagovida Das Ferienresort Am Störmthaler See,Großpösna,8.4,1,2479,0,0,0,1,0,1,1
+Hotel zur Isar,Plattling,8.6,498,3362,1,1,1,1,0,1,1
+Landhaus Arcadia,Ketzin,9.0,39,3233,1,0,0,1,1,1,1
+Hotel Amadeus, Hannover,8.5,1,3556,0,1,0,1,0,1,1
+Ummen Hotel&Restaurant,Barßel,8.3,162,2457,1,1,1,1,0,1,1
+Genusshotel Krone & Roadtrips bei Basel,Inzlingen,8.5,481,2959,0,0,1,1,0,1,1
+Gutshof Woldzegarten,Woldzegarten,8.1,354,5245,0,1,1,1,0,1,1
+Kempinski Hotel Frankfurt Gravenbruch,Gravenbruch,8.8,890,5497,0,0,1,1,0,1,1
+Hotel Gasthof Zur Post,Königstein in der Oberpfalz,8.5,219,2328,1,1,1,1,0,1,1
+Hotel Dampfmühle,Neukirchen-Vluyn,7.5,1,2734,1,0,1,1,0,1,1
+Seehotel Luisenhof,Falkenhagen,6.3,333,2537,0,0,1,1,0,1,1
+Seehotel Luisenhof,Falkenhagen,6.3,333,2537,0,0,1,1,0,1,1
+Da Marcello - Hostaria & Pensione,Markkleeberg,7.7,370,1606,0,0,1,1,0,1,1
+Gasthaus zum Ochsen,Herrischried,6.7,158,1423,1,0,1,1,0,1,1
+Hotel Am Medemufer,Otterndorf,8.9,498,4962,1,1,0,1,0,1,1
+"""Strand-Gut""",Börgerende-Rethwisch,8.8,158,1293,1,0,0,1,1,1,1
+Pension Stechlinsee,Neuglobsow,7.7,707,1606,0,0,0,0,1,1,1
+Hotel Residenz Limburgerhof,Limburgerhof,8.2,1,2797,1,1,1,1,0,1,1
+Gästehaus Perrin,Bliesmengen-Bolchen,7.7,91,1940,1,0,0,0,1,1,1
+Gästehaus Falkenhof,Westensee,8.6,88,2328,1,0,1,1,1,1,1
+Pension Genat,Wedemark,8.1,307,1681,1,0,1,1,1,1,1
+Pension Holmer Moorhof,Hartenholm,8.6,103,1810,1,0,1,1,1,1,1
+Hotel Preishof,Kirchham,9.5,418,2509,1,1,0,1,0,1,1
+Landgasthaus Klosterhof,Fischbach,7.6,156,1423,1,0,1,1,0,1,1
+Vilotel,Oberkochen,8.9,422,3124,0,1,1,1,0,1,1
+DEVA Hotel Beim Egger,Schechen,7.9,685,1737,0,1,1,1,0,1,1
+Hotel & Restaurant Elisabethhöhe,Melsbach,8.2,46,3078,1,1,0,1,0,0,1
+DUA Hotel,Sarstedt,7.6,74,1526,1,0,0,1,0,1,1
+Meyers Hofcafe,Isenbüttel,8.7,701,2328,1,1,1,1,0,1,1
+Garni-Hotel zum alten Ratskeller,Vetschau,7.6,521,1862,0,0,1,1,1,1,1
+Trans World Hotel Kranichhöhe,Much,7.8,757,2441,0,0,1,1,0,1,1
+Hotel Ebnet,Mutterstadt,7.7,226,2424,1,0,0,1,0,1,1
+EulenNest,Laubach,8.3,57,2346,1,1,0,1,1,1,1
+Hotel Heisede,Sarstedt,8.8,584,1681,1,0,1,1,0,1,1
+Hotel Stadt Mainz,Schwabenheim,7.9,188,1221,1,0,0,1,1,1,1
+EC Hotel Elchingen,Elchingen,7.4,1,1257,1,0,0,1,0,1,1
+Rheinhotel Vier Jahreszeiten,Bad Breisig,6.7,1,2302,1,0,1,1,0,1,1
+Hotel Zur Rebe,Hochheim am Main,6.9,69,2147,0,0,1,1,0,1,1
+Hotel Restaurant Waldesruh,Emstek,8.3,244,2457,1,1,1,1,0,1,1
+Country Inn Hotel Phöben,Phöben,8.3,762,1839,0,0,1,1,0,1,1
+Rheinhessen-Lörzweiler,Lörzweiler,9.3,48,1888,1,0,0,1,1,0,1
+Best Western Plus Palatin Kongresshotel,Wiesloch,8.3,284,2924,1,0,1,1,0,1,1
+Ferienwohnung Ohanna Goslar,Goslar,9.2,29,1179,1,0,0,1,1,1,1
+Residenzia Hotel Grenadier,Munster im Heidekreis,8.3,227,2302,1,0,1,1,0,1,1
+Hotel Stadt Spremberg,Spremberg,7.8,373,2716,1,0,1,1,0,1,1
+Eisberg Gästehaus & De Luxe Appartements,Friesenheim,7.7,341,2021,1,0,0,1,0,1,1
+Schlosshotel Wendorf,Wendorf,7.8,90,3990,1,0,1,1,0,1,1
+"WAGNERS Hotel Schönblick, C&C Hotels und Vertrieb GmbH",Fichtelberg,6.6,325,1280,0,1,1,1,0,1,1
+Ferienwohnung von Postel,Büsumer Deichhausen,8.6,12,1164,1,0,0,1,1,1,1
+DAS STEIN,Amerang,9.3,246,3693,1,1,1,1,0,1,1
+Landhotel Gillenfelder Hof,Gillenfeld,7.7,304,2246,1,0,1,1,0,1,1
+Select Hotel Wiesbaden City, Wiesbaden,8.0,1,1684,0,0,0,1,0,1,1
+Triebenerhof,Quierschied,7.9,162,2328,1,1,0,1,0,1,1
+Ostseehotel Neubukow,Neubukow,7.7,457,1810,1,0,0,1,0,1,1
+Waldhotel zum Bergsee Damme,Damme,8.5,398,2652,0,1,1,1,0,1,1
+B&B Hotel Nürnberg-Plärrer, Nürnberg,8.2,991,1751,1,0,1,1,0,1,1
+Dreimädelhaus - Haus Oerdekenbrück,Kirchseelte,8.4,266,2374,1,0,0,1,0,1,1
+Hotel am Maibaum,Neuenrade,8.0,125,1914,1,0,0,1,0,1,1
+Neumaiers Hirsch -Gasthof und Landhotel,Weißenhorn,8.7,335,3414,1,1,0,1,0,1,1
+Zur Krone,Seelze,7.7,134,1940,0,0,1,1,0,1,1
+Ferienhaus Kompass (ehemals Pension Hohlen),Carolinensiel,9.2,36,2703,1,0,0,1,1,1,1
+Hotel Seiler Hof Keitum garni,Keitum,8.9,100,4970,0,1,0,1,0,1,1
+Hotel FIT,Much,8.2,116,2535,1,1,1,1,0,1,1
+Hotel A2,Schopsdorf,8.1,535,79,0,0,1,1,0,1,1
+Landhotel Mohren,Schwarzenbach,8.5,427,3595,0,0,1,1,0,1,1
+Hotel A2,Schopsdorf,8.1,535,79,0,0,1,1,0,1,1
+Landhotel Mohren,Schwarzenbach,8.5,427,3595,0,0,1,1,0,1,1
+Gasthof Scharfe Kurve,Lützow,8.4,447,2457,0,1,1,1,0,1,1
+EMICH´S Hotel,Amorbach,8.8,355,2923,1,0,1,1,0,0,1
+Ferienwohnung Ohanna Goslar,Goslar,9.2,29,1179,1,0,0,1,1,1,1
+Hotel Storck,Bad Laer,8.5,594,2095,1,0,1,1,0,1,1
+Hotel Insel Pension,Niebüll,8.5,585,2836,0,0,0,1,0,1,1
+Hotel Alte Försterei,Kloster Zinna,8.2,203,2169,0,1,1,1,0,1,1
+Hotel zum Hirschen,Lam,7.5,274,3569,1,1,1,1,0,1,1
+Gut Altona,Dötlingen,9.0,923,3518,1,0,1,1,0,1,1
+Ferienwohnung von Postel,Büsumer Deichhausen,8.6,12,1164,1,0,0,1,1,1,1
+Hotel & Restaurant Zur Spreewälderin,Golßen,7.3,875,1655,1,0,1,1,0,1,1
+Hotel-Gasthof Maisberger,Neufahrn bei Freising,8.5,648,2476,1,0,1,1,0,1,1
+Golfhotel Vesper,Sprockhövel,8.5,481,5513,0,1,0,1,0,1,1
+ibis budget Bremen City Center, Bremen,7.9,5,1748,1,0,1,1,0,1,1
+Land gut Hotel Hermann,Bentwisch,8.0,1,2308,1,0,1,1,0,1,1
+Confour Hotel,Burgdorf,7.7,485,1761,1,0,1,1,0,1,1
+Breitenberger Hof,Breitenberg,8.5,140,2457,1,0,1,1,0,1,1
+Hotel am Stadtring,Nordhorn,7.8,421,3071,0,1,1,1,0,1,1
+Dorint Hotel & Sportresort Arnsberg/Sauerland,Neheim-Hüsten,7.7,1,2521,1,1,1,1,0,1,1
+Kleinkunstbühne Zur Post beim John in Obing,Obing,8.2,194,2069,1,1,1,1,0,1,1
+Schloss Basthorst,Crivitz,8.4,1,3541,0,0,1,1,0,1,1
+Ferienpark Markgrafenheide,Markgrafenheide,6.8,290,1966,0,0,1,1,0,1,1
+the niu Leo, Nürnberg,8.6,2,1606,0,0,0,1,0,1,1
+Hotel garni Sonnenhof,Damnatz,8.9,326,2302,0,1,1,1,0,1,1
+Hotel Zum Goldenen Stern,Prüm,8.3,549,2638,0,1,1,1,0,1,1
+Raffelsteiner Hof,Mörnsheim,8.2,567,2069,1,1,1,1,0,1,1
+Hotel Pflieger,Pocking,7.8,275,1992,1,1,1,1,0,1,1
+Landgasthof zur Ulsterbrücke,Tann,7.6,322,1810,1,0,1,1,0,1,1
+Stadthotel Oranienburg,Oranienburg,8.0,578,2654,0,1,1,1,0,1,1
+Hotel Bellevue,Wolfshausen,8.3,593,3362,1,1,1,1,0,1,1
+Aparthotel Deutscher Kaiser Ferienwohnungen,Kurort Oberwiesenthal,9.0,127,1324,0,0,0,1,1,1,1
+Ferienwohnung am Westerwaldsteig,Niederbuchenau,9.1,16,1606,1,0,1,1,1,1,1
+Wiesenblick,Dönschten,9.1,7,1319,1,0,0,1,0,1,1
+Hotel Hochwald,Bad Liebenzell,8.7,299,2968,1,0,0,1,0,1,1
+a&o Köln Neumarkt, Cologne,7.5,3,2414,0,0,1,1,0,1,1
+Posthotel Rotenburg,Rotenburg an der Fulda,7.9,346,3100,1,0,1,1,0,1,1
+Boardinghaus P5-Heilbronn,Heilbronn,8.2,15,2561,1,0,0,0,1,1,1
+Hotel Gasthof Heckl,Kinding,8.5,86,3621,1,1,1,1,0,1,1
+Hotel Gasthof Mohren,Hechingen,7.3,543,2302,1,1,1,1,0,1,1
+Landhotel Rehedyk,Sankt Michaelisdonn,8.5,451,2276,1,0,0,1,1,1,1
+Restaurant & Hotel Exquisite,Bobenheim am Berg,8.1,395,2176,1,0,0,1,0,1,1
+Hotel Gut Schwaige,Ebenhausen,8.7,417,3100,1,0,1,1,0,1,1
+Hotel Lösch Pfälzer Hof,Römerberg,7.3,458,2198,0,1,1,1,0,1,1
+Villa Sachsenhof,Bad Schlema,8.5,274,2054,1,0,0,1,0,1,1
+Gasthaus Schwan,Riedenburg,8.7,507,2845,1,1,1,1,0,1,1
+Hotel Freihof am Roland,Wedel,8.2,812,2924,1,1,1,1,0,1,1
+Die Kronacher Stadthotels,Kronach,8.7,400,3078,1,0,1,1,0,1,1
+Hotel Haarener Hof,Bad Wünnenberg,7.5,182,1914,1,0,1,1,0,1,1
+Gasthaus Zum Rethberg,Lübstorf,7.9,297,2211,0,0,0,1,0,1,1
+Das Hotel Ostseeblick,Lütjenburg,9.2,2,1829,1,1,1,1,0,1,1
+Landgasthof Meisel,Kalchreuth,8.0,147,2069,1,1,1,1,0,1,1
+Super 8 by Wyndham Dresden, Dresden,8.2,6,90,0,0,0,1,0,1,1
+Hotel Cafe Meynen,Bad Münder am Deister,7.0,106,2281,1,0,1,1,0,1,1
+Hotel Cafe Meynen,Bad Münder am Deister,7.0,106,2281,1,0,1,1,0,1,1
+Hotel Schwanen,Mosbach,7.9,230,2535,1,0,1,1,0,0,1
+Hotelpension zum Gockl,Allershausen,7.5,219,2379,1,1,1,1,0,1,1
+SKYBASIC Merseburg,Merseburg,7.9,615,1291,0,0,1,1,1,1,1
+Comfort Apartment Oldenburg,Oldenburg,8.9,298,2302,1,0,0,1,1,1,1
+Hotel Linde Pfalz,Silz,7.7,161,3144,1,1,0,1,0,1,1
+Landhotel Gottinger,Waldkirchen,8.9,207,3518,1,1,1,1,0,1,1
+Hotel Alt Steinbach,Steinbach im Taunus,8.1,161,1966,0,0,1,1,0,1,1
+Hotel Ullrich,Elfershausen,8.3,191,3311,1,1,0,1,0,1,1
+Hotel Garni am Bowenberg,Niederzissen,8.1,80,2043,0,0,0,1,0,1,1
+Seebrise mit Musik und Wein,Meersburg,9.3,225,2198,1,0,0,1,1,1,1
+Waldhotel Kelkheim,Kelkheim,7.7,188,2198,1,0,1,1,0,1,1
+a&o Leipzig Hauptbahnhof, Leipzig,7.4,2,1499,0,0,1,1,1,1,1
+Altes Kurhaus Landhotel,Trabelsdorf,8.6,75,4242,1,1,1,1,0,1,1
+Hotel zur Schloss-Schmiede,Kühbach,8.5,190,2537,1,1,0,1,0,0,1
+Waldhotel König von Rom,Waldesch,8.1,201,2017,1,0,1,1,0,1,1
+Kenner Treff,Kenn,7.8,222,1839,1,0,1,1,0,1,1
+CAESARO Hotel & Pizzeria,Hagen,8.6,87,2379,1,0,0,1,0,1,1
+Hotel Bornmühle,Groß Nemerow,8.1,992,4054,1,1,1,1,0,1,1
+Werrapark Resort Hotel Heubacher Höhe,Masserberg,7.0,224,2091,1,1,1,1,0,1,1
+Berghotel Rotstein,Löbau,7.8,377,1810,1,0,1,1,0,1,1
+Hotel Neuer Fritz, Berlin,8.3,480,3001,0,0,1,1,0,1,1
+Hotel Allegra,Heinsberg,8.9,85,3336,1,0,0,1,0,1,1
+Gasthof Linde - Hotel Blum,Unterroth,8.9,175,2716,1,1,0,1,0,1,1
+Hotel zur Pfalz,Kandel,8.5,293,3451,1,0,1,1,0,1,1
+Hotel Am Kloster,Wienhausen,9.1,363,3608,1,0,0,1,0,1,1
+Vulkanhotel balance&selfness ***S,Steffeln,8.7,71,3669,0,0,1,1,0,1,1
+Haus am Kurpark,Schömberg,8.2,305,2793,1,0,1,1,0,1,1
+ipartment Wolfsburg,Wolfsburg,8.7,133,2062,1,0,0,1,1,1,1
+Mettner Hof,Metten bei Deggendorf,8.4,392,2017,1,0,1,1,0,1,1
+Hotel-Restaurant Burg Hornberg,Neckarzimmern,8.2,209,4268,1,1,0,1,0,1,1
+Seebrise mit Musik und Wein,Meersburg,9.3,225,2198,1,0,0,1,1,1,1
+Ostalgie Ferienheim Sorgenfrei,Sorge,6.9,434,2770,1,1,1,1,0,1,1
+Gasthaus da Enzo,Siefersheim,8.5,87,2483,1,0,0,1,0,1,1
+Hotel Ahornhof,Lindberg,6.8,1,2100,0,1,1,1,0,1,1
+Ferienwohnung An der Loreley,Bornich,8.2,30,1571,1,0,0,1,1,1,1
+Hotel Weißbräu,Oberhaching,8.5,1,2972,1,0,0,1,0,1,1
+"Eifelferienwohnungen ""Familie Saxler""",Bereborn,9.4,58,1429,0,0,0,1,1,1,1
+Hotel O'felder,Osterrönfeld,8.4,222,2435,1,0,1,1,0,1,1
+Ibis budget Hannover Hbf, Hannover,7.1,1,1358,1,0,1,1,0,1,1
+Pension Brenz,Sontheim an der Brenz,8.2,58,1655,1,0,0,1,1,1,1
+Alte Schreinerei-Auberge Harlekin,Randegg,8.0,382,2302,1,0,1,1,0,1,1
+Kurgarten-Hotel,Wolfach,7.3,189,3052,1,1,0,1,0,1,1
+Seerose Boutique-Pension,Tating,9.2,494,1164,0,0,0,1,0,1,1
+Hotel Sternzeit (ex Esplanade Parkhotel),Wegberg,7.5,126,2756,1,0,1,1,0,1,1
+Hotel und Restaurant Post Prienbach,Stubenberg,8.1,169,1526,1,0,1,1,0,1,1
+"Hotel Berlin, Berlin", Berlin,8.2,7,3089,1,0,1,1,0,1,1
+Hotel Clostermanns Hof,Niederkassel,8.5,587,3099,1,0,1,1,0,1,1
+Ferienanlage Gutshaus Gramkow,Gramkow,8.4,208,1940,1,0,1,1,0,1,1
+Altstadthotel Weinforum Franken,Eibelstadt,8.5,149,3466,1,0,0,1,0,0,1
+Klostergasthof Heidenheim,Heidenheim,8.6,59,3693,1,1,0,1,0,0,1
+Hotel zur Post in Wurzen,Wurzen,8.1,182,2250,0,0,1,1,0,1,1
+Eden Hotel Wolff, Munich,8.5,2,4223,1,0,1,1,0,1,1
+Hotel Kloster Hirsau,Calw,8.2,327,3492,1,1,0,1,0,1,1
+Hotel Kloster Hirsau,Calw,8.2,327,3492,1,1,0,1,0,1,1
+CAREA Residenz Hotel Harzhöhe,Hahnenklee-Bockswiese,6.8,1,2493,1,0,1,1,0,1,1
+Hotel Wuelfers Gasthaus,Groß Ippener,8.5,200,2246,1,0,0,1,0,1,1
+"Gasthaus ""Fahrenkamp""",Röwitz,8.7,76,2069,1,0,0,1,1,1,1
+Gästehaus Siebert,Lobbe,8.9,108,1940,1,0,0,1,1,1,1
+Hostel Köln, Cologne,8.4,1,5077,1,1,0,1,0,1,1
+Steverbett Hotel,Lüdinghausen,8.3,509,2886,0,0,1,1,0,0,1
+Hotel Winzerstube,Ihringen,8.1,477,2302,1,0,1,1,0,1,1
+Hotel Riesengebirge,Neuhof an der Zenn,8.3,231,2527,0,1,1,1,0,1,1
+Main Hotel Eckert,Margetshöchheim,8.3,419,2612,1,0,0,1,0,1,1
+Landhaus Kaltenborn,Trebsen,8.8,35,2494,1,0,1,1,1,1,1
+Altbau Gasthaus Amboss,Grünkraut,8.6,325,2444,1,1,0,1,0,1,1
+Hotel-Pension Ramona,Bad Soden-Salmünster,8.5,101,1914,1,0,0,1,1,1,1
+Wohnen bei Gabi,Walkendorf,8.3,25,905,0,0,1,1,1,1,1
+Apartments Fröhling,Utarp,9.4,103,2235,0,0,0,1,1,1,1
+Hotel Wilder Mann,Feuchtwangen,8.6,193,2433,0,1,1,1,0,1,1
+Joos Hotel,Bergheim,8.1,285,1817,1,0,0,1,0,1,1
+Restaurant Niedmühle Land & Genuss Hotel,Rehlingen-Siersburg,8.7,224,2748,1,1,0,1,0,1,1
+Hotel Alter Wirt,Weyarn,7.6,1,2339,0,0,0,1,0,1,1
+Nice holiday home in the Hochsauerland with terrace in a quiet location,Schmallenberg,7.5,105,1923,0,0,1,0,1,1,1
+Grüner Baum,Höfen an der Enz,7.4,251,1526,1,0,0,1,1,1,1
+"Landhotel ""Wettin""",Neuhermsdorf,8.5,167,1839,0,0,1,1,0,1,1
+Hotel Restaurant Felix,Bensheim,8.2,539,2880,1,0,1,1,0,1,1
+Ganter Hotel & Restaurant Mohren,Reichenau,7.8,508,2552,1,0,0,1,0,1,1
+Hotel Lohenstein,Holzwickede,6.6,166,1423,1,0,1,1,0,1,1
+Berliner Hof,Dallgow,8.2,459,2328,0,0,0,1,0,1,1
+Moxy Dresden Neustadt, Dresden,,,1696,1,0,1,1,0,1,1
+Hotel Löwen,Randersacker,7.7,375,2483,1,0,1,1,0,1,1
+Zur Schatztruhe,Nordstrand,9.0,63,2281,1,0,1,1,1,1,1
+Akzent Hotel-Restaurant Albert,Dorsten,7.8,399,2793,0,0,1,1,0,1,1
+Prisma Hotel Burg Bollendorf,Bollendorf,8.0,149,3706,1,1,1,1,0,1,1
+Öko-Apartments Casa da Enzo,Goslar,7.8,200,1895,1,0,0,1,1,1,1
+Astheimer Schlösschen,Trebur,7.6,87,1350,1,0,1,1,0,1,1
+Moxy Essen City, Essen,8.4,176,2309,0,0,0,0,0,1,1
+Landhotel Rebstock,Schonach,8.0,194,2897,1,1,1,1,0,1,1
+Landhotel Wolfschlugen,Wolfschlugen,8.0,492,1785,1,0,1,1,0,1,1
+Hotel Graf Bentinck,Dangast,8.8,666,4630,1,1,0,1,0,1,1
+FeWo`s Katharina,Bremerhaven,7.0,182,1940,1,0,0,1,1,1,1
+Hotel & Chalets Herrihof,Todtnauberg,8.4,771,2234,0,1,1,1,0,1,1
+Boardinghouse Alte Bank,Wöllstein,8.4,97,1810,1,0,0,1,0,1,1
+Hotel & Mühlenapartments,Gernsbach,8.8,369,2974,1,1,1,1,0,1,1
+Landhotel Graf,Schliengen,8.6,626,2302,1,1,1,1,0,1,1
+Schlosshotel Horneck,Gundelsheim,9.2,157,3336,1,1,1,1,0,0,1
+Braustüble und Hotel zur Post,Weiler-Simmerberg,8.3,348,2871,1,1,0,1,0,1,1
+Hotel Alte Redaktion,Gevelsberg,8.7,484,2654,1,0,1,1,0,1,1
+THE FLAG West M., Frankfurt/Main,8.4,852,2455,0,0,1,1,0,1,1
+Gästehaus am Oberlausitzer Dreieck,Bertsdorf,8.3,96,1187,0,1,1,1,1,1,1
+Schlosshotel Kronberg - Hotel Frankfurt,Kronberg im Taunus,8.9,482,7334,1,0,1,1,0,1,1
+Hotel Restaurant Felderbock,Nußloch,8.1,319,2302,1,0,1,1,0,1,1
+Hotel Haus Krone,Bexbach,7.6,155,2150,0,0,1,1,0,1,1
+Hotel Fronhof Mettendorf,Mettendorf,8.3,265,2845,1,1,1,1,0,1,1
+the niu Air, Frankfurt/Main,8.4,1,1470,0,0,0,1,0,1,1
+Hotel zur Fürstabtei,Herford,8.8,181,3492,1,1,1,1,0,1,1
+Van der Valk Naturresort Drewitz,Nossentiner Hütte,8.0,290,3475,0,0,1,1,0,1,1
+Hotel Fronhof Mettendorf,Mettendorf,8.3,265,2845,1,1,1,1,0,1,1
+the niu Air, Frankfurt/Main,8.4,1,1470,0,0,0,1,0,1,1
+Hotel zur Fürstabtei,Herford,8.8,181,3492,1,1,1,1,0,1,1
+Van der Valk Naturresort Drewitz,Nossentiner Hütte,8.0,290,3475,0,0,1,1,0,1,1
+Haus Lavendel,Lancken,8.9,33,2069,0,0,0,1,1,1,1
+Hotel & Restaurant Bella Italia,Niederfell,7.1,285,1492,1,0,0,1,0,0,1
+Hotel.Restaurant zum alten Postwagen,Gevelsberg,8.2,175,2142,0,0,0,1,0,1,1
+mönchgut living & spa,Gager,8.6,765,2974,0,0,0,1,1,1,1
+Heinsens Ellerbek,Ellerbek,8.0,108,2043,1,0,1,1,0,1,1
+Querfurter Hof,Querfurt,8.2,284,2327,0,0,1,1,0,1,1
+Öko-Apartments Casa da Enzo,Goslar,7.8,200,1895,1,0,0,1,1,1,1
+Hotel New In Guesthouse,Gaimersheim,8.4,335,2132,0,0,0,1,0,1,1
+a&o Stuttgart City, Stuttgart,7.5,4,1841,0,0,1,1,1,1,1
+Akzent Hotel Saltenhof,Hörstel,8.0,286,3414,1,1,1,1,0,1,1
+MinSion 38,Altdorf,9.0,26,1733,1,0,0,1,1,1,1
+Ferienwohnung Seeblick - Insel Usedom,Balm,8.8,30,1655,0,0,0,1,1,1,1
+Hotel Restaurant Kerzenstüble,Gärtringen,7.8,62,2742,1,0,1,1,0,1,1
+Motel Touchdown & Restaurant,Lohmar,7.0,53,2069,0,0,0,1,0,1,1
+Lufthansa Seeheim - More than a Conference Hotel,Seeheim-Jugenheim,8.7,959,4038,1,1,1,1,0,1,1
+the niu Mood,Mainz,8.3,2,1796,0,0,0,1,0,1,1
+"Haus am Sonnenberg,Todtnauberg, Ferienwohnung 305, direkt am Skilift-Skipiste, Nähe Feldberg",Todtnauberg,8.8,14,1205,1,0,0,1,1,1,1
+Engelhard Das Landhotel Garni,Kirchheim am Ries,9.5,292,2457,1,0,0,1,0,1,1
+Dat Lütte Steak- & Burgerhus,Ockholm,8.8,312,2069,1,0,0,1,0,1,1
+Nella Parkhotel,Steinhude,7.9,455,2822,1,1,0,1,0,0,1
+harry's home München Hotel & Apartments, Munich,8.6,1,2373,0,0,1,1,0,1,1
+LandHaus Zum LindenHof,Marxen,8.8,112,3233,0,0,0,1,0,1,1
+Landgasthaus zum Seysingshof,Bad Colberg,8.2,228,2069,1,0,0,1,0,1,1
+Landhotel Kussmann,Wrexen,7.4,80,1862,1,0,1,1,0,1,1
+B&B Hotel Braunschweig-City, Braunschweig,8.0,1,1836,1,0,1,1,0,1,1
+Bett4-you Pinneberg - Prisdorf,Prisdorf,7.4,64,2642,1,0,1,1,1,1,1
+Novum Hotel Boulevard Stuttgart City, Stuttgart,6.9,2,1553,1,0,0,1,0,1,1
+Carl.22 City Appartements,Eisenach,9.4,167,1718,0,0,1,1,1,1,1
+Ferienwohnungen am Feldrain - Gornau im Erzgebirge,Zschopau,9.7,47,1649,1,0,1,1,1,1,1
+B&B Hotel Köln-Troisdorf,Troisdorf,8.3,1,1807,1,0,1,1,0,1,1
+Hotel Montan, Duisburg,7.5,47,1319,1,0,1,1,0,1,1
+Ferienwohnung Am Panoramaweg,Lichtenhain,9.2,50,1526,1,0,0,1,1,1,1
+B&B Hotel Berlin-Charlottenburg, Berlin,8.4,2,1914,1,0,1,1,0,1,1
+Villa Monsei,Bad Schandau,8.9,177,2328,1,0,1,1,1,1,1
+Ostsee Radlerpension Peitz,Peitz,8.9,429,1639,1,0,1,1,1,1,1
+Mühlenkamp Hotel & Gastronomie,Oelde,8.6,280,2845,1,0,1,1,0,1,1
+Landhotel Restaurant Deutsche Eiche,Grebenstein,8.9,63,3104,1,0,1,1,0,0,1
+Berghotel Steiger,Schneeberg,7.6,149,2561,0,1,1,1,0,1,1
+B&B Hotel Hamburg City-Ost,Hamburg,7.8,2,2154,1,0,1,1,0,1,1
+Naturhotel Wittelsbach,Aichach,8.8,111,2561,1,0,0,1,0,1,1
+Hotel Garni Julia,Linnich,7.5,258,2173,1,1,0,1,0,1,1
+Recknitztal-Hotel Marlow,Marlow,8.8,819,2586,1,0,1,1,0,1,1
+Hotel Irmchen,Maintal,9.1,178,2845,1,1,0,1,0,1,1
+Hotel Goldinger,Landstuhl,8.3,106,2790,1,0,0,1,0,1,1
+Ferienwohnanlage Schwabe mit Schwimmbad,Rerik,8.3,902,7630,1,0,1,1,1,1,1
+Hotel Hof Sudermühlen,Egestorf,8.1,672,3362,1,1,1,1,0,1,1
+Motel One Dresden - Palaisplatz, Dresden,8.6,2,2043,1,0,1,1,0,1,1
+Fuchsbräu,Beilngries,8.5,367,3957,1,1,1,1,0,0,1
+Villa Behr,Wendlingen am Neckar,8.0,232,3658,1,0,1,0,0,1,1
+Berggasthof Eisenberg,Kirchheim,8.1,124,1681,1,0,1,1,0,1,1
+Fuchsbräu,Beilngries,8.5,367,3957,1,1,1,1,0,0,1
+Villa Behr,Wendlingen am Neckar,8.0,232,3658,1,0,1,0,0,1,1
+Berggasthof Eisenberg,Kirchheim,8.1,124,1681,1,0,1,1,0,1,1
+Concorde Hotel Viktoria,Kronberg im Taunus,8.3,235,3035,0,0,1,1,0,1,1
+Carl.22 City Appartements,Eisenach,9.4,167,1718,0,0,1,1,1,1,1
+Hotel zur goldenen Sonne,Usingen,8.5,150,2328,1,0,1,1,0,1,1
+Hotel Motorsport Arena,Oschersleben,8.2,691,3621,1,1,1,1,0,1,1
+Pension zur Sonne 24/7,Poppenhausen,8.1,341,1629,1,0,0,1,1,1,1
+the niu Tab, Düsseldorf,8.4,1,3827,0,0,0,1,0,1,1
+Hotel Leo Mühlhausen,Mühlhausen,7.9,340,2561,1,0,1,1,0,1,1
+Villa Monsei,Bad Schandau,8.9,177,2328,1,0,1,1,1,1,1
+Hotel Waldkrug,Delbrück,8.9,333,4666,1,1,1,1,0,1,1
+Pension Haus Anny,Deudesfeld,8.1,265,2188,0,1,1,1,0,1,1
+Hotel Restaurant Rössle,Calw,7.8,180,2845,1,0,1,1,0,0,1
+Hotel Restaurant Talblick,Bad Ditzenbach,8.6,111,3078,1,0,1,1,0,1,1
+Hofatelier Menacher,Neureichenau,8.7,46,2017,1,0,1,1,1,1,1
+Hotel Weisse Taube,Aschersleben,7.2,255,1495,1,0,1,1,0,1,1
+Novel Hotel,Wusterhausen,8.9,349,1940,1,0,0,1,0,1,1
+Bahnhof Thalfang,Thalfang,8.9,195,3414,1,1,0,1,0,1,1
+Die Edelkastanie,Voitze,8.2,116,9618,1,0,1,1,0,1,1
+Hotel am Fischmarkt,Rheinberg,9.1,421,4408,1,0,1,1,0,1,1
+Argenta Hostel & Apartments,Künzell,8.3,225,1526,1,0,0,1,0,1,1
+Hotel Seeblick am Sankelmarker See - Natur und Erholung,Oeversee,8.5,654,2328,0,1,1,1,0,1,1
+Historisches Genusshotel Löwen,Schopfheim,8.1,264,2690,1,1,0,1,0,1,1
+Tutzinger Hof,Tutzing,7.5,442,2793,1,0,1,1,0,1,1
+Landhotel & Reiterhof Schumann,Triptis,7.9,122,2638,1,0,1,1,0,1,1
+Am Landhaus - Gästezimmer & Frühstück,Walsheim,7.8,293,1895,1,1,0,1,1,1,1
+Villa Le Palais Quedlinburg, Quedlinburg,9.4,375,4508,1,0,0,1,1,1,1
+ibis Berlin Ostbahnhof, Berlin,7.9,2,1910,1,0,1,0,0,1,1
+Lindenhaus Scharfe Kurve,Rosenow,8.2,17,2638,1,1,1,1,1,1,1
+Hotel Graf von Mansfeld,Lutherstadt Eisleben,8.7,1,2453,0,0,1,1,0,1,1
+Appartements Katharina,Bremerhaven,7.2,84,1940,1,0,0,1,1,1,1
+City-Hotel,Friesoythe,8.6,153,2116,1,0,1,1,0,1,1
+Lindenhof 1887,Lunden,9.1,239,3362,1,1,1,1,0,1,1
+B&B Hotel Kaiserslautern,Kaiserslautern,7.9,1,1940,1,0,1,1,0,1,1
+Pension zum Schwanenteich,Haldensleben,8.6,474,1423,1,0,0,1,0,1,1
+Landhotel Allgäuer Hof,Wolfegg,8.2,352,2974,1,0,1,1,0,1,1
+Seeperle 2,Meersburg,8.2,44,3263,1,0,1,1,1,1,1
+Hotel Goldflair am Rathaus,Korbach,8.3,560,2939,1,0,1,1,0,1,1
+NH Collection Hamburg City, Hamburg,8.8,3,3168,1,0,1,1,1,1,1
+Hotel Seeblick,Barhöft,8.1,1,1526,1,1,1,1,0,1,1
+Hotel-Restaurant Im Heisterholz,Hemmelzen,8.3,59,2518,1,0,0,1,0,0,1
+DEVA Achentaler Vitalhotel,Unterwössen,7.7,323,2836,0,1,1,1,0,1,1
+Hotel Löwen,Meckenbeuren,8.1,638,2391,0,0,1,1,0,1,1
+B&B Hotel Dresden, Dresden,8.1,4,1713,1,0,1,1,0,1,1
+Hotel Zur Kutsche,Oberschöna,8.1,165,2484,0,1,1,1,0,1,1
+Hessen Hotelpark Hohenroda,Hohenroda,8.4,240,3556,1,1,0,1,0,1,1
+Hotel Dorfmühle,Lehrberg,8.8,278,2875,1,1,0,1,0,1,1
+"Ferienwohnung ""Kretsche""",Boxberg,8.9,30,1583,0,0,0,1,1,1,1
+Bachhof Resort Hotel,Kirchroth,9.2,52,3336,1,0,1,1,0,1,1
+Hotel Gassbachtal,Grasellenbach,7.7,228,2544,1,0,1,1,0,1,1
+Hotel Garni HaWattn,Dornumersiel,9.0,1,1940,1,0,0,1,0,1,1
+Hotel Friedchen mit eigener Fleischerei,Artern,8.6,379,2250,1,1,0,1,0,1,1
+Ferienland Sonnenwald,Schöfweg,7.9,185,905,0,0,1,1,1,1,1
+Hotel Friedchen mit eigener Fleischerei,Artern,8.6,379,2250,1,1,0,1,0,1,1
+Ferienland Sonnenwald,Schöfweg,7.9,185,905,0,0,1,1,1,1,1
+Apartment Landhotel Zum Storchennest,Bann,8.6,127,2555,0,1,1,1,0,1,1
+Beningaburg,Dornum,7.3,484,1810,1,0,1,1,0,1,1
+Seeperle 2,Meersburg,8.2,44,3263,1,0,1,1,1,1,1
+Panoramahotel Waldenburg,Waldenburg,8.9,496,5447,1,1,1,1,0,1,1
+B&B Hotel Wetzlar,Wetzlar,8.3,712,1744,1,0,1,1,0,1,1
+Hotel Friesenhof,Westoverledingen,8.1,198,1649,0,0,0,1,0,1,1
+Hotel WITT am See,Weiherhammer,9.4,318,3104,1,1,0,1,0,1,1
+Atrium Hotel Amadeus,Osterfeld,8.1,1,1866,1,0,1,1,0,1,1
+apartment11,Ulm,9.0,51,2584,0,0,1,1,1,1,1
+Astoria Apartments, Nürnberg,9.0,478,1796,0,0,0,1,1,1,1
+The Starnbergsee Hideaway,Seeshaupt,8.3,605,6518,0,1,1,1,0,1,1
+a&o Dortmund Hauptbahnhof, Dortmund,7.4,2,1551,0,0,1,1,0,0,1
+Pöltnerhof,Weilheim in Oberbayern,9.0,1,3621,1,1,0,1,0,1,1
+Hotel garni Marktterrassen,Hennef,8.8,291,2561,0,0,1,1,1,1,1
+Sachsenwald Hotel Reinbek,Reinbek,8.1,700,2454,0,0,1,1,0,1,1
+Hotel Garni Altes Wirtshaus,Tharandt,8.6,173,1862,1,1,0,1,0,1,1
+Hotel Bayerischer Wald,Neukirchen,8.0,734,1865,0,0,1,1,0,1,1
+Gästehaus/Pension Fässle,Weinstadt,7.7,83,1810,1,0,0,1,1,0,1
+Pension Rehschopp,Ediger-Eller,8.6,167,2082,1,0,0,1,0,0,1
+Hotel Mühleinsel,Kenzingen,8.3,558,2242,1,1,0,1,1,1,1
+B&B Hotel Weimar,Weimar,7.7,1,1818,1,0,1,1,0,1,1
+Pension Zentrum Riesa,Riesa,8.0,341,1117,1,0,1,1,1,1,1
+Adler Stube,Münstertal,7.9,380,2924,1,0,1,1,0,1,1
+Beurener Hof,Beuren,7.9,80,2845,1,0,0,1,0,1,1
+Waldhotel Humboldt,Salzhemmendorf,8.3,190,4389,1,1,1,1,0,1,1
+Mayers Waldhorn,Kusterdingen,8.1,200,2509,0,0,0,1,0,1,1
+Moxy Bremen, Bremen,8.4,71,2228,1,0,0,0,0,1,1
+Pension Geno,Geisenhausen,8.6,84,2302,1,1,0,1,0,1,1
+Weinberghotel Edelacker,Freyburg,8.2,1,2047,0,0,0,1,0,1,1
+Miralior Apartment Mainz,Mainz,9.3,25,4365,0,0,0,1,1,1,1
+Hotel DREI SCHWANEN - Ristorante Due Fratelli,Hohenstein-Ernstthal,8.1,255,2555,1,1,1,1,0,1,1
+Hotel Spessartstuben,Haibach,8.5,153,2703,0,0,1,1,0,0,1
+Kaminstübchen,Altrich,8.8,36,1785,1,0,0,1,1,1,1
+Gasthof Zuck,Schauren,9.0,228,2043,1,1,0,1,0,1,1
+Holstenhof,Schmalfeld,7.6,201,1655,1,0,1,1,0,1,1
+Schwalehof Gästewohnungen,Bönebüttel,8.5,31,1810,1,0,0,1,1,1,1
+Hotel Diamant,Wedel,8.7,342,3336,1,1,0,1,0,1,1
+Residenz & Hotel Am Kurpark,Schlangenbad,7.9,102,2457,1,0,1,1,0,1,1
+NaturKulturHotel Stumpf,Neunkirchen,8.3,264,4737,1,1,1,1,0,1,1
+Hotel & Boarding House Schlosserwirt,Mering,9.1,563,2819,1,1,1,1,0,1,1
+Landlust Hotel,Gransee,7.9,251,2747,1,0,1,1,0,1,1
+Hotel & Restaurant Zur Linde,Freital,8.2,184,2973,0,1,1,1,0,1,1
+Hotel Restaurant Krone & Wellness - Schopfheim,Schopfheim,8.9,418,4785,1,1,0,1,0,1,1
+Parkhotel Weiskirchen,Weiskirchen,8.4,405,3675,0,1,1,1,0,1,1
+Wolfshotel am Arendsee,Arendsee,7.3,352,2132,0,0,1,1,0,1,1
+Abasto Hotel & Spa Maisach,Maisach,8.6,1,2361,0,0,1,1,0,1,1
+Wellenreiter,Tating,8.7,313,2276,1,0,1,0,0,1,1
+Pension Gaststätte Tannenhof,Saupsdorf,7.7,111,1060,1,0,0,1,0,1,1
+Rössle,Altensteig,9.0,206,2845,1,0,0,1,0,1,1
+Garni-Hotel Goldenes Lamm,Dudenhofen,8.6,282,2214,1,0,1,1,0,1,1
+Parkhotel FRITZ am Brunnen,Schwelm,7.9,635,2268,0,0,1,1,0,1,1
+Verena's Parkhotel,Löffingen,7.4,336,2561,1,1,1,1,0,1,1
+ibis budget Dueren West,Düren - Eifel,7.2,735,1427,1,0,1,1,0,1,1
+Leonardo Hotel Dresden Altstadt, Dresden,8.4,5,1573,0,0,1,1,0,1,1
+City-Hotel-Wolgast,Wolgast,7.9,730,1653,1,0,1,1,1,1,1
+Landgasthof Karner,Frasdorf,8.5,1,3078,1,1,1,1,0,1,1
+Ferienwohnung Erzgebirgswohnung Götze,Glashütte,9.7,4,2379,0,0,0,1,1,1,1
+Kulturhotel Kaiserhof,Bad Liebenstein,7.9,1,2974,1,1,0,1,1,1,1
+Courtyard By Marriott Munich Garching,Garching bei München,8.5,264,1871,1,0,1,1,0,1,1
+NYX Hotel Mannheim by Leonardo Hotels, Mannheim,8.2,5,1984,0,0,1,1,0,1,1
+Hotel Sternen,Geisingen,7.1,393,2144,1,0,1,1,0,1,1
+Schwarzwaldhotel Stollen,Gutach im Breisgau,8.4,363,1692,1,0,1,1,0,1,1
+Ferienwohnung Küper,Getelo,8.9,15,1571,0,0,0,1,1,1,1
+Heimbach Apartments,Lahr,8.2,113,2302,1,0,1,1,1,1,1
+Ober's,Ittlingen,7.6,300,2041,0,1,0,1,1,1,1
+Hotel Dawin,Rotthalmünster,9.2,302,3311,1,1,1,1,0,1,1
+Residence Inn by Marriott Essen City, Essen,8.8,306,3451,0,1,1,1,0,1,1
+Hostel Wendt,Fintel,8.0,135,1423,1,0,1,1,1,0,1
+"Holiday Inn Express - Offenbach, an IHG Hotel",Offenbach,8.5,446,1667,0,1,0,1,0,1,1
+Dreiklang Business & Spa Resort,Kaltenkirchen,7.5,659,5018,1,0,1,1,0,1,1
+ibis Styles Bremen Altstadt, Bremen,7.8,2,2040,1,0,1,1,0,1,1
+Hotel Limmerhof,Taufkirchen,8.2,192,3233,1,1,1,1,0,1,1
+Posthotel Sachrang,Sachrang,8.4,593,2211,1,0,1,1,0,1,1
+Hotel Zum Jägerhaus,Vreden,8.5,135,2723,1,1,0,1,0,1,1
+Hotel Gutsmühle,Obernburg am Main,8.2,360,2198,0,0,0,1,0,1,1
+Appartementhaus Stern,Wangels,8.1,599,3492,0,0,1,1,1,1,1
+Historischer Pfarrhof Niederleierndorf,Langquaid,9.8,16,2457,0,0,0,1,1,1,1
+"Holiday Inn Express Düsseldorf - Hauptbahnhof, an IHG Hotel", Düsseldorf,7.7,1,3485,0,1,0,1,0,1,1
+B&B Hotel Böblingen,Böblingen,,,1940,1,0,1,1,0,1,1
+Ammi Hotel Garni,Inning am Ammersee,8.7,609,3052,1,1,0,1,0,1,1
+Stefanutti Hof,Grabenstätt,8.9,109,1940,1,1,1,1,1,1,1
+Arthotel ANA Aura,Aystetten,8.1,1,2191,1,1,1,1,0,1,1
+Mosel Weinhotel Steffensberg,Enkirch,7.1,126,2336,1,1,0,1,0,1,1
+Vogelhaus Gobbin,Lancken-Granitz,9.3,102,1862,1,0,0,1,1,1,1
+Gut Gremmelin,Gremmelin,8.2,265,2717,0,1,0,1,0,1,1
+Hotel Alpenblick,Riedering,8.4,500,3233,1,1,1,1,0,1,1
+"Dorfgasthof ""Zur Rose""",Obereisenheim,8.2,458,2043,1,1,0,1,0,1,1
+Weingut-Aparthotel Olinger,Mehring,9.0,255,3362,1,0,0,1,0,1,1
+Aparthotel Adagio Access Freiburg,Freiburg im Breisgau,8.2,1,1888,1,0,1,1,0,1,1
+Blockhaus Stamsried,Stamsried,8.9,142,2089,1,0,1,1,1,1,1
+Gasthaus & Hotel Drei Lilien,Werbach,7.6,357,2257,1,0,1,1,0,1,1
+Aparthotel,Bad Abbach,7.7,341,2043,0,0,0,1,0,1,1
+Hotel Haus Kylltal,Zendscheid,7.0,724,2302,1,1,1,1,0,1,1
+CASILINO Hotel A 24 Wittenburg,Wittenburg,8.0,233,2304,0,0,1,1,0,1,1
+Pension Seba,Grevesmühlen,8.1,230,1681,1,0,0,1,0,1,1
+C&S Hotel,Pinneberg,6.9,333,1401,1,0,0,1,1,1,1
+Alpha-Hotel garni,Dietzenbach,7.3,310,2431,1,0,1,1,0,1,1
+Landhotel Huberhof,Allershausen,8.6,413,2793,1,0,0,1,0,1,1
+Café - Pension Bernreutehof,Vöhrenbach,9.0,348,1862,0,0,1,1,0,1,1
+Pension & Café Abendröte,Kurort Oybin,8.7,338,1020,0,0,1,1,0,1,1
+Hotel Hesborner Kuckuck,Hallenberg,8.0,246,2376,0,1,0,1,0,1,1
+Weinromantikhotel Richtershof,Mülheim an der Mosel,8.6,358,7807,1,1,1,1,0,1,1
+Hotel Waldhalle,Mölln,8.8,810,3071,0,0,1,1,0,1,1
+Bergschlößchen,Jüterbog,8.7,275,2577,1,0,1,1,0,1,1
+Parkhotel Viktoria,Velten,7.2,572,1646,0,0,1,1,0,1,1
+the niu Form,Stuttgart,8.2,663,1798,0,0,1,1,0,1,1

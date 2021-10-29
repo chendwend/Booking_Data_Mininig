@@ -1,13 +1,13 @@
 from utilities.config import *
 from sources.element import Element
-from sources.place_of_stay import PlaceOfStay
-from selenium.common.exceptions import ElementNotInteractableException
-import re
 from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
 import pandas as pd
+import grequests
+import re
+from bs4 import BeautifulSoup
 
 
 class Page(Element):
@@ -77,22 +77,20 @@ class Page(Element):
         """
         room_facilities_elements = [element for element in
                                     self.get_elements(self._driver, SUB_LOCATION_FACILITIES, "continue")]
-        if room_facilities_elements == DEFAULT_VALUE:
-            room_facilities = [EMPTY_ROOM_FACILITIES.copy()] * Page.number_of_sub_locations
-            return room_facilities
-        window_before = self._driver.window_handles[0]
+        links = [elem.get_attribute('href') for elem in room_facilities_elements]
+        rs = (grequests.get(url) for url in links)  # Create a set of unsent Requests
+        responses = grequests.map(rs, size=BATCH_SIZE)  # Send them all at the same time by batches
+        soups = [BeautifulSoup(response.content, "html.parser") for response in responses]
+        facilities = [soup.find(class_=FACILITY_CLASS) for soup in soups]
+        facilities_text = [facility.text for facility in facilities]
         room_facilities = []
-        for element in room_facilities_elements:  # click to move to each stays' page
-            try:
-                element.click()
-                window_after = self._driver.window_handles[1]
-                self._driver.switch_to_window(window_after)
-                place_of_stay_obj = PlaceOfStay(self._driver)
-                room_facilities.append(place_of_stay_obj.extract_data())
-            except ElementNotInteractableException:  # if not clickable, return dictionary of default values
-                room_facilities.append(EMPTY_ROOM_FACILITIES.copy())
-            self._driver.close()
-            self._driver.switch_to_window(window_before)
+        for facility in facilities_text:
+            dicti = {}
+            dicti.update({service: SERVICE_AVAILABILITY["yes"] if (selector_string in facility.lower())
+                                                               else SERVICE_AVAILABILITY["no"]
+                                                               for service, selector_string in ROOM_FACILITIES.items()})
+            room_facilities.append(dicti)
+
         return room_facilities
 
     @staticmethod
@@ -113,7 +111,8 @@ class Page(Element):
             kitchen.append(stay_facilities["kitchen"])
             parking.append(stay_facilities["parking"])
             air_conditioning.append(stay_facilities["air conditioning"])
-        df_new = pd.DataFrame({"pets": pets, "wifi": wifi, "kitchen": kitchen, "parking": parking, "air conditioning": air_conditioning})
+        df_new = pd.DataFrame(
+            {"pets": pets, "wifi": wifi, "kitchen": kitchen, "parking": parking, "air conditioning": air_conditioning})
         df = pd.concat([df, df_new], axis=1)
         return df
 

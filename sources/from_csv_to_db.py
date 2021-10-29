@@ -1,11 +1,9 @@
+from datetime import datetime
 import pymysql.cursors
 import csv
-from datetime import datetime
-from utilities.config import FILE_NAME
 
-#FILE_NAME="output.csv"
 
-def insert_to_db(from_date, to_date, location):
+def insert_to_db(from_date, to_date, location, file_path):
     """
     The function receives dates and location and inserts it with the data from the csv file
     to the different tables in the DB.
@@ -13,7 +11,7 @@ def insert_to_db(from_date, to_date, location):
 
     connection = pymysql.connect(host='localhost',
                                  user='root',
-                                 password='root',
+                                 password='Kostya',
                                  charset='utf8mb4',
                                  cursorclass=pymysql.cursors.DictCursor,
                                  database='booking_data')
@@ -63,8 +61,8 @@ def insert_to_db(from_date, to_date, location):
     #                 FOREIGN KEY (location_dates_id) REFERENCES location_dates(id) ON DELETE CASCADE
     #                                         )'''
     #             )
-
-    csv_file = open('output_files/'+FILE_NAME, "r", encoding="utf-8")
+    # path = os.path.join(OUTPUT_DIR, file)
+    csv_file = open(file_path, "r", encoding="utf-8")
     reader = csv.DictReader(csv_file)
     now = datetime.now()
     formatted_date = now.strftime('%Y-%m-%d %H:%M:%S')
@@ -135,4 +133,6 @@ def insert_to_db(from_date, to_date, location):
     cur.close()
     connection.close()
     print("The DB was updated successfully")
-#insert_to_db("2021-11-26","2021-12-29","germany")
+
+
+# insert_to_db("2021-11-26", "2021-12-29", "germany")
