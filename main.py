@@ -1,12 +1,14 @@
+from gevent import monkey as curious_george
+curious_george.patch_all(thread=False, select=False)
 from sources.from_csv_to_db import insert_to_db
-from utilities.config import WEB_SOURCE, FILE_NAME
+from utilities.config import WEB_SOURCE, FILE_NAME, OUTPUT_DIR
+from sources.weather_api import weather_api
 from sources.source_page import Website
-from time import perf_counter
 from datetime import datetime
+from time import perf_counter
 import argparse
 import sys
 import os
-from sources.weather_api import weather_api
 
 
 def validate_date(s):
@@ -42,6 +44,8 @@ def validate_country(destination):
     if not destination.isalpha():
         sys.exit(f"the destination {destination} is not alphanumeric.")
 
+    destination_filtered = destination
+
     return destination
 
 
@@ -59,10 +63,13 @@ if __name__ == '__main__':
     website.select_date(args.start_date, args.end_date)
     data, pages = website.get_all_data()
     website.teardown()
-    os.chdir('output_files')
-    data.to_csv(FILE_NAME, index=False)
-    weather_api(FILE_NAME)
-    insert_to_db(args.start_date, args.end_date, args.destination)
+
+    path1 = os.path.join(OUTPUT_DIR, FILE_NAME)
+    path2 = os.path.join(OUTPUT_DIR, 'output.csv')
+    # os.chdir(OUTPUT_DIR)
+    data.to_csv(path1, index=False)
+    weather_api(path1)
+    insert_to_db(args.start_date, args.end_date, args.destination, path2)
     time = perf_counter() - start
     print(
         f"Basic processing information for destination ='{args.destination}',"

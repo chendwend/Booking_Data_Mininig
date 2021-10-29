@@ -1,7 +1,8 @@
+
 import time
 from selenium import webdriver
 from utilities.config import PAGES_BUTTONS, USER_AGENT, SEARCH_BAR, SEARCH_BUTTON, \
-    CALENDAR, BAR, DEFAULT_VALUE, USER_AGENT_LINUX
+    CALENDAR, BAR, DEFAULT_VALUE
 from sources.page import Page
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
@@ -83,7 +84,7 @@ class Website(Element):
         pages_elements = self.get_elements(self._driver, PAGES_BUTTONS, on_exception='quit')
         number_of_pages = int(pages_elements[-2].text)
         print(f"Found {number_of_pages} pages.")
-        for page_number in range(1, 2):  # number_of_pages + 1
+        for page_number in range(1, number_of_pages + 1):  # number_of_pages + 1
             print(f"Processing page number  {page_number}/{number_of_pages}... \n {BAR}")
             page = Page(self._driver)
             if page_number == 1:

@@ -1,18 +1,16 @@
 """########## General constants #############"""
 BAR = "-----------------------------------"
-
+FILE_NAME = "data.csv"
+OUTPUT_DIR = 'output_files'
 """########## Webdriver constants #############"""
 SEC_TO_WAIT = 10
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" \
              " Chrome/93.0.4577.82 Safari/537.36"
-USER_AGENT_LINUX = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)" \
-                   " Chrome/92.0.4515.159 Safari/537.36"
 
 """########## Website constants #############"""
 WEB_SOURCE = "https://www.booking.com"
 SEARCH_BAR = {"name": "search bar", "selector": "ss"}
 SEARCH_BUTTON = {"name": "search button", "selector": ".sb-searchbox__button "}
-# PAGE_LINKS = {"name": "page links", "selector": ".bui-pagination__pages .bui-pagination__list li a"}
 PAGES_BUTTONS = {"name": "page links", "selector": "._4310f7077._fd15ae127"}
 CALENDAR = {"name": "calendar", "selector": ".bui-calendar__date"}
 
@@ -35,8 +33,9 @@ REGEX_DATA_DICT = \
      "price": "[0-9,]+$"
      }
 
-SUB_LOCATION_FACILITIES = {"name": "sub location facilities", "selector": "._4310f7077._ab6816951._03eb8c30a.e33c6840d8._aa53125bf._c846a17ec"}
-
+SUB_LOCATION_FACILITIES = {"name": "sub location facilities",
+                           "selector": "._4310f7077._ab6816951._03eb8c30a.e33c6840d8._aa53125bf._c846a17ec"}
+BATCH_SIZE = 20
 
 """########## Hotel constants #############"""
 PET_STRING = "pets are allowed"
@@ -46,17 +45,14 @@ PARKING_STRING = "parking is possible"
 AIR_CONDITIONING_STRING = "air conditioning"
 FREE_CANCELLATION_STRING = "free cancellation"
 BREAKFAST_STRING = "breakfast included"
-# FACILITY_STRING_LIST = [({"name": "facilities - first selector", "selector": ".hotel-facilities__list"}, 0),
-#                         ({"name": "facilities - second selector", "selector": ".facilitiesChecklist"}, 1)]
-FACILITY = {"name": "facilities", "selector": ".hotel-facilities"}
 
+FACILITY_CLASS = "hotel-facilities"
 ROOM_FACILITIES_KEYS = ["pets", "wifi", "kitchen", "parking", "air conditioning"]
 ROOM_FACILITIES_VALUES = [PET_STRING, WIFI_STRING, KITCHEN_STRING, PARKING_STRING, AIR_CONDITIONING_STRING]
 ROOM_FACILITIES = dict(zip(ROOM_FACILITIES_KEYS, ROOM_FACILITIES_VALUES))
 EMPTY_ROOM_FACILITIES = dict(zip(ROOM_FACILITIES_KEYS, [DEFAULT_VALUE] * len(ROOM_FACILITIES_KEYS)))
 SERVICE_AVAILABILITY = {"yes": 1, "no": 0}
 """########## SQL constants ###############"""
-FILE_NAME = "data.csv"
 
 """########## API constants ###############"""
 COLUMNS = ['latitude', 'longitude', 'temperature', 'feelslike']
