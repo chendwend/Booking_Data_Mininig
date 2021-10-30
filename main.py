@@ -9,6 +9,7 @@ from time import perf_counter
 import argparse
 import sys
 import os
+from utilities.log import init_logger
 
 
 def validate_date(s):
@@ -50,6 +51,8 @@ def validate_country(destination):
 
 
 if __name__ == '__main__':
+    logger = init_logger()
+    logger.error(f'Hi kostya')
     parser = argparse.ArgumentParser(description="Extract data from Booking.com")
     parser.add_argument('-d', "--destination", help="Desired country", required=True, type=validate_country,
                         action="store")
