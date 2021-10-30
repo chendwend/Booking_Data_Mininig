@@ -58,6 +58,15 @@ ROOM_FACILITIES = dict(zip(ROOM_FACILITIES_KEYS, ROOM_FACILITIES_VALUES))
 EMPTY_ROOM_FACILITIES = dict(zip(ROOM_FACILITIES_KEYS, [DEFAULT_VALUE] * len(ROOM_FACILITIES_KEYS)))
 SERVICE_AVAILABILITY = {"yes": 1, "no": 0}
 """########## SQL constants ###############"""
+TABLE_NAMES = ['location_dates', 'site_info', 'facilities']
+JOIN_COLUMNS = [('id', 'location_dates_id'), ('location_dates_id', 'location_dates_id')]
+
+BASE_STATEMENT = \
+    f"SELECT * " \
+    f"FROM {TABLE_NAMES[0]} " \
+    f"INNER JOIN {TABLE_NAMES[1]} ON {TABLE_NAMES[0]}.{JOIN_COLUMNS[0][0]}={TABLE_NAMES[1]}.{JOIN_COLUMNS[0][1]}" \
+    f"INNER JOIN {TABLE_NAMES[2]} ON {TABLE_NAMES[1]}.{JOIN_COLUMNS[1][0]}={TABLE_NAMES[2]}.{JOIN_COLUMNS[1][1]}"
+
 
 """########## API constants ###############"""
 COLUMNS = ['latitude', 'longitude', 'temperature', 'feelslike']

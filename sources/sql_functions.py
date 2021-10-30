@@ -3,19 +3,34 @@ import pymysql.cursors
 import csv
 
 
+def establish_connection():
+    connection = pymysql.connect(host='localhost',
+                                 user='root',
+                                 password='Kostya',
+                                 charset='utf8mb4',
+                                 cursorclass=pymysql.cursors.DictCursor,
+                                 database='booking_data')
+    cur = connection.cursor()
+
+    return connection, cur
+
+
+def query_sql(statement):
+    connection, cur = establish_connection()
+    cur.execute(statement)
+    result = cur.fetchall()
+    return result
+
+
+
+
 def insert_to_db(from_date, to_date, location, file_path):
     """
     The function receives dates and location and inserts it with the data from the csv file
     to the different tables in the DB.
     """
-    cursor = pymysql.cursors.DictCursor
-    connection = pymysql.connect(host='localhost',
-                                 user='root',
-                                 password='root',
-                                 charset='utf8mb4',
-                                 cursorclass=cursor,
-                                 database='booking_data')
-    cur = connection.cursor()
+
+    connection, cur = establish_connection()
 
     # cur.execute('''drop database booking_data''')
     # cur.execute('''CREATE DATABASE IF NOT EXISTS booking_data''')
@@ -134,5 +149,4 @@ def insert_to_db(from_date, to_date, location, file_path):
     connection.close()
     print("The DB was updated successfully")
 
-
-#insert_to_db("2021-11-26", "2021-12-29", "germany", "..\output_files\output.csv")
+# insert_to_db("2021-11-26", "2021-12-29", "germany")

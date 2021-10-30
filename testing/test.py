@@ -6,7 +6,7 @@
 #     CALENDAR, BAR, DEFAULT_VALUE, PAGE_DATA_DICT, REGEX_DATA_DICT, PAGES_BUTTONS, ROOM_FACILITIES, SERVICE_AVAILABILITY
 # from selenium.webdriver.chrome.options import Options
 # from webdriver_manager.chrome import ChromeDriverManager
-# from utilities.config import SEC_TO_WAIT, DEFAULT_VALUE
+
 # from selenium.webdriver.support.ui import WebDriverWait
 # from selenium.webdriver.support import expected_conditions as EC
 # from selenium.common.exceptions import TimeoutException
@@ -16,6 +16,7 @@
 # import pandas as pd
 # import grequests
 # from bs4 import BeautifulSoup
+from utilities.config import *
 import argparse
 # url = 'https://www.booking.com/searchresults.en-gb.html?label=gen173nr-1FCAEoggI46AdIM1gEaGqIAQGYAQm4ARfIAQzYAQHoAQH4AQuIAgGoAgO4Apaw74sGwAIB0gIkYjBiMWNkOTctYWRmMC00Y2U4LTgzNDMtYTMyZDVhYzE1ZDMz2AIG4AIB;sid=96fed286f84b1cadf61d477975932c11;checkin_monthday=08;checkin_year_month=2021-11;checkout_monthday=15;checkout_year_month=2021-11;dest_id=80;dest_type=country;from_history=1;group_adults=2;group_children=0;no_rooms=1;radius=1;si=ad;si=ai;si=ci;si=co;si=di;si=la;si=re;sig=v1mYt_Bn8Y&;sh_position=1'
 # selector = "._4310f7077._ab6816951._03eb8c30a.e33c6840d8._aa53125bf._c846a17ec"
@@ -121,7 +122,7 @@ def validate_name(destination):
 
 
 parser = argparse.ArgumentParser(description="Extract data from Booking.com")
-subparsers = parser.add_subparsers(dest='subcommand')
+subparsers = parser.add_subparsers(help='sub-command help')  # dest='subcommand'
 Q_parser = subparsers.add_parser("Q", help="Query help")
 S_parser = subparsers.add_parser("S", help="Scrape help")
 # a_parser.add_argument("something", choices=['a1', 'a2'])
@@ -140,7 +141,14 @@ args.func(args)
 args = parser.parse_args()
 
 # Base select statement
-statement = "SELECT * FROM TABLE"
+base_statement = \
+    f"SELECT * " \
+    f"FROM {TABLE_NAMES[0]} " \
+    f"INNER JOIN {TABLE_NAMES[1]} ON {TABLE_NAMES[0]}.{JOIN_COLUMNS[0][0]}={TABLE_NAMES[1]}.{JOIN_COLUMNS[0][1]}" \
+    f"INNER JOIN {TABLE_NAMES[2]} ON {TABLE_NAMES[1]}.{JOIN_COLUMNS[1][0]}={TABLE_NAMES[2]}.{JOIN_COLUMNS[1][1]}"
+
+
+
 
 # This list will hold all the extra conditionals
 operators = []
@@ -149,3 +157,4 @@ if "city" in args:
     operators.append("sub location BETWEEN {} AND {}".format(*args["date"]))
 
 a = 5
+
