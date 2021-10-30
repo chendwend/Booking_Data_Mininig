@@ -2,6 +2,11 @@
 BAR = "-----------------------------------"
 FILE_NAME = "data.csv"
 OUTPUT_DIR = 'output_files'
+
+"""########## Logger constants #############"""
+FORMATTER_STRING = '%(asctime)s-%(levelname)s-FILE:%(filename)s-FUNC:%(funcName)s-LINE:%(lineno)d-%(message)s'
+FILE_NAME_LOG = 'booking.log'
+
 """########## Webdriver constants #############"""
 SEC_TO_WAIT = 10
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" \

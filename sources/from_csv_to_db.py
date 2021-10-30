@@ -11,7 +11,7 @@ def insert_to_db(from_date, to_date, location, file_path):
 
     connection = pymysql.connect(host='localhost',
                                  user='root',
-                                 password='Kostya',
+                                 password='root',
                                  charset='utf8mb4',
                                  cursorclass=pymysql.cursors.DictCursor,
                                  database='booking_data')
@@ -135,4 +135,4 @@ def insert_to_db(from_date, to_date, location, file_path):
     print("The DB was updated successfully")
 
 
-# insert_to_db("2021-11-26", "2021-12-29", "germany")
+#insert_to_db("2021-11-26", "2021-12-29", "germany", "output_files\output.csv")
