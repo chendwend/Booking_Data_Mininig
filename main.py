@@ -9,7 +9,6 @@ from time import perf_counter
 import argparse
 import sys
 import os
-import logging
 from utilities.log import init_logger
 
 
