@@ -1,23 +1,16 @@
 from gevent import monkey
 
-monkey.patch_all(thread=False, select=False)
+monkey.patch_all(thread=False, select=False)  # required for grequests to be executed before imports
 from sources.sql_functions import insert_to_db, query_sql
-from utilities.config import WEB_SOURCE, FILE_NAME, OUTPUT_DIR, BASE_STATEMENT
+from utilities.config import WEB_SOURCE, FILE_NAME, OUTPUT_DIR, BASE_STATEMENT, SERVICE_AVAILABILITY, QUERY_OUTPUT_FILE
 from sources.weather_api import weather_api
 from sources.source_page import Website
 from datetime import datetime
 from time import perf_counter
-from argparse import ArgumentParser, Action, ArgumentTypeError
+from argparse import ArgumentParser, ArgumentTypeError
 import sys
 import os
-
-
-class StopAction(Action):
-    def __call__(self, parser, namespace, values, option_string=None):
-        # Do whatever actions you want
-        if values:
-            print("Exiting")
-            exit(0)
+import csv
 
 
 def validate_date(s):
@@ -71,7 +64,7 @@ def scraper(args):
     path2 = os.path.join(OUTPUT_DIR, 'output.csv')
     # os.chdir(OUTPUT_DIR)
     data.to_csv(path1, index=False)
-    weather_api(path1)
+    weather_api(path1, path2)
     insert_to_db(args.start_date, args.end_date, args.destination, path2)
     time = perf_counter() - start
     print(
@@ -85,43 +78,56 @@ def query(args):
     # This list will hold all the extra conditionals
     operators = []
     args = vars(args)
-    args = {k: v for k, v in args.items() if v is not None and (k not in ['stop', 'func'])}
-    # for k, v in args.items():
-    #     print(f"{k}: {v}")
-    # # )
+    args = {k: v for k, v in args.items() if v is not None and (k not in ['func'])}
+    statement = BASE_STATEMENT
     if "city" in args:
-        operators.append(f"city={args['city']}")
+        operators.append(f"LOWER(sub_location) = LOWER('{args['city']}')")
+    if "free_cancellation" in args:
+        operators.append(f"free_cancellation = {SERVICE_AVAILABILITY[args['free_cancellation']]}")
+
+    if "rating" in args:
+        operators.append(f"rating >= {args['rating']}")
+    if "reviewers_amount" in args:
+        operators.append(f"reviewers_amount >= {args['reviewers_amount']}")
 
     if operators:
-        statement = BASE_STATEMENT + " WHERE " " and ".join(operators)
-
+        statement += " WHERE " + " and ".join(operators)
+        print(statement)
     query_response = query_sql(statement)
-    print(query_response)
+    for response in query_response[:10]:
+        print(response)
 
+    # Save results to csv file
+    path = os.path.join(OUTPUT_DIR, QUERY_OUTPUT_FILE)
+    keys = query_response[0].keys()
+    with open(path, 'w', newline='') as output_file:
+        dict_writer = csv.DictWriter(output_file, keys)
+        dict_writer.writeheader()
+        dict_writer.writerows(query_response)
 
 if __name__ == '__main__':
     parser = ArgumentParser(description="Extract data from Booking.com or Query the DB")
-    parser.add_argument('stop', nargs='?', action=StopAction, default=False)
     subparsers = parser.add_subparsers(help='sub-command help')  # dest='subcommand'
     q_parser = subparsers.add_parser("q", help="Query help")  # query parser
     s_parser = subparsers.add_parser("s", help="Scrape help")  # scraper parser
 
-    # Scraper parser arguments
+    # scraper parser arguments
     s_parser.add_argument("-s", "--start_date", help="Start date - format YYYY-MM-DD ", required=True,
                           type=validate_date)
     s_parser.add_argument("-e", "--end_date", help="End date - format YYYY-MM-DD ", required=True, type=validate_date)
     s_parser.add_argument('-d', "--destination", help="Desired country", required=True, type=validate_name)
     s_parser.set_defaults(func=scraper)
 
-    # Query parser parser.parse_args()arguments
-    q_parser.add_argument("--city", help="the city to filter by", type=validate_name)
-    q_parser.add_argument("--breakfast", help="filter by breakfast inclusiveness", choices=['yes', 'no'])
+    # query parser arguments
+    q_parser.add_argument("--city", help="filter by city", type=validate_name)
+    q_parser.add_argument("--free_cancellation", help="filter by breakfast inclusiveness", choices=['yes', 'no'])
+    q_parser.add_argument("--reviewers_amount", help="filter by reviewers amount", type=int)
+    q_parser.add_argument("--rating", help="filter by rating", type=float)
     q_parser.set_defaults(func=query)
-    # args = parser.parse_args(input("Enter arguments: ").split())
-    args = parser.parse_args('q --city Berlin'.split())
+
+
+    # args = parser.parse_args('q --city Binz --breakfast yes'.split())
+    args = parser.parse_args('q --city Milan'.split())
     # args = parser.parse_args('s -d italy -s 2021-11-15 -e 2021-11-21'.split())
     # args = parser.parse_args()
     args.func(args)
-    # while True:
-    #
-    #

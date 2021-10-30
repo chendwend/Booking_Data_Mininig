@@ -83,7 +83,7 @@ class Website(Element):
         pages_elements = self.get_elements(self._driver, PAGES_BUTTONS, on_exception='quit')
         number_of_pages = int(pages_elements[-2].text)
         print(f"Found {number_of_pages} pages.")
-        for page_number in range(1, number_of_pages + 1):  # number_of_pages + 1
+        for page_number in range(1, 3):  # number_of_pages + 1
             print(f"Processing page number  {page_number}/{number_of_pages}... \n {BAR}")
             page = Page(self._driver)
             if page_number == 1:

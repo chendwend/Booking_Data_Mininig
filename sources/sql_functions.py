@@ -22,8 +22,6 @@ def query_sql(statement):
     return result
 
 
-
-
 def insert_to_db(from_date, to_date, location, file_path):
     """
     The function receives dates and location and inserts it with the data from the csv file
@@ -99,16 +97,17 @@ def insert_to_db(from_date, to_date, location, file_path):
                                              )LIMIT 1
                                              '''
 
-        values_1 = (location, row.get('sub location'), row.get('latitude'),
-                    row.get('longitude'), row.get('name'), from_date, to_date, location,
-                    row.get('sub location'), row.get('name'), from_date, to_date)
+        values_1 = (location, row.get('sub_location'), row.get('latitude'),
+                    row.get('longitude'), row.get('site_name'), from_date, to_date, location,
+                    row.get('sub_location'), row.get('site_name'), from_date, to_date)
         cur.execute(insert_query_1, values_1)
+
 
         # getting the id from the location_dates table to use as foreign key in the site_info table.
         query_id = '''SELECT id
                       FROM location_dates
                       WHERE location=%s and sub_location=%s and site_name=%s and from_date=%s and to_date=%s'''
-        cur.execute(query_id, (location, row.get('sub location'), row.get('name'), from_date, to_date))
+        cur.execute(query_id, (location, row.get('sub_location'), row.get('site_name'), from_date, to_date))
         result_id = cur.fetchone()
         the_id = result_id["id"]
 
@@ -128,8 +127,8 @@ def insert_to_db(from_date, to_date, location, file_path):
                             date_time = VALUES(date_time),
                             temperature = VALUES(temperature),
                             feelslike = VALUES(feelslike)'''
-        values_2 = (the_id, row.get('rating'), row.get('reviewers amount'),
-                    row.get('free cancellation'), row.get('parking'), row.get('breakfast'), row.get('pets'),
+        values_2 = (the_id, row.get('rating'), row.get('reviewers_amount'),
+                    row.get('free_cancellation'), row.get('parking'), row.get('breakfast'), row.get('pets'),
                     row.get('price'), formatted_date, row.get('temperature'), row.get('feelslike'))
         cur.execute(insert_query_2, values_2)
 

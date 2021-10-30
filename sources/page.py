@@ -48,23 +48,23 @@ class Page(Element):
             data_list_filtered = [int(re.search(REGEX_DATA_DICT["price"], data).group().replace(',', ''))
                                   if data else DEFAULT_VALUE
                                   for data in data_list]
-        elif data_type == "reviewers amount":
-            data_list_filtered = [int(re.search(REGEX_DATA_DICT["reviewers amount"], data).group())
+        elif data_type == "reviewers_amount":
+            data_list_filtered = [int(re.search(REGEX_DATA_DICT["reviewers_amount"], data).group())
                                   if data else DEFAULT_VALUE
                                   for data in data_list]
         elif data_type == "rating":
             data_list_filtered = [float(data) for data in data_list]
-        elif data_type == "sub location":
-            data_list_filtered = [data[data.find(',') + 1:data.find('Show')]
-                                  if data.find(',') != -1 else data[0:data.find('Show')]
+        elif data_type == "sub_location":
+            data_list_filtered = [data[data.find(',') + 1:data.find('Show')].strip()
+                                  if data.find(',') != -1 else data[0:data.find('Show')].strip()
                                   for data in data_list]
         elif data_type == "breakfast":
             data_list_filtered = [1
-                                  if "free cancellation" in data.lower() else 0
-                                  for data in data_list]
-        elif data_type == "free cancellation":
-            data_list_filtered = [1
                                   if "breakfast included" in data.lower() else 0
+                                  for data in data_list]
+        elif data_type == "free_cancellation":
+            data_list_filtered = [1
+                                  if "free cancellation" in data.lower() else 0
                                   for data in data_list]
 
         return data_list_filtered
@@ -110,9 +110,9 @@ class Page(Element):
             wifi.append(stay_facilities["wifi"])
             kitchen.append(stay_facilities["kitchen"])
             parking.append(stay_facilities["parking"])
-            air_conditioning.append(stay_facilities["air conditioning"])
+            air_conditioning.append(stay_facilities["air_conditioning"])
         df_new = pd.DataFrame(
-            {"pets": pets, "wifi": wifi, "kitchen": kitchen, "parking": parking, "air conditioning": air_conditioning})
+            {"pets": pets, "wifi": wifi, "kitchen": kitchen, "parking": parking, "air_conditioning": air_conditioning})
         df = pd.concat([df, df_new], axis=1)
         return df
 
