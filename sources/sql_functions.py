@@ -3,12 +3,7 @@ import pymysql.cursors
 import csv
 
 
-def insert_to_db(from_date, to_date, location, file_path):
-    """
-    The function receives dates and location and inserts it with the data from the csv file
-    to the different tables in the DB.
-    """
-
+def establish_connection():
     connection = pymysql.connect(host='localhost',
                                  user='root',
                                  password='Kostya',
@@ -16,6 +11,26 @@ def insert_to_db(from_date, to_date, location, file_path):
                                  cursorclass=pymysql.cursors.DictCursor,
                                  database='booking_data')
     cur = connection.cursor()
+
+    return connection, cur
+
+
+def query_sql(statement):
+    connection, cur = establish_connection()
+    cur.execute(statement)
+    result = cur.fetchall()
+    return result
+
+
+
+
+def insert_to_db(from_date, to_date, location, file_path):
+    """
+    The function receives dates and location and inserts it with the data from the csv file
+    to the different tables in the DB.
+    """
+
+    connection, cur = establish_connection()
 
     # cur.execute('''drop database booking_data''')
     # cur.execute('''CREATE DATABASE IF NOT EXISTS booking_data''')
@@ -133,6 +148,5 @@ def insert_to_db(from_date, to_date, location, file_path):
     cur.close()
     connection.close()
     print("The DB was updated successfully")
-
 
 # insert_to_db("2021-11-26", "2021-12-29", "germany")
