@@ -1,5 +1,5 @@
-from gevent import monkey as curious_george
-curious_george.patch_all(thread=False, select=False)
+from gevent import monkey
+monkey.patch_all(thread=False, select=False)
 from sources.from_csv_to_db import insert_to_db
 from utilities.config import WEB_SOURCE, FILE_NAME, OUTPUT_DIR
 from sources.weather_api import weather_api

@@ -72,7 +72,6 @@ class Website(Element):
         if page_number < 8:
             return pages_elements[page_number + 1]
         else:
-            print(len(pages_elements))
             return pages_elements[7]
 
     def get_all_data(self):
