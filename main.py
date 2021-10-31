@@ -133,7 +133,7 @@ if __name__ == '__main__':
 
     # query parser arguments
     q_parser.add_argument("--city", help="filter by city", type=validate_name)
-    q_parser.add_argument("--free_cancellation", help="filter by breakfast inclusiveness", choices=['yes', 'no'])
+    q_parser.add_argument("--free_cancellation", help="filter by free_cancellation", choices=['yes', 'no'])
     q_parser.add_argument("--reviewers_amount", help="filter by reviewers amount", type=int)
     q_parser.add_argument("--rating", help="filter by rating", type=float)
     q_parser.set_defaults(func=query)

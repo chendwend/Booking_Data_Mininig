@@ -55,7 +55,10 @@ class Page(Element):
                                   if data else DEFAULT_VALUE
                                   for data in data_list]
         elif data_type == "rating":
-            data_list_filtered = [float(data) for data in data_list]
+            data_list_filtered = [float(data)
+                                  if data else DEFAULT_VALUE
+                                  for data in data_list]
+            print(data_list_filtered)
         elif data_type == "sub_location":
             data_list_filtered = [data[data.find(',') + 1:data.find('Show')].strip()
                                   if data.find(',') != -1 else data[0:data.find('Show')].strip()
