@@ -1,53 +1,107 @@
 site_name,sub_location,rating,reviewers_amount,price,breakfast,free_cancellation,pets,wifi,kitchen,parking,air_conditioning
-Casa ParticulART,Rome,8.7,108,964,0,1,1,1,1,1,1
-Gramsci Luxury Rooms,Naples,8.0,598,2192,1,0,0,1,1,1,1
-Hotel Iris Venice,Venice,5.6,316,921,0,0,1,1,0,1,1
-Piccolo Hotel,Milan,7.6,1,2670,1,1,0,1,0,0,1
-Roero Suite,Montà,8.9,26,1874,0,1,0,1,1,1,1
+Alloggio Turistico Sutri,Sutri,9.1,25,1227,0,1,0,1,1,1,1
+Gramsci Luxury Rooms,Naples,8.0,597,2192,1,0,0,1,1,1,1
+Hotel Iris Venice,Venice,5.6,316,921,0,1,1,1,0,1,1
 Combo Torino,Turin,8.9,1,3726,0,0,1,1,1,0,1
+Roero Suite,Montà,8.9,26,1815,0,1,0,1,1,1,1
 Hotel Conca d'Oro,Positano,8.6,656,3087,1,1,0,1,0,1,1
-Bed No Breakfast AK,Naples,8.3,683,2696,0,0,0,1,0,1,1
+Piccolo Hotel,Milan,7.6,1,2670,1,1,0,1,0,0,1
+Bed No Breakfast AK,Naples,8.3,684,2696,0,0,0,1,0,1,1
 "Villa Sassolini Luxury Boutique Hotel, The Originals Collection",Montevarchi,8.8,75,5129,0,0,1,1,0,0,1
-Hotel Berlino,Milan,8.1,1,1553,0,1,0,1,0,1,1
-Casa vacanze Totò & Peppino,Naples,8.7,28,937,0,0,0,1,1,0,1
+Hotel Berlino,Milan,8.1,1,1504,0,1,0,1,0,1,1
+Casa vacanze Totò & Peppino,Naples,8.7,28,907,0,1,0,1,1,0,1
 Tiby Hotel,Modena,7.4,2,1227,1,1,1,1,0,0,1
+Hotel Edelweiss,Breuil-Cervinia,8.9,111,3288,0,1,1,1,0,1,1
 Viktory Rooms,Bolzano,5.8,116,1054,0,1,1,0,0,0,1
-Molino Della Lodola,Rapolano Terme,8.7,149,5208,0,0,1,1,0,1,1
+Molino Della Lodola,Rapolano Terme,8.7,149,2236,0,1,1,1,0,1,1
 Hotel Brivio,Milan,7.3,837,1396,0,1,0,1,0,0,1
 Hotel Ulivi,Paratico,8.8,649,2915,1,1,1,1,0,1,1
-Hotel La Caravella,Milan,7.2,293,2192,0,1,1,1,0,1,1
 Habitat Guest House,Trento,9.0,249,1237,0,1,0,1,0,1,1
-Hotel Demo',Milan,7.1,2,1900,0,1,1,1,0,1,1
-Hotel Morgana,Marina di Carrara,7.9,248,1863,1,1,0,1,0,1,1
+Hotel Morgana,Marina di Carrara,7.9,247,1863,1,1,0,1,0,1,1
+Hotel La Caravella,Milan,7.2,293,1412,0,1,1,1,0,1,1
+La Suite B&B Apartments,Bologna,7.6,726,2349,0,1,0,1,0,1,1
 Dealuna Motel,Fidenza,8.3,384,1534,0,1,1,1,0,1,1
-Casa Belvedere,Cuneo,9.1,37,1458,0,1,0,0,1,0,1
+Casa Belvedere,Cuneo,9.1,37,1412,0,1,0,0,1,0,1
 Civico 3,Portofino,9.6,29,2411,0,1,0,1,1,1,1
-"""Ca' Mia"" On The Lake - By House Of Travelers -",Como,8.9,43,2179,0,1,1,1,1,0,1
-Hotel Del Corso,Pula,8.0,174,2280,1,1,0,1,0,0,1
-Hotel Del Corso,Pula,8.0,174,2280,1,1,0,1,0,0,1
+"""Ca' Mia"" On The Lake - By House Of Travelers -",Como,8.9,43,2110,0,1,1,1,1,0,1
+"""Ca' Mia"" On The Lake - By House Of Travelers -",Como,8.9,43,2110,0,1,1,1,1,0,1
+Hotel Del Corso,Pula,8.0,174,2192,1,1,0,1,0,0,1
 Casa Consani,Ventimiglia,9.0,45,1644,0,1,1,1,1,0,1
-Engadina B&B,Livigno,8.7,159,4081,1,1,0,1,0,1,1
+Engadina B&B,Livigno,8.7,159,3953,1,1,0,1,0,1,1
+Casa Belvedere,Cuneo,9.1,37,1412,0,1,0,0,1,0,1
 Hotel Fattori,Bologna,7.6,123,1425,1,1,1,1,0,1,1
-Casa Belvedere,Cuneo,9.1,37,1458,0,1,0,0,1,0,1
-Camere Bar Rudi,Santa Maria Maggiore,8.5,27,1874,0,1,1,0,0,0,1
-Nirvana House Pisa,Pisa,8.1,550,833,0,1,0,1,1,0,1
+Camere Bar Rudi,Santa Maria Maggiore,8.5,27,1815,0,1,1,0,0,0,1
+Nirvana House Pisa,Pisa,8.1,550,807,0,1,0,1,1,0,1
+Ratzeshof,Castelrotto,9.5,94,1863,0,1,1,1,1,1,1
 Gentile Relais,Naples,9.1,312,3014,1,1,0,1,1,1,1
-House Giardina,Cefalù,9.6,31,1416,0,0,1,1,1,1,1
-Florencehostels Anamaria,Florence,7.7,415,957,0,1,0,1,1,0,1
 Civico 3,Portofino,9.6,29,2411,0,1,0,1,1,1,1
+House Giardina,Cefalù,9.6,31,1371,0,1,1,1,1,1,1
+Florencehostels Anamaria,Florence,7.7,415,957,0,1,0,1,1,0,1
 Assietta,Sauze dʼOulx,9.0,324,1986,1,1,1,1,0,1,1
 B&B Sallustio Rooms,Siena,9.3,660,2192,0,1,0,1,0,0,1
-Casa Ortensia,Pellizzano,8.9,39,1666,1,1,1,1,1,1,1
+Casa Ortensia,Pellizzano,8.9,39,1613,1,1,1,1,1,1,1
 Hotel Boutique Nazionale,Rome,8.2,592,9751,0,0,1,1,0,0,1
-Hotel Daniel,Basiano,8.1,371,1815,0,0,1,1,0,1,1
-Da Sophie,Mondello,9.7,40,1458,0,1,0,1,1,0,1
+Hotel Daniel,Basiano,8.1,371,1815,0,1,1,1,0,1,1
+Da Sophie,Mondello,9.7,40,1412,0,1,0,1,1,0,1
 Amalfi Residence,Conca dei Marini,9.4,232,3244,1,1,0,1,0,1,1
 Villa Flores,Bellaria-Igea Marina,9.0,32,1973,0,1,1,1,1,1,1
 Niederhaeusererhof,Falzes,9.5,76,877,0,1,1,1,1,1,1
-Casa Vacanze Le Tortore,Rome,9.6,24,1208,0,0,1,1,1,0,1
+Hotel Flora,Milano Marittima,7.8,160,1206,0,1,1,1,0,1,1
+Casa Vacanze Le Tortore,Rome,9.6,24,1170,0,1,1,1,1,0,1
 Appartamenti Il Sogno,Bellagio,8.4,337,2590,0,1,1,1,1,0,1
-B&B Porticella,Marsala,8.5,46,1096,1,0,0,1,1,1,1
-Peppino's Room,Naples,8.2,102,1458,1,1,1,1,1,1,1
-Il QuintoPiano,Genoa,9.4,47,1041,0,1,0,1,1,1,1
-Bed & Breakfast Fontanarossa Airport,Catania,9.0,445,1425,1,1,0,1,1,1,1
-Nonna Nina,Avola,8.6,350,936,1,1,1,1,1,1,1
+B&B Porticella,Marsala,8.5,46,1096,1,1,0,1,1,1,1
+Peppino's Room,Naples,8.2,102,1412,1,1,1,1,1,1,1
+Bed & Breakfast Fontanarossa Airport,Catania,9.0,440,1425,1,1,0,1,1,1,1
+Nonna Nina,Avola,8.6,349,936,1,1,1,1,1,1,1
+Mirella,Perugia,7.8,29,1096,0,1,1,0,1,1,1
+Case Vacanza Catania (blue home),Catania,7.6,33,548,0,1,0,0,1,0,1
+"""Ca' Mia"" On The Lake - By House Of Travelers -",Como,8.9,43,2110,0,1,1,1,1,0,1
+Dora maison de charme,Ivrea,9.4,234,3343,1,1,0,1,1,1,1
+B&B Business,Casalnuovo di Napoli,8.9,52,1125,1,0,1,1,1,1,1
+ABACA b&b AFFITTACAMERE,Lecce,7.7,76,1412,0,1,1,1,0,0,1
+Casale del Sole,Cepagatti,9.1,56,1109,0,1,1,1,0,1,1
+Kompatscherhof,Castelrotto,9.3,45,2411,0,1,1,1,1,1,1
+House Giardina,Cefalù,9.6,31,1371,0,1,1,1,1,1,1
+B&B Sepulveda,Rome,8.6,515,723,0,1,1,1,1,1,1
+Albergo Al Castello,Gavi,9.0,443,1715,0,1,1,1,0,1,1
+Casa Sofia,Valdisotto,9.5,110,1534,0,1,0,1,1,1,1
+Apartment Bellomia,Palermo,9.1,79,1210,0,1,0,1,1,1,1
+La Lucciola Albergo Ristorante,Tagliacozzo,7.2,108,1008,1,1,1,1,0,1,1
+Stellium,Palermo,7.5,355,605,0,1,1,1,0,0,1
+Il Cavaliere di Toledo,Naples,9.6,56,1748,0,1,0,1,1,1,1
+Residence Tabor,Bardonecchia,8.5,313,1537,0,1,1,1,1,1,1
+B&B Verdi,Salerno,9.0,65,1622,0,1,0,1,1,0,1
+B&B Incanto,Cles,9.2,163,1573,1,1,1,1,1,1,1
+HolidayMonopoli,Monopoli,8.8,875,1983,1,1,1,1,1,1,1
+COCCIU D’AMURI,Castellammare del Golfo,9.7,75,1929,1,1,1,1,1,1,1
+Domus Lace,Messina,9.3,48,1311,1,1,0,1,1,1,1
+Park Hotel Sant'Elia,Fasano,7.9,620,1695,1,1,1,1,0,1,1
+De Guestibus,Rome,8.7,110,1688,0,1,1,1,1,1,1
+B&B Via dell'Astrologo,Cosenza,8.7,27,1589,1,0,0,1,0,1,1
+Le Suite Bed,Pulsano,8.1,142,1042,0,1,0,1,1,1,1
+The Old House,Mottola,7.4,23,1283,0,1,1,1,1,1,1
+Villa Ruberto,San Giovanni Rotondo,8.1,143,855,1,1,1,1,0,1,1
+Casa Lo Scoglio Della Ballerina,Livorno,8.4,226,1412,0,1,1,1,1,0,1
+Da Sophie,Mondello,9.7,40,1412,0,1,0,1,1,0,1
+Venice Sanella Rooms,Venice,8.2,112,862,0,1,1,1,1,0,1
+Terra di Venere Inn,Ragusa,9.2,115,785,0,1,0,1,0,1,1
+Hotel Residence Chateau,Saint-Pierre,8.9,269,1644,1,1,1,1,0,1,1
+Terra di Leuca,Salve,9.0,209,1206,0,1,1,1,1,1,1
+"Crowne Plaza Milan City, an IHG Hotel",Milan,8.5,950,3376,0,1,1,1,0,1,1
+Villa Flores,Bellaria-Igea Marina,9.0,32,1973,0,1,1,1,1,1,1
+Agriturismo Le Due Palme Il Paradiso di Adamo,Frigintini,8.7,27,958,0,1,1,1,1,1,1
+la TerrazzaSPA B&B,Comiso,9.3,136,1140,1,1,0,1,1,0,1
+B&B Valpolicella 68,San Pietro in Cariano,9.4,111,2170,1,1,0,1,1,1,1
+Mercure Firenze Centro,Florence,8.3,225,2711,0,1,1,1,0,0,1
+La Casa Di Miele,Marcignago,6.8,215,1293,0,1,1,1,1,1,1
+La Barchessa,Corva,9.1,387,2411,1,1,0,1,1,1,1
+Borgo Casalvento,Cantagrillo,9.7,68,3288,0,1,1,1,1,1,1
+Hotel Como,Siracusa,7.7,981,1578,0,1,1,1,0,1,1
+Hotel Flavia,Rome,8.0,1,2328,1,1,1,1,0,0,1
+B&B da Sissi,La Maddalena,9.1,66,1109,1,1,1,1,1,1,1
+Hotel Borromeo,Rome,8.1,1,2700,1,1,1,1,0,1,1
+Euro Hotel Iglesias,Iglesias,8.9,696,1619,1,1,1,1,0,1,1
+Hotel Gioia,Florence,8.1,1,1995,1,1,1,1,0,1,1
+Palazzo Rosenthal Vesuview Hotel & Resort,Trecase,8.6,279,1775,1,1,1,1,0,1,1
+TH Roma - Carpegna Palace,Rome,7.7,35,1731,0,1,1,1,0,1,1
+Hotel Astoria Garden,Rome,7.8,631,2174,1,1,1,1,0,0,1

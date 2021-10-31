@@ -2,6 +2,8 @@ import requests
 import json
 from utilities.config import COLUMNS, DEFAULT_VALUE, ACCESS_KEY, TYPE_OF_REQUEST
 import pandas as pd
+import logging
+logger = logging.getLogger()
 
 
 def weather_api(origin, destination):
@@ -27,9 +29,10 @@ def weather_api(origin, destination):
         api_result_json = json.loads(api_result.content)
         if api_result_json["success"] is False:  # error code for usage_limit_reached
             if api_result_json["error"]["code"] == 104:
-                print('Monthly API subscription has reached its limit! ')
+                logger.info(f"Monthly API subscription has reached its limit.")
             break
         elif api_result.status_code != 200:  # for bad result, skip to next location
+            logger.info(f"Weather API bad status code")
             continue
         else:
             api_response = api_result.json()
@@ -40,6 +43,7 @@ def weather_api(origin, destination):
             feelslike = api_response['current']['feelslike']
 
             df.loc[df['sub location'] == sub_location, COLUMNS] = lat, lon, temperature, feelslike
+    logger.info(f"Weather API finished all requests.")
     df.to_csv(destination, index=False)
 
 # weather_api('data.csv')

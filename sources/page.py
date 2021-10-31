@@ -5,9 +5,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
 import pandas as pd
+import logging
 import grequests
 import re
 from bs4 import BeautifulSoup
+logger = logging.getLogger()
 
 
 class Page(Element):
@@ -77,6 +79,7 @@ class Page(Element):
         """
         room_facilities_elements = [element for element in
                                     self.get_elements(self._driver, SUB_LOCATION_FACILITIES, "continue")]
+        logger.info(f"room facilities elements were found.")
         links = [elem.get_attribute('href') for elem in room_facilities_elements]
         rs = (grequests.get(url) for url in links)  # Create a set of unsent Requests
         responses = grequests.map(rs, size=BATCH_SIZE)  # Send them all at the same time by batches
@@ -114,6 +117,7 @@ class Page(Element):
         df_new = pd.DataFrame(
             {"pets": pets, "wifi": wifi, "kitchen": kitchen, "parking": parking, "air_conditioning": air_conditioning})
         df = pd.concat([df, df_new], axis=1)
+        logger.info(f"DataFrame created successfully.")
         return df
 
     def get_data(self):
@@ -130,5 +134,6 @@ class Page(Element):
             filtered_data_list = self._clean_data(original_data_text_list, data_type)
             data.append(filtered_data_list)
         facilities_list = self.extract_room_facilities()
+        logger.info(f"Extracted room facilities successfully")
 
         return self._arrange_data(facilities_list, data)

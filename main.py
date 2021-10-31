@@ -2,15 +2,22 @@ from gevent import monkey
 
 monkey.patch_all(thread=False, select=False)  # required for grequests to be executed before imports
 from sources.sql_functions import insert_to_db, query_sql
-from utilities.config import WEB_SOURCE, FILE_NAME, OUTPUT_DIR, BASE_STATEMENT, SERVICE_AVAILABILITY, QUERY_OUTPUT_FILE
+from utilities.config import WEB_SOURCE, FILE_NAME, OUTPUT_DIR, BASE_STATEMENT, SERVICE_AVAILABILITY, QUERY_OUTPUT_FILE, \
+    LOGGING_FILE
 from sources.weather_api import weather_api
 from sources.source_page import Website
 from datetime import datetime
 from time import perf_counter
 from argparse import ArgumentParser, ArgumentTypeError
+import logging
 import sys
 import os
 import csv
+
+log_path = os.path.join(OUTPUT_DIR, LOGGING_FILE)
+logging.basicConfig(filename=log_path,
+                    format='%(asctime)s-%(levelname)s-FILE:%(filename)s-FUNC:%(funcName)s-LINE:%(lineno)d-%(message)s',
+                    level=logging.INFO)
 
 
 def validate_date(s):
@@ -26,9 +33,11 @@ def validate_date(s):
         date = datetime.strptime(s, "%Y-%m-%d")
         today = datetime.today()
         if date < today:
-            sys.exit(f"the date {date} is in the past.")
+            logging.critical(f'date provided: {date} - is in the past')
+            sys.exit()
     except ValueError:
         msg = f"Not a valid date: {s}"
+        logging.critical(f'date provided: {date} - not valid')
         raise ArgumentTypeError(msg)
     return date
 
@@ -44,7 +53,8 @@ def validate_name(destination):
     :rtype: str
     """
     if not destination.isalpha():
-        sys.exit(f"the destination {destination} is not alphanumeric.")
+        logging.critical(f"the string {destination} is not alphanumeric.")
+        sys.exit()
 
     destination_filtered = destination
 
@@ -94,8 +104,9 @@ def query(args):
         statement += " WHERE " + " and ".join(operators)
         print(statement)
     query_response = query_sql(statement)
-    for response in query_response[:10]:
-        print(response)
+    logging.info(f"query request: \n {statement} \n - retrieved successfully")
+    # for response in query_response[:10]:
+    #     print(response)
 
     # Save results to csv file
     path = os.path.join(OUTPUT_DIR, QUERY_OUTPUT_FILE)
@@ -104,6 +115,8 @@ def query(args):
         dict_writer = csv.DictWriter(output_file, keys)
         dict_writer.writeheader()
         dict_writer.writerows(query_response)
+        logging.info(f"query response saved to file {path}.")
+
 
 if __name__ == '__main__':
     parser = ArgumentParser(description="Extract data from Booking.com or Query the DB")
@@ -125,9 +138,8 @@ if __name__ == '__main__':
     q_parser.add_argument("--rating", help="filter by rating", type=float)
     q_parser.set_defaults(func=query)
 
-
     # args = parser.parse_args('q --city Binz --breakfast yes'.split())
-    args = parser.parse_args('q --city Milan'.split())
+    # args = parser.parse_args('q --city Milan'.split())
     # args = parser.parse_args('s -d italy -s 2021-11-15 -e 2021-11-21'.split())
-    # args = parser.parse_args()
+    args = parser.parse_args()
     args.func(args)

@@ -6,7 +6,7 @@ QUERY_OUTPUT_FILE = 'query.csv'
 
 """########## Logger constants #############"""
 FORMATTER_STRING = '%(asctime)s-%(levelname)s-FILE:%(filename)s-FUNC:%(funcName)s-LINE:%(lineno)d-%(message)s'
-FILE_NAME_LOG = 'booking.log'
+LOGGING_FILE = 'booking.log'
 
 """########## Webdriver constants #############"""
 SEC_TO_WAIT = 10
@@ -74,3 +74,7 @@ BASE_STATEMENT = \
 COLUMNS = ['latitude', 'longitude', 'temperature', 'feelslike']
 ACCESS_KEY = 'c97f8ed4ab7a775dd2abe77f28bac6be'
 TYPE_OF_REQUEST = 'current'
+
+"""########## SQL constants ###############"""
+DB_NAME = 'booking_data'
+PASSWORD = 'Kostya'

@@ -1,17 +1,20 @@
 from datetime import datetime
 import pymysql.cursors
 import csv
+import logging
+from utilities.config import DB_NAME, PASSWORD
+logger = logging.getLogger()
 
 
 def establish_connection():
     connection = pymysql.connect(host='localhost',
                                  user='root',
-                                 password='Kostya',
+                                 password=PASSWORD,
                                  charset='utf8mb4',
                                  cursorclass=pymysql.cursors.DictCursor,
-                                 database='booking_data')
+                                 database=DB_NAME)
     cur = connection.cursor()
-
+    logger.info(f"connection to DB established successfully")
     return connection, cur
 
 
@@ -146,6 +149,7 @@ def insert_to_db(from_date, to_date, location, file_path):
     csv_file.close()
     cur.close()
     connection.close()
-    print("The DB was updated successfully")
+    logger.info(f"DB connection closed.")
+    logger.info(f"The DB was updated successfully.")
 
 # insert_to_db("2021-11-26", "2021-12-29", "germany")
