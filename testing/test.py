@@ -1,21 +1,22 @@
 # from gevent import monkey as curious_george
 #
 # curious_george.patch_all(thread=False, select=False)
-from selenium import webdriver
-from utilities.config import USER_AGENT, SEARCH_BAR, SEARCH_BUTTON, \
-    CALENDAR, BAR, DEFAULT_VALUE, PAGE_DATA_DICT, REGEX_DATA_DICT, PAGES_BUTTONS, ROOM_FACILITIES, SERVICE_AVAILABILITY
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
-from utilities.config import SEC_TO_WAIT, DEFAULT_VALUE
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.common.by import By
-from time import perf_counter
-import re
-import pandas as pd
-import grequests
-from bs4 import BeautifulSoup
+# from selenium import webdriver
+# from utilities.config import USER_AGENT, SEARCH_BAR, SEARCH_BUTTON, \
+#     CALENDAR, BAR, DEFAULT_VALUE, PAGE_DATA_DICT, REGEX_DATA_DICT, PAGES_BUTTONS, ROOM_FACILITIES, SERVICE_AVAILABILITY
+# from selenium.webdriver.chrome.options import Options
+# from webdriver_manager.chrome import ChromeDriverManager
+
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
+# from selenium.common.exceptions import TimeoutException
+# from selenium.webdriver.common.by import By
+# from time import perf_counter
+# import re
+# import pandas as pd
+# import grequests
+# from bs4 import BeautifulSoup
+from utilities.config import *
 import argparse
 # url = 'https://www.booking.com/searchresults.en-gb.html?label=gen173nr-1FCAEoggI46AdIM1gEaGqIAQGYAQm4ARfIAQzYAQHoAQH4AQuIAgGoAgO4Apaw74sGwAIB0gIkYjBiMWNkOTctYWRmMC00Y2U4LTgzNDMtYTMyZDVhYzE1ZDMz2AIG4AIB;sid=96fed286f84b1cadf61d477975932c11;checkin_monthday=08;checkin_year_month=2021-11;checkout_monthday=15;checkout_year_month=2021-11;dest_id=80;dest_type=country;from_history=1;group_adults=2;group_children=0;no_rooms=1;radius=1;si=ad;si=ai;si=ci;si=co;si=di;si=la;si=re;sig=v1mYt_Bn8Y&;sh_position=1'
 # selector = "._4310f7077._ab6816951._03eb8c30a.e33c6840d8._aa53125bf._c846a17ec"
@@ -78,10 +79,82 @@ import argparse
 # for element in elements:
 #     print(element.text)
 # text = element_3.text
+import sys
+from datetime import datetime
 
-parser = argparse.ArgumentParser()
-subparsers = parser.add_subparsers(dest='subcommand')
+
+def validate_date(s):
+    """
+    Validates a date to be of type YYYY-MM-DD and is not in the past.
+    If not given in this formant, exits the program.
+    :param s: date
+    :type s: str
+    :return: datetime object representation of the given date
+    :rtype: datetime
+    """
+    try:
+        date = datetime.strptime(s, "%Y-%m-%d")
+        today = datetime.today()
+        if date < today:
+            sys.exit(f"the date {date} is in the past.")
+    except ValueError:
+        msg = f"Not a valid date: {s}"
+        raise argparse.ArgumentTypeError(msg)
+    return date
 
 
+def validate_name(destination):
+    """
+    Validates the given string to be alphanumeric.
+    If not, exits the program.
+
+    :param destination: desired destination
+    :type destination: str
+    :return: destination, the input
+    :rtype: str
+    """
+    if not destination.isalpha():
+        sys.exit(f"the destination {destination} is not alphanumeric.")
+
+    destination_filtered = destination
+
+    return destination
+
+
+parser = argparse.ArgumentParser(description="Extract data from Booking.com")
+subparsers = parser.add_subparsers(help='sub-command help')  # dest='subcommand'
+Q_parser = subparsers.add_parser("Q", help="Query help")
+S_parser = subparsers.add_parser("S", help="Scrape help")
+# a_parser.add_argument("something", choices=['a1', 'a2'])
+
+# Scraper parser arguments
+S_parser.add_argument("-s", "--start_date", help="Start date - format YYYY-MM-DD ", required=True, type=validate_date)
+S_parser.add_argument("-e", "--end_date", help="End date - format YYYY-MM-DD ", required=True, type=validate_date)
+S_parser.add_argument('-d', "--destination", help="Desired country", required=True, type=validate_name)
+# Query parser arguments
+Q_parser.add_argument("--city", help="the city to filter by", type=validate_name)
+Q_parser.add_argument("--breakfast", help="filter by breakfast inclusiveness", choices=['yes', 'no'])
+
+args = parser.parse_args('Q --breakfast yes'.split())
+args.func(args)
+
+args = parser.parse_args()
+
+# Base select statement
+base_statement = \
+    f"SELECT * " \
+    f"FROM {TABLE_NAMES[0]} " \
+    f"INNER JOIN {TABLE_NAMES[1]} ON {TABLE_NAMES[0]}.{JOIN_COLUMNS[0][0]}={TABLE_NAMES[1]}.{JOIN_COLUMNS[0][1]}" \
+    f"INNER JOIN {TABLE_NAMES[2]} ON {TABLE_NAMES[1]}.{JOIN_COLUMNS[1][0]}={TABLE_NAMES[2]}.{JOIN_COLUMNS[1][1]}"
+
+
+
+
+# This list will hold all the extra conditionals
+operators = []
+
+if "city" in args:
+    operators.append("sub location BETWEEN {} AND {}".format(*args["date"]))
 
 a = 5
+

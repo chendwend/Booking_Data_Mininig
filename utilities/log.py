@@ -1,16 +1,14 @@
-from utilities.config import FORMATTER_STRING
+from utilities.config import FORMATTER_STRING, OUTPUT_DIR, LOGGING_FILE
 import logging.config
 import sys
-from utilities.config import OUTPUT_DIR
-from utilities.config import FILE_NAME_LOG
 import os
 
 
 def init_logger():
     # Create the path for the log file
-    path = os.path.join(OUTPUT_DIR, FILE_NAME_LOG)
+    path = os.path.join(OUTPUT_DIR, LOGGING_FILE)
     # Create logger
-    log = logging.getLogger("booking")
+    log = logging.getLogger()
     log.setLevel(logging.DEBUG)
     # Create Formatter
     formatter = logging.Formatter(FORMATTER_STRING)

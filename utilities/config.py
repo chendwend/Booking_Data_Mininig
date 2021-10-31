@@ -2,10 +2,11 @@
 BAR = "-----------------------------------"
 FILE_NAME = "data.csv"
 OUTPUT_DIR = 'output_files'
+QUERY_OUTPUT_FILE = 'query.csv'
 
 """########## Logger constants #############"""
 FORMATTER_STRING = '%(asctime)s-%(levelname)s-FILE:%(filename)s-FUNC:%(funcName)s-LINE:%(lineno)d-%(message)s'
-FILE_NAME_LOG = 'booking.log'
+LOGGING_FILE = 'booking.log'
 
 """########## Webdriver constants #############"""
 SEC_TO_WAIT = 10
@@ -24,17 +25,17 @@ DEFAULT_VALUE = -1
 """########## Page constants #############"""
 
 PAGE_DATA_DICT = \
-    {"name": ".fde444d7ef._c445487e2",
-     "sub location": "._cff98816f",
+    {"site_name": ".fde444d7ef._c445487e2",
+     "sub_location": "._cff98816f",
      "rating": "._9c5f726ff.bd528f9ea6",
-     "reviewers amount": "._4abc4c3d5._1e6021d2f._fb3ba087b._6e869d6e0",
+     "reviewers_amount": "._4abc4c3d5._1e6021d2f._fb3ba087b._6e869d6e0",
      "price": ".fde444d7ef._e885fdc12",
      "breakfast": "._371410fad",
-     "free cancellation": "._371410fad"
+     "free_cancellation": "._371410fad"
      }
 
 REGEX_DATA_DICT = \
-    {"reviewers amount": "[0-9]+",
+    {"reviewers_amount": "[0-9]+",
      "price": "[0-9,]+$"
      }
 
@@ -52,14 +53,28 @@ FREE_CANCELLATION_STRING = "free cancellation"
 BREAKFAST_STRING = "breakfast included"
 
 FACILITY_CLASS = "hotel-facilities"
-ROOM_FACILITIES_KEYS = ["pets", "wifi", "kitchen", "parking", "air conditioning"]
+ROOM_FACILITIES_KEYS = ["pets", "wifi", "kitchen", "parking", "air_conditioning"]
 ROOM_FACILITIES_VALUES = [PET_STRING, WIFI_STRING, KITCHEN_STRING, PARKING_STRING, AIR_CONDITIONING_STRING]
 ROOM_FACILITIES = dict(zip(ROOM_FACILITIES_KEYS, ROOM_FACILITIES_VALUES))
 EMPTY_ROOM_FACILITIES = dict(zip(ROOM_FACILITIES_KEYS, [DEFAULT_VALUE] * len(ROOM_FACILITIES_KEYS)))
 SERVICE_AVAILABILITY = {"yes": 1, "no": 0}
 """########## SQL constants ###############"""
+TABLE_NAMES = ['location_dates', 'site_info', 'facilities']
+JOIN_COLUMNS = [('id', 'location_dates_id'), ('location_dates_id', 'location_dates_id')]
+
+BASE_STATEMENT = \
+    "SELECT " + ('{}, '*len(PAGE_DATA_DICT)).format(*PAGE_DATA_DICT.keys()) +\
+    ', '.join(ROOM_FACILITIES_KEYS) +\
+    f" FROM {TABLE_NAMES[0]} " +\
+    f"INNER JOIN {TABLE_NAMES[1]} ON {TABLE_NAMES[0]}.{JOIN_COLUMNS[0][0]}={TABLE_NAMES[1]}.{JOIN_COLUMNS[0][1]} " +\
+    f"INNER JOIN {TABLE_NAMES[2]} ON {TABLE_NAMES[1]}.{JOIN_COLUMNS[1][0]}={TABLE_NAMES[2]}.{JOIN_COLUMNS[1][1]}"
+
 
 """########## API constants ###############"""
 COLUMNS = ['latitude', 'longitude', 'temperature', 'feelslike']
 ACCESS_KEY = 'c97f8ed4ab7a775dd2abe77f28bac6be'
 TYPE_OF_REQUEST = 'current'
+
+"""########## SQL constants ###############"""
+DB_NAME = 'booking_data'
+PASSWORD = 'Kostya'
