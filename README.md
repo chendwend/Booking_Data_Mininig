@@ -72,7 +72,7 @@ The output is stored in a local SQL Database which was created previously.
 ### SQL DB Design 
 The DB contains three tables: location_dates, site_info and facilities. The location_dates unique key is a combination of the location (country and city), site name and the dates (check-in and check-out). Each record from the location_dates table points to record in the other two tables: site_info and facilities. The tables site_info and facilities was separated by their concepts. The site_info table holds general data about the site (for example: is the hotel have a free_cancellation policy) and facilities table holds more specific data (for example:is there a kitchen in the room). For more information about the DB look at the attached ERD:
 
-![ERD](/ERD new.png)
+![ERD](/Data_mininig_project_2021/ERD new.png)
  
 
 ## Implementation
