@@ -2,15 +2,17 @@ Data Mining Project - Booking.com Webscraper
 ============================  
 A booking.com webscraper project 
 ## General Information
-- In this project we scrape the website Booking.com using Selenium.
-- The user inputs a desired country, check-in and check-out dates
-- based on that input, specific data is collected from all page results and stored in a local SQL Database
+- In this project we scrape the website Booking.com using Selenium and beautifulsoap4.
+- The user inputs a desired country, check-in and check-out dates. Based on that input, specific data is collected from all page results and stored in a local SQL Database.
+- The DB was enriched by weatherstack API.
+- The user can filter the data by specifying variables.
 
 ## Installation
 1. Install MySQL server from [MySQL server Download](https://dev.mysql.com/downloads/mysql/).
-2. Install Python 3.7 or above 
-3. Create a new project directory in your local machine and clone the repository into it.
-4. Inside the project directory create a virtual environment and activate it:    
+2. Install Python 3.7 or above.
+3. Install git.
+4. Create a new project directory in your local machine and clone the repository into it.
+5. Inside the project directory create a virtual environment and activate it:    
   Creating the environment (Windows & Linux):
   ```bash
   python -m venv venv
@@ -62,25 +64,16 @@ example run:
 ```bash
 main.py -d germany -s 2021-08-15 -e 2021-08-21
 ```
-All you need to do now is wait... \
-For this input it might take about 10 minutes so go make yourself a cup of coffee.
+All you need to do now is wait... 
 
 ## Output
 The output is stored in a local SQL Database which was created previously.
 
-### SQL DB Design  
-![This is an image](/ERD.png)
+### SQL DB Design 
+The DB contains three tables: location_dates, site_info and facilities. The location_dates unique key is a combination of the location (country and city), site name and the dates (check-in and check-out). Each record from the location_dates table points to record in the other two tables: site_info and facilities. The tables site_info and facilities was separated by their concepts. The site_info table holds general data about the site (for example: is the hotel have a free_cancellation policy) and facilities table holds more specific data (for example:is there a kitchen in the room). For more information about the DB look at the attached ERD:
 
-```
-    site_location
-    └── Website                 
-        ├── Page                
-        │   ├── Place_of_stay                
-        │   ├── Place_of_stay      
-        │   └── ...    
-        ├── Page
-        └── ...
-```     
+![ERD](/ERD.png)
+ 
 
 ## Implementation
 ### Special Libraries
@@ -91,7 +84,7 @@ The output is stored in a local SQL Database which was created previously.
 ### Code Structure
 From the code structure perspective, Our project is implemented in a hierarchial manner with 4 classes:
 - The Website class: Represents the booking website main page. Instantiates Page objects.  
-- The Page class: Represents a page from the search result.  Instantiates Place_of_stay objects  
+- The Page class: Represents a page from the search result.  Instantiates Place_of_stay objects.  
 - The Place_of_stay Clas: Represents the availability page (when pressing "availability" button for each place of stay). 
 - The Elemet Class: A custom defined base class with recurring methods to be used by all other classes. All classes mentioned above inherit from it.  
 Here is a diagram depicting the relations:

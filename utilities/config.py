@@ -77,4 +77,4 @@ TYPE_OF_REQUEST = 'current'
 
 """########## SQL constants ###############"""
 DB_NAME = 'booking_data'
-PASSWORD = 'Kostya'
+PASSWORD = 'root'
