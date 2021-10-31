@@ -7,6 +7,9 @@ logger = logging.getLogger()
 
 
 def establish_connection():
+    """
+    The function connecting to the DB and creating a cursor.
+    """
     connection = pymysql.connect(host='localhost',
                                  user='root',
                                  password=PASSWORD,
