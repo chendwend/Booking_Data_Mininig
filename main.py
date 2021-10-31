@@ -102,20 +102,21 @@ def query(args):
 
     if operators:
         statement += " WHERE " + " and ".join(operators)
-        print(statement)
+
     query_response = query_sql(statement)
     logging.info(f"query request: \n {statement} \n - retrieved successfully")
-    # for response in query_response[:10]:
-    #     print(response)
 
     # Save results to csv file
     path = os.path.join(OUTPUT_DIR, QUERY_OUTPUT_FILE)
-    keys = query_response[0].keys()
-    with open(path, 'w', newline='') as output_file:
-        dict_writer = csv.DictWriter(output_file, keys)
-        dict_writer.writeheader()
-        dict_writer.writerows(query_response)
-        logging.info(f"query response saved to file {path}.")
+    try:
+        keys = query_response[0].keys()
+        with open(path, 'w', newline='') as output_file:
+            dict_writer = csv.DictWriter(output_file, keys)
+            dict_writer.writeheader()
+            dict_writer.writerows(query_response)
+            logging.info(f"query response saved to file {path}.")
+    except IndexError:
+        logging.warning(f"query response is empty.")
 
 
 if __name__ == '__main__':

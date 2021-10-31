@@ -161,7 +161,7 @@ def insert_to_db(from_date, to_date, location, file_path):
     close_connection(connection, cur)
     logger.info(f"DB connection closed.")
     logger.info(f"The DB was updated successfully.")
-os.chdir('..')
-path2 = os.path.join(OUTPUT_DIR, 'output.csv')
-
-insert_to_db("2021-11-26", "2021-12-29", "germany", path2)
+# os.chdir('..')
+# path2 = os.path.join(OUTPUT_DIR, 'output.csv')
+#
+# insert_to_db("2021-11-26", "2021-12-29", "germany", path2)
