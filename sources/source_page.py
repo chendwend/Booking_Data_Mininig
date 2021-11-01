@@ -96,7 +96,7 @@ class Website(Element):
         number_of_pages = int(pages_elements[-2].text)
         logger.info(f"Total number of pages: {number_of_pages}")
         print(f"Found {number_of_pages} pages.")
-        for page_number in range(1, 5):  # number_of_pages + 1
+        for page_number in range(1, 2):  # number_of_pages + 1
             print(f"Processing page number  {page_number}/{number_of_pages}... \n {BAR}")
             page = Page(self._driver)
             if page_number == 1:
