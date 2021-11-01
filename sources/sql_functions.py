@@ -25,11 +25,25 @@ def establish_connection():
 
 
 def close_connection(connection, cursor):
+    """
+    closes connection to SQL database
+
+    :param connection:  pymysql.connect object
+    :param cursor: connection.cursor() object
+    """
     cursor.close()
     connection.close()
 
 
 def query_sql(statement):
+    """
+    queries the SQL DB with given statement and returns the response
+
+    :param statement: SQL query
+    :type statement: str
+    :return: dictionary with sql query responses
+    :rtype: dict
+    """
     connection, cur = establish_connection()
     cur.execute(statement)
     result = cur.fetchall()
