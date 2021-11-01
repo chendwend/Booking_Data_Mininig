@@ -62,6 +62,12 @@ def validate_name(destination):
 
 
 def scraper(args):
+    """
+    scrapes the website and updates the DB
+
+    :param args: arguments from user
+    :type args: parser.parse_args object
+    """
     start = perf_counter()
 
     website = Website(WEB_SOURCE)
@@ -85,6 +91,12 @@ def scraper(args):
 
 
 def query(args):
+    """
+    Constructs the query for the SQL DB, queries the DB and returns the result in a csv file
+
+    :param args: arguments from user
+    :type args: parser.parse_args object
+    """
     # This list will hold all the extra conditionals
     operators = []
     args = vars(args)
