@@ -1,8 +1,11 @@
 from datetime import datetime
 import pymysql.cursors
+from pymysql.err import DataError
 import csv
+import os
 import logging
-from utilities.config import DB_NAME, PASSWORD
+from utilities.config import DB_NAME, PASSWORD, OUTPUT_DIR
+
 logger = logging.getLogger()
 
 
@@ -21,10 +24,16 @@ def establish_connection():
     return connection, cur
 
 
+def close_connection(connection, cursor):
+    cursor.close()
+    connection.close()
+
+
 def query_sql(statement):
     connection, cur = establish_connection()
     cur.execute(statement)
     result = cur.fetchall()
+    close_connection(connection, cur)
     return result
 
 
@@ -106,6 +115,7 @@ def insert_to_db(from_date, to_date, location, file_path):
         values_1 = (location, row.get('sub_location'), row.get('latitude'),
                     row.get('longitude'), row.get('site_name'), from_date, to_date, location,
                     row.get('sub_location'), row.get('site_name'), from_date, to_date)
+
         cur.execute(insert_query_1, values_1)
 
 
@@ -138,6 +148,7 @@ def insert_to_db(from_date, to_date, location, file_path):
                     row.get('price'), formatted_date, row.get('temperature'), row.get('feelslike'))
         cur.execute(insert_query_2, values_2)
 
+
         # filling the facilities table with the option to update existing rows.
         insert_query_3 = '''INSERT INTO facilities (location_dates_id, kitchen, wifi, air_conditioning) 
                             VALUES (%s, %s, %s, %s)
@@ -150,9 +161,10 @@ def insert_to_db(from_date, to_date, location, file_path):
 
     connection.commit()
     csv_file.close()
-    cur.close()
-    connection.close()
+    close_connection(connection, cur)
     logger.info(f"DB connection closed.")
     logger.info(f"The DB was updated successfully.")
-
-# insert_to_db("2021-11-26", "2021-12-29", "germany")
+# os.chdir('..')
+# path2 = os.path.join(OUTPUT_DIR, 'output.csv')
+#
+# insert_to_db("2021-11-26", "2021-12-29", "germany", path2)

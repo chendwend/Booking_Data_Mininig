@@ -83,78 +83,28 @@ import sys
 from datetime import datetime
 
 
-def validate_date(s):
-    """
-    Validates a date to be of type YYYY-MM-DD and is not in the past.
-    If not given in this formant, exits the program.
-    :param s: date
-    :type s: str
-    :return: datetime object representation of the given date
-    :rtype: datetime
-    """
-    try:
-        date = datetime.strptime(s, "%Y-%m-%d")
-        today = datetime.today()
-        if date < today:
-            sys.exit(f"the date {date} is in the past.")
-    except ValueError:
-        msg = f"Not a valid date: {s}"
-        raise argparse.ArgumentTypeError(msg)
-    return date
+import unittest
+from selenium import webdriver
+from selenium.webdriver.support.events import EventFiringWebDriver
+from selenium.webdriver.support.events import AbstractEventListener
 
+class ScreenshotListener(AbstractEventListener):
+    def on_exception(self, exception, driver):
+        screenshot_name = "exception.png"
+        driver.get_screenshot_as_file(screenshot_name)
+        print("Screenshot saved as '%s'" % screenshot_name)
 
-def validate_name(destination):
-    """
-    Validates the given string to be alphanumeric.
-    If not, exits the program.
+class TestDemo(unittest.TestCase):
+    def test_demo(self):
 
-    :param destination: desired destination
-    :type destination: str
-    :return: destination, the input
-    :rtype: str
-    """
-    if not destination.isalpha():
-        sys.exit(f"the destination {destination} is not alphanumeric.")
+        pjsdriver = webdriver.PhantomJS("phantomjs")
+        d = EventFiringWebDriver(pjsdriver, ScreenshotListener())
 
-    destination_filtered = destination
+        d.get("http://www.google.com")
+        d.find_element_by_css_selector("div.that-does-not-exist")
 
-    return destination
-
-
-parser = argparse.ArgumentParser(description="Extract data from Booking.com")
-subparsers = parser.add_subparsers(help='sub-command help')  # dest='subcommand'
-Q_parser = subparsers.add_parser("Q", help="Query help")
-S_parser = subparsers.add_parser("S", help="Scrape help")
-# a_parser.add_argument("something", choices=['a1', 'a2'])
-
-# Scraper parser arguments
-S_parser.add_argument("-s", "--start_date", help="Start date - format YYYY-MM-DD ", required=True, type=validate_date)
-S_parser.add_argument("-e", "--end_date", help="End date - format YYYY-MM-DD ", required=True, type=validate_date)
-S_parser.add_argument('-d', "--destination", help="Desired country", required=True, type=validate_name)
-# Query parser arguments
-Q_parser.add_argument("--city", help="the city to filter by", type=validate_name)
-Q_parser.add_argument("--breakfast", help="filter by breakfast inclusiveness", choices=['yes', 'no'])
-
-args = parser.parse_args('Q --breakfast yes'.split())
-args.func(args)
-
-args = parser.parse_args()
-
-# Base select statement
-base_statement = \
-    f"SELECT * " \
-    f"FROM {TABLE_NAMES[0]} " \
-    f"INNER JOIN {TABLE_NAMES[1]} ON {TABLE_NAMES[0]}.{JOIN_COLUMNS[0][0]}={TABLE_NAMES[1]}.{JOIN_COLUMNS[0][1]}" \
-    f"INNER JOIN {TABLE_NAMES[2]} ON {TABLE_NAMES[1]}.{JOIN_COLUMNS[1][0]}={TABLE_NAMES[2]}.{JOIN_COLUMNS[1][1]}"
-
-
-
-
-# This list will hold all the extra conditionals
-operators = []
-
-if "city" in args:
-    operators.append("sub location BETWEEN {} AND {}".format(*args["date"]))
+if __name__ == '__main__':
+        unittest.main()
 
 a = 5
 
