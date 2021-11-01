@@ -154,6 +154,6 @@ if __name__ == '__main__':
 
     # args = parser.parse_args('q --city Binz --breakfast yes'.split())
     # args = parser.parse_args('q --city Milan'.split())
-    args = parser.parse_args('s -d italy -s 2021-11-15 -e 2021-11-21'.split())
-    # args = parser.parse_args()
+    # args = parser.parse_args('s -d italy -s 2021-11-15 -e 2021-11-21'.split())
+    args = parser.parse_args()
     args.func(args)
