@@ -1,6 +1,6 @@
 """########## General constants #############"""
 BAR = "-----------------------------------"
-FILE_NAME = "data.csv"
+OUTPUT_DB_CSV = "data.csv"
 OUTPUT_DIR = 'output_files'
 QUERY_OUTPUT_FILE = 'query.csv'
 
@@ -77,4 +77,4 @@ TYPE_OF_REQUEST = 'current'
 
 """########## SQL constants ###############"""
 DB_NAME = 'booking_data'
-PASSWORD = 'root'
+PASSWORD = 'Kostya'

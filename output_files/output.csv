@@ -1,26 +1,26 @@
 site_name,sub_location,rating,reviewers_amount,price,breakfast,free_cancellation,pets,wifi,kitchen,parking,air_conditioning,latitude,longitude,temperature,feelslike
-Maison Ottavia,Rome,9.1,257,3144,0,0,0,1,1,0,1,41.900,12.483,18,18
-Piccolo Hotel,Milan,7.6,1,2384,1,0,0,1,0,0,1,45.467,9.200,11,10
-Combo Torino,Turin,8.9,1,3288,0,0,1,1,1,0,1,45.050,7.667,7,7
-Hotel Conca d'Oro,Positano,8.6,656,2639,1,0,0,1,0,0,1,40.633,14.483,17,17
-Roero Suite,Montà,8.9,26,1874,0,1,0,1,1,0,1,-1,-1,-1,-1
-Bed No Breakfast AK,Naples,8.2,684,2561,0,0,0,1,0,0,1,-1,-1,-1,-1
+Maison Ottavia,Rome,9.1,257,3332,0,0,0,1,1,0,1,41.900,12.483,17,17
+Piccolo Hotel,Milan,7.6,1,2384,1,0,0,1,0,0,1,45.467,9.200,10,9
+Palazzo Porta Romana Hotel,Milan,8.2,92,3243,0,0,0,1,0,1,1,45.467,9.200,10,9
+Hotel Conca d'Oro,Positano,8.6,658,2639,1,0,0,1,0,1,1,40.633,14.483,18,18
+Roero Suite,Montà,9.0,27,1874,0,1,0,1,1,1,1,-1,-1,-1,-1
+Hotel Berlino,Milan,8.1,1,2678,0,1,0,1,0,1,1,45.467,9.200,10,9
+Bed No Breakfast AK,Naples,8.3,688,2561,0,0,0,1,0,1,1,-1,-1,-1,-1
 "Villa Sassolini Luxury Boutique Hotel, The Originals Collection",Montevarchi,8.8,75,4873,0,0,1,1,0,0,1,-1,-1,-1,-1
-Domus Il Palio,Siena,8.9,680,1244,0,1,1,1,1,0,1,-1,-1,-1,-1
-Hotel Brivio,Milan,7.3,837,1326,0,0,0,1,0,0,1,45.467,9.200,11,10
-Hotel Edelweiss,Breuil-Cervinia,8.9,111,3288,0,0,1,1,0,0,1,-1,-1,-1,-1
+Combo Torino,Turin,8.9,1,3288,0,0,1,1,1,0,1,-1,-1,-1,-1
+Hotel Brivio,Milan,7.3,837,1326,0,1,0,1,0,0,1,45.467,9.200,10,9
 Casa Belvedere,Cuneo,9.1,37,1458,0,1,0,0,1,0,1,-1,-1,-1,-1
-Hotel Demo',Milan,7.1,2,1900,0,1,1,1,0,0,1,45.467,9.200,11,10
-Viktory Rooms,Bolzano,5.8,117,1001,0,1,1,0,0,0,1,-1,-1,-1,-1
-Albergo Al Castello,Gavi,9.0,442,1715,0,1,1,1,0,0,1,-1,-1,-1,-1
-Molino Della Lodola,Rapolano Terme,8.7,149,2124,0,0,1,1,0,0,1,-1,-1,-1,-1
-Hotel Ulivi,Paratico,8.8,649,2548,1,0,1,1,0,0,1,-1,-1,-1,-1
-Verona Maison,Verona,8.2,609,1593,0,0,0,1,1,0,1,-1,-1,-1,-1
-Hotel Morgana,Marina di Carrara,7.9,249,1682,1,0,0,1,0,0,1,-1,-1,-1,-1
-Habitat Guest House,Trento,9.0,251,1237,0,1,0,1,0,0,1,-1,-1,-1,-1
-Hotel Iris Venice,Venice,5.6,317,1284,0,0,1,1,0,0,1,-1,-1,-1,-1
-Agriturismo Il Macchione,Pienza,9.5,455,2649,1,0,1,1,1,0,1,-1,-1,-1,-1
-Dealuna Motel,Fidenza,8.3,387,1534,0,1,1,1,0,0,1,-1,-1,-1,-1
-Alchimia di Mare,La Spezia,9.5,363,1395,1,1,0,1,1,0,1,-1,-1,-1,-1
-Civico 3,Portofino,9.6,29,2291,0,1,0,1,1,0,1,-1,-1,-1,-1
-Ariana Luxury Guest House,Rome,9.2,19,1083,0,1,0,1,1,0,1,41.900,12.483,18,18
+Hotel Edelweiss,Breuil-Cervinia,8.9,111,3726,0,0,1,1,0,1,1,-1,-1,-1,-1
+Viktory Rooms,Bolzano,5.7,119,1001,0,1,1,0,0,0,1,-1,-1,-1,-1
+Verona Maison,Verona,8.2,608,1593,0,0,0,1,1,1,1,-1,-1,-1,-1
+Albergo Al Castello,Gavi,9.0,442,1715,0,1,1,1,0,1,1,-1,-1,-1,-1
+Molino Della Lodola,Rapolano Terme,8.7,149,2124,0,0,1,1,0,1,1,-1,-1,-1,-1
+Habitat Guest House,Trento,9.0,252,1237,0,1,0,1,0,1,1,-1,-1,-1,-1
+Hotel Demo',Milan,7.1,2,2557,0,1,1,1,0,1,1,45.467,9.200,10,9
+Hotel Ulivi,Paratico,8.8,650,2548,1,0,1,1,0,1,1,-1,-1,-1,-1
+Hotel Morgana,Marina di Carrara,7.9,250,1682,1,0,0,1,0,1,1,-1,-1,-1,-1
+Hotel Iris Venice,Venice,5.6,321,1284,0,0,1,1,0,1,1,-1,-1,-1,-1
+Dealuna Motel,Fidenza,8.3,389,1534,0,1,1,1,0,1,1,-1,-1,-1,-1
+Alchimia di Mare,La Spezia,9.5,366,1395,1,1,0,1,1,1,1,-1,-1,-1,-1
+Civico 3,Portofino,9.6,29,2291,0,1,0,1,1,1,1,-1,-1,-1,-1
+"""Ca' Mia"" On The Lake - By House Of Travelers -",Como,8.9,42,1961,0,0,1,1,1,0,1,-1,-1,-1,-1

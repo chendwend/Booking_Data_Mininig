@@ -1,6 +1,6 @@
 from datetime import datetime
 import pymysql.cursors
-from pymysql.err import DataError
+from pymysql.err import OperationalError
 import csv
 import os
 import logging
@@ -33,6 +33,19 @@ def close_connection(connection, cursor):
     """
     cursor.close()
     connection.close()
+
+
+def verify_db():
+    """
+    Verifies that the DB exists.
+    If not, exits the program.
+    """
+
+    try:
+        establish_connection()
+    except OperationalError:
+        logger.error(f"The DB was not created.")
+        exit()
 
 
 def query_sql(statement):
