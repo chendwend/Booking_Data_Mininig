@@ -2,7 +2,7 @@
 import time
 from selenium import webdriver
 from utilities.config import PAGES_BUTTONS, USER_AGENT, SEARCH_BAR, SEARCH_BUTTON, \
-    CALENDAR, BAR, DEFAULT_VALUE
+    CALENDAR, BAR
 from sources.page import Page
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
@@ -17,7 +17,7 @@ class Website(Element):
     """
     page_offset = 25
 
-    def __init__(self, main_url):
+    def __init__(self, main_url, page_limit):
         """
         Constructs all the necessary attributes for the Website object.
 
@@ -31,6 +31,7 @@ class Website(Element):
         self._driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         logger.info(f"Webdriver instantiated")
         self._driver.get(main_url)
+        self._page_limit = page_limit
         logger.info(f"{main_url} loaded successfully")
 
     def insert_location(self, location):
@@ -96,7 +97,8 @@ class Website(Element):
         number_of_pages = int(pages_elements[-2].text)
         logger.info(f"Total number of pages: {number_of_pages}")
         print(f"Found {number_of_pages} pages.")
-        for page_number in range(1, 2):  # number_of_pages + 1
+        print(f"processing {self._page_limit} pages")
+        for page_number in range(1, self._page_limit+1):  # number_of_pages + 1
             print(f"Processing page number  {page_number}/{number_of_pages}... \n {BAR}")
             page = Page(self._driver)
             if page_number == 1:

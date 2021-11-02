@@ -1,64 +1,23 @@
 from gevent import monkey
 
 monkey.patch_all(thread=False, select=False)  # required for grequests to be executed before imports
-from sources.sql_functions import insert_to_db, query_sql
-from utilities.config import WEB_SOURCE, FILE_NAME, OUTPUT_DIR, BASE_STATEMENT, SERVICE_AVAILABILITY, QUERY_OUTPUT_FILE, \
-    LOGGING_FILE
+from sources.sql_functions import insert_to_db, query_sql, establish_connection, verify_db
+from utilities.config import WEB_SOURCE, OUTPUT_DB_CSV, OUTPUT_DIR, BASE_STATEMENT, SERVICE_AVAILABILITY, \
+    QUERY_OUTPUT_FILE, LOGGING_FILE, MAX_NUMBER_OF_PAGES
 from sources.weather_api import weather_api
 from sources.source_page import Website
-from datetime import datetime
 from time import perf_counter
-from argparse import ArgumentParser, ArgumentTypeError
+from argparse import ArgumentParser
+from sources.input_validation_functions import validate_date, validate_name, validate_rating, validate_reviewers_amount
 import logging
-import sys
 import os
 import csv
+import pandas as pd
 
 log_path = os.path.join(OUTPUT_DIR, LOGGING_FILE)
 logging.basicConfig(filename=log_path,
                     format='%(asctime)s-%(levelname)s-FILE:%(filename)s-FUNC:%(funcName)s-LINE:%(lineno)d-%(message)s',
                     level=logging.INFO)
-
-
-def validate_date(s):
-    """
-    Validates a date to be of type YYYY-MM-DD and is not in the past.
-    If not given in this formant, exits the program.
-    :param s: date
-    :type s: str
-    :return: datetime object representation of the given date
-    :rtype: datetime
-    """
-    try:
-        date = datetime.strptime(s, "%Y-%m-%d")
-        today = datetime.today()
-        if date < today:
-            logging.critical(f'date provided: {date} - is in the past')
-            sys.exit()
-    except ValueError:
-        msg = f"Not a valid date: {s}"
-        logging.critical(f'date provided: {date} - not valid')
-        raise ArgumentTypeError(msg)
-    return date
-
-
-def validate_name(destination):
-    """
-    Validates the given string to be alphanumeric.
-    If not, exits the program.
-
-    :param destination: desired destination
-    :type destination: str
-    :return: destination, the input
-    :rtype: str
-    """
-    if not destination.isalpha():
-        logging.critical(f"the string {destination} is not alphanumeric.")
-        sys.exit()
-
-    destination_filtered = destination
-
-    return destination
 
 
 def scraper(args):
@@ -68,24 +27,26 @@ def scraper(args):
     :param args: arguments from user
     :type args: parser.parse_args object
     """
+    verify_db()
+
     start = perf_counter()
 
-    website = Website(WEB_SOURCE)
+    website = Website(WEB_SOURCE, args.page_limit)
     website.insert_location(args.destination)
     website.select_date(args.start_date, args.end_date)
     data, pages = website.get_all_data()
     website.teardown()
 
-    path1 = os.path.join(OUTPUT_DIR, FILE_NAME)
-    path2 = os.path.join(OUTPUT_DIR, 'output.csv')
-    # os.chdir(OUTPUT_DIR)
-    data.to_csv(path1, index=False)
-    weather_api(path1, path2)
-    insert_to_db(args.start_date, args.end_date, args.destination, path2)
+    csv_path = os.path.join(OUTPUT_DIR, OUTPUT_DB_CSV)
+    df_no_weather = pd.DataFrame(data=data)
+    df = weather_api(df_no_weather)
+    df.to_csv(csv_path, index=False)
+    insert_to_db(args.start_date, args.end_date, args.destination, csv_path)
     time = perf_counter() - start
     print(
         f"Basic processing information for destination ='{args.destination}',"
         f" between {args.start_date.date()} and {args.end_date.date()}:")
+    logging.info(f"time of execution: {time / 60:.2f}")
     print(f"Number of total pages = {pages}")
     print(f"Execution time: {time / 60:.2f} minutes")
 
@@ -98,6 +59,7 @@ def query(args):
     :type args: parser.parse_args object
     """
     # This list will hold all the extra conditionals
+    verify_db()
     operators = []
     args = vars(args)
     args = {k: v for k, v in args.items() if v is not None and (k not in ['func'])}
@@ -142,18 +104,20 @@ if __name__ == '__main__':
                           type=validate_date)
     s_parser.add_argument("-e", "--end_date", help="End date - format YYYY-MM-DD ", required=True, type=validate_date)
     s_parser.add_argument('-d', "--destination", help="Desired country", required=True, type=validate_name)
+    s_parser.add_argument('-p', '--page_limit', help="maximum number of pages to process", default=1, type=int,
+                          choices=range(1, MAX_NUMBER_OF_PAGES+1))
     s_parser.set_defaults(func=scraper)
 
     # query parser arguments
     q_parser.add_argument("--city", help="filter by city", type=validate_name)
     q_parser.add_argument("--free_cancellation", help="filter by free_cancellation", choices=['yes', 'no'])
 
-    q_parser.add_argument("--reviewers_amount", help="filter by reviewers amount", type=int)
-    q_parser.add_argument("--rating", help="filter by rating", type=float)
+    q_parser.add_argument("--reviewers_amount", help="filter by reviewers amount", type=validate_reviewers_amount)
+    q_parser.add_argument("--rating", help="filter by rating", type=validate_rating)
     q_parser.set_defaults(func=query)
 
     # args = parser.parse_args('q --city Binz --breakfast yes'.split())
     # args = parser.parse_args('q --city Milan'.split())
-    # args = parser.parse_args('s -d italy -s 2021-11-15 -e 2021-11-21'.split())
-    args = parser.parse_args()
+    args = parser.parse_args('s -d italy -s 2021-11-15 -e 2021-11-21 -p 3'.split())
+    # args = parser.parse_args()
     args.func(args)

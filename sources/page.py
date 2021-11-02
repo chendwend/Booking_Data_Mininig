@@ -109,6 +109,8 @@ class Page(Element):
         """
         df = pd.DataFrame(data=page_data_list, index=PAGE_DATA_DICT.keys())
         df = df.transpose()
+        df.astype({"site_name": 'object', "sub_location": 'object', "rating": 'float64', "reviewers_amount": 'int64',
+                   "price": 'int64', "breakfast": 'int64', 'free_cancellation': 'int64'}).dtypes
         pets, wifi, kitchen, parking, air_conditioning = [], [], [], [], []
         for stay_facilities in list_of_facilities_dict:
             pets.append(stay_facilities["pets"])
