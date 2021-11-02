@@ -17,7 +17,8 @@ import pandas as pd
 log_path = os.path.join(OUTPUT_DIR, LOGGING_FILE)
 logging.basicConfig(filename=log_path,
                     format='%(asctime)s-%(levelname)s-FILE:%(filename)s-FUNC:%(funcName)s-LINE:%(lineno)d-%(message)s',
-                    level=logging.INFO)
+                    level=logging.INFO,
+                    filemode='w')
 
 
 def scraper(args):
@@ -46,7 +47,7 @@ def scraper(args):
     print(
         f"Basic processing information for destination ='{args.destination}',"
         f" between {args.start_date.date()} and {args.end_date.date()}:")
-    logging.info(f"time of execution: {time / 60:.2f}")
+    logging.debug(f"time of execution: {time / 60:.2f}")
     print(f"Number of total pages = {pages}")
     print(f"Execution time: {time / 60:.2f} minutes")
 
@@ -78,7 +79,9 @@ def query(args):
         statement += " WHERE " + " and ".join(operators)
 
     query_response = query_sql(statement)
-    logging.info(f"query request: \n {statement} \n - retrieved successfully")
+    logging.info(f"query request: retrieved successfully")
+    if not query_response:
+        logging.info(f"query request is empty.")
 
     # Save results to csv file
     path = os.path.join(OUTPUT_DIR, QUERY_OUTPUT_FILE)
@@ -124,7 +127,12 @@ if __name__ == '__main__':
     q_parser.set_defaults(func=query)
 
     # args = parser.parse_args('q --city Binz --breakfast yes'.split())
-    args = parser.parse_args('q --city Milan'.split())
-    # args = parser.parse_args('s -d italy -s 2021-11-15 -e 2021-11-21 -p 3'.split())
     # args = parser.parse_args()
-    args.func(args)
+    # args = parser.parse_args('s -d italy -s 2021-11-15 -e 2021-11-21 -p 3'.split())
+    args = parser.parse_args()
+
+    try:  # when no arguments are provided
+        args.func(args)
+    except AttributeError:
+        logging.error(f"No arguments provided.")
+        exit(1)

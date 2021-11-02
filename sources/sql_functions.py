@@ -15,7 +15,7 @@ def establish_connection():
     try:
         connection = pymysql.connect(host='localhost',
                                      user='root',
-                                     password='Kostya',
+                                     password=PASSWORD,
                                      charset='utf8mb4',
                                      cursorclass=pymysql.cursors.DictCursor,
                                      database=DB_NAME)

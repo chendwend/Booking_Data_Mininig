@@ -27,6 +27,7 @@ class Website(Element):
         options = Options()
         options.add_argument("--headless")
         options.add_argument("--blink-settings=imagesEnabled=false")
+        options.add_argument('--no-sandbox')
         options.add_argument(f'user-agent={USER_AGENT}')  # Without this -> doesn't find pages
         self._driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         logger.info(f"Webdriver instantiated")
