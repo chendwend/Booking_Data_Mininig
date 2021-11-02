@@ -1,7 +1,7 @@
 from gevent import monkey
 
 monkey.patch_all(thread=False, select=False)  # required for grequests to be executed before imports
-from sources.sql_functions import insert_to_db, query_sql, establish_connection, verify_db
+from sources.sql_functions import insert_to_db, query_sql, establish_connection
 from utilities.config import WEB_SOURCE, OUTPUT_DB_CSV, OUTPUT_DIR, BASE_STATEMENT, SERVICE_AVAILABILITY, \
     QUERY_OUTPUT_FILE, LOGGING_FILE, MAX_NUMBER_OF_PAGES
 from sources.weather_api import weather_api
@@ -27,7 +27,7 @@ def scraper(args):
     :param args: arguments from user
     :type args: parser.parse_args object
     """
-    verify_db()
+    establish_connection()
 
     start = perf_counter()
 
@@ -59,7 +59,7 @@ def query(args):
     :type args: parser.parse_args object
     """
     # This list will hold all the extra conditionals
-    verify_db()
+    establish_connection()
     operators = []
     args = vars(args)
     args = {k: v for k, v in args.items() if v is not None and (k not in ['func'])}
@@ -94,6 +94,13 @@ def query(args):
 
 
 if __name__ == '__main__':
+    # Verify output directory exists
+    if not os.path.exists(OUTPUT_DIR):
+        logging.info(f"output directory {OUTPUT_DIR} was created.")
+        os.mkdir(OUTPUT_DIR)
+    else:
+        logging.info(f"output directory {OUTPUT_DIR} exists.")
+
     parser = ArgumentParser(description="Extract data from Booking.com or Query the DB")
     subparsers = parser.add_subparsers(help='sub-command help')  # dest='subcommand'
     q_parser = subparsers.add_parser("q", help="Query help")  # query parser
@@ -105,7 +112,7 @@ if __name__ == '__main__':
     s_parser.add_argument("-e", "--end_date", help="End date - format YYYY-MM-DD ", required=True, type=validate_date)
     s_parser.add_argument('-d', "--destination", help="Desired country", required=True, type=validate_name)
     s_parser.add_argument('-p', '--page_limit', help="maximum number of pages to process", default=1, type=int,
-                          choices=range(1, MAX_NUMBER_OF_PAGES+1))
+                          choices=range(1, MAX_NUMBER_OF_PAGES + 1))
     s_parser.set_defaults(func=scraper)
 
     # query parser arguments
@@ -117,7 +124,7 @@ if __name__ == '__main__':
     q_parser.set_defaults(func=query)
 
     # args = parser.parse_args('q --city Binz --breakfast yes'.split())
-    # args = parser.parse_args('q --city Milan'.split())
-    args = parser.parse_args('s -d italy -s 2021-11-15 -e 2021-11-21 -p 3'.split())
+    args = parser.parse_args('q --city Milan'.split())
+    # args = parser.parse_args('s -d italy -s 2021-11-15 -e 2021-11-21 -p 3'.split())
     # args = parser.parse_args()
     args.func(args)
