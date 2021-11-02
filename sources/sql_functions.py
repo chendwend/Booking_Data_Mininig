@@ -12,12 +12,24 @@ def establish_connection():
     """
     The function connecting to the DB and creating a cursor.
     """
-    connection = pymysql.connect(host='localhost',
-                                 user='root',
-                                 password=PASSWORD,
-                                 charset='utf8mb4',
-                                 cursorclass=pymysql.cursors.DictCursor,
-                                 database=DB_NAME)
+    try:
+        connection = pymysql.connect(host='localhost',
+                                     user='root',
+                                     password='Kostya',
+                                     charset='utf8mb4',
+                                     cursorclass=pymysql.cursors.DictCursor,
+                                     database=DB_NAME)
+    except OperationalError as err:
+        if err.args[0] == 1045:
+            logger.error(f"Wrong password was provided to the sql connection")
+            print(f"Wrong password was provided to the sql connection")
+        elif err.args[0] == 1049:
+            logger.error(f"The DB was not created.")
+            print(f"The DB was not created")
+        else:
+            logger.error(f"error: {err}")
+            print(f"error: {err}")
+        exit()
     cur = connection.cursor()
     logger.info(f"connection to DB established successfully")
     return connection, cur
@@ -32,19 +44,6 @@ def close_connection(connection, cursor):
     """
     cursor.close()
     connection.close()
-
-
-def verify_db():
-    """
-    Verifies that the DB exists.
-    If not, exits the program.
-    """
-
-    try:
-        establish_connection()
-    except OperationalError:
-        logger.error(f"The DB was not created.")
-        exit()
 
 
 def query_sql(statement):
@@ -144,7 +143,6 @@ def insert_to_db(from_date, to_date, location, file_path):
 
         cur.execute(insert_query_1, values_1)
 
-
         # getting the id from the location_dates table to use as foreign key in the site_info table.
         query_id = '''SELECT id
                       FROM location_dates
@@ -173,7 +171,6 @@ def insert_to_db(from_date, to_date, location, file_path):
                     row.get('free_cancellation'), row.get('parking'), row.get('breakfast'), row.get('pets'),
                     row.get('price'), formatted_date, row.get('temperature'), row.get('feelslike'))
         cur.execute(insert_query_2, values_2)
-
 
         # filling the facilities table with the option to update existing rows.
         insert_query_3 = '''INSERT INTO facilities (location_dates_id, kitchen, wifi, air_conditioning) 
