@@ -3,6 +3,7 @@ BAR = "-----------------------------------"
 OUTPUT_DB_CSV = "data.csv"
 OUTPUT_DIR = 'output_files'
 QUERY_OUTPUT_FILE = 'query.csv'
+MAX_NUMBER_OF_PAGES = 40
 
 """########## Logger constants #############"""
 FORMATTER_STRING = '%(asctime)s-%(levelname)s-FILE:%(filename)s-FUNC:%(funcName)s-LINE:%(lineno)d-%(message)s'

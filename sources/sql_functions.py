@@ -2,7 +2,6 @@ from datetime import datetime
 import pymysql.cursors
 from pymysql.err import OperationalError
 import csv
-import os
 import logging
 from utilities.config import DB_NAME, PASSWORD, OUTPUT_DIR
 
@@ -191,7 +190,5 @@ def insert_to_db(from_date, to_date, location, file_path):
     close_connection(connection, cur)
     logger.info(f"DB connection closed.")
     logger.info(f"The DB was updated successfully.")
-# os.chdir('..')
-# path2 = os.path.join(OUTPUT_DIR, 'output.csv')
-#
-# insert_to_db("2021-11-26", "2021-12-29", "germany", path2)
+# csv_path = os.path.join(OUTPUT_DIR, OUTPUT_DB_CSV)
+# insert_to_db("2021-11-26", "2021-12-29", "germany", csv_path)
