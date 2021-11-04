@@ -83,9 +83,12 @@ class Page(Element):
                                     self.get_elements(self._driver, SUB_LOCATION_FACILITIES, "continue")]
         logger.info(f"room facilities elements were found.")
         links = [elem.get_attribute('href') for elem in room_facilities_elements]
-        rs = (grequests.get(url) for url in links)  # Create a set of unsent Requests
+        headers = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36'}
+        rs = (grequests.get(url, headers=headers) for url in links)  # Create a set of unsent Requests
         responses = grequests.map(rs, size=BATCH_SIZE)  # Send them all at the same time by batches
-        soups = [BeautifulSoup(response.content, "html.parser") for response in responses]
+        soups = [BeautifulSoup(response.content, "html.parser")
+                 for response in responses
+                 if response]
         facilities = [soup.find(class_=FACILITY_CLASS) for soup in soups]
         facilities_text = [facility.text for facility in facilities]
         room_facilities = []
