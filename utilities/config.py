@@ -1,8 +1,9 @@
 """########## General constants #############"""
 BAR = "-----------------------------------"
-FILE_NAME = "data.csv"
+OUTPUT_DB_CSV = "data.csv"
 OUTPUT_DIR = 'output_files'
 QUERY_OUTPUT_FILE = 'query.csv'
+MAX_NUMBER_OF_PAGES = 40
 
 """########## Logger constants #############"""
 FORMATTER_STRING = '%(asctime)s-%(levelname)s-FILE:%(filename)s-FUNC:%(funcName)s-LINE:%(lineno)d-%(message)s'
@@ -77,4 +78,4 @@ TYPE_OF_REQUEST = 'current'
 
 """########## SQL constants ###############"""
 DB_NAME = 'booking_data'
-PASSWORD = 'root'
+PASSWORD = 'Kostya'

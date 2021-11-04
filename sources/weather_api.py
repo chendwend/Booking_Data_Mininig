@@ -6,16 +6,17 @@ import logging
 logger = logging.getLogger()
 
 
-def weather_api(origin, destination):
+def weather_api(origin_df):
     """
-    requests additional information using the weather API
-    :param origin: csv_file with scraped data
-    :param destination: csv_file to write to
-    :return: csv_file with added columns from the weather API
+    requests additional information using the weather
+    API for the cities supplied in the 'sub_location' column.
+
+    :param origin_csv: csv_file with scraped data
+    :return: pd.DataFrame with added columns from the weather API
     """
 
     # Read csv file to pandas and initialize new columns
-    df = pd.read_csv(origin)
+    df = origin_df.copy()
     df[COLUMNS] = DEFAULT_VALUE
     # go over all unique locations and update columns, thus saving api calls
     unique_sub_locations = df['sub_location'].unique()
@@ -31,7 +32,8 @@ def weather_api(origin, destination):
             if api_result_json["success"] is False:  # error code for usage_limit_reached
                 if api_result_json["error"]["code"] == 104:
                     logger.info(f"Monthly API subscription has reached its limit.")
-            break
+                    break
+                continue
         elif api_result.status_code != 200:  # for bad result, skip to next location
             logger.info(f"Weather API bad status code")
             continue
@@ -45,6 +47,4 @@ def weather_api(origin, destination):
 
             df.loc[df['sub_location'] == sub_location, COLUMNS] = lat, lon, temperature, feelslike
     logger.info(f"Weather API finished all requests.")
-    df.to_csv(destination, index=False)
-
-# weather_api('data.csv')
+    return df
